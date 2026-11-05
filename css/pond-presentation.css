@@ -1,0 +1,76 @@
+                                                                      
+                                                                           
+.task-plate .tp-prog{height:14px;flex:none;}
+.task-plate .tp-bar{height:12px;min-height:12px;}
+.task-plate .tp-bar i{height:100%;min-height:8px;}
+.tutorial-tip.task-plate.tp-celebrate{animation:objectiveBounce 1.9s var(--success-t,0ms) both;isolation:isolate;}
+.tp-celebrate .tp-label,.tp-celebrate .tp-prog{position:relative!important;z-index:1;}
+.tp-success{position:absolute;inset:0;overflow:hidden;border-radius:inherit;pointer-events:none;}
+.tp-success::before{content:'';position:absolute;inset:0;background:#79e89b;transform-origin:left;animation:objectiveFill 1.9s var(--success-t,0ms) both;}
+.tp-success b{position:absolute;right:9px;top:5px;font-size:28px;color:#126533;animation:objectiveCheck 1.9s var(--success-t,0ms) both;}
+.tp-celebrate .tp-label{padding-right:24px;}
+@keyframes objectiveFill{0%{transform:scaleX(0)}34%,76%{transform:scaleX(1)}92%,100%{transform:scaleX(0)}}
+@keyframes objectiveCheck{0%,34%{opacity:0;transform:scale(.2)}42%,76%{opacity:1;transform:scale(1)}92%,100%{opacity:0}}
+@keyframes objectiveBounce{0%,38%,100%{transform:translateX(-50%) scale(1)}48%{transform:translateX(-50%) translateY(-15px) scale(1.17,.9)}57%{transform:translateX(-50%) translateY(3px) scale(.95,1.12)}68%,85%{transform:translateX(-50%) scale(1)}}
+.hatch-travel,.cinematic-merge-travel{z-index:30!important;pointer-events:none!important;}
+                                                              
+body.ftue-tv #ftue-crop .crt-breaking{animation-duration:.175s;}
+body.ftue-tv #ftue-crop .crt-breaking.out{animation-duration:.25s;}
+body.ftue-tv #ftue-lumberjack:not(.hopping) .lj-bob{animation-duration:.275s;}
+body.ftue-tv .wander-frog.ftue-mutate .frog-stack{animation-iteration-count:1!important;}
+#ftue-crop{transition-duration:.475s,.475s,.475s,.275s;}
+.ftue-harvest-goal{display:flex;flex-direction:column;gap:6px;margin-bottom:12px;padding:10px;border-radius:14px;background:var(--kit-card-bg,#362449);}
+.ftue-harvest-goal>div{display:flex;gap:8px;}
+.ftue-harvest-goal>span{font-size:13px;}
+.ftue-harvest-wallet{display:flex;align-items:center;gap:5px;font-size:13px;}
+.tp-success b{width:25px;height:25px;line-height:21px;text-align:center;border:2px solid #126533;border-radius:5px;background:#deffe7;font-size:21px;}
+.tp-celebrate .tp-count{animation:objectiveCheck 1.9s var(--success-t,0ms) both;}
+.tp-celebrate .tp-bar i{transform-origin:left;animation:objectiveFill 1.9s var(--success-t,0ms) both;}
+                                                                          
+                                                                             
+.tp-celebrate.tp-complete-held .tp-bar i{animation:none;transform:scaleX(1);}
+.tp-celebrate.tp-complete-held .tp-count{animation:none;opacity:1;}
+
+                                                                            
+                                                                             
+.wander-frog{z-index:9;}
+
+                                                                             
+                                                                          
+                                                                     
+                                                                          
+                                                                           
+                                                                             
+                                                                         
+                                                                        
+                                                   
+.lilypad.pad-built-glow::after{
+  content:'';position:absolute;left:50%;top:50%;width:260%;height:260%;
+  transform:translate(-50%,-50%);border-radius:50%;pointer-events:none;z-index:-1;
+  background:radial-gradient(circle,rgba(255,224,120,.95) 0%,rgba(255,214,110,.55) 35%,rgba(255,214,110,0) 72%);
+  animation:padBuiltGlow 1.6s ease-out both;
+}
+@keyframes padBuiltGlow{
+  0%{opacity:0;transform:translate(-50%,-50%) scale(.3);}
+  18%{opacity:1;transform:translate(-50%,-50%) scale(1.15);}
+  40%{opacity:1;transform:translate(-50%,-50%) scale(1);}
+  100%{opacity:0;transform:translate(-50%,-50%) scale(1);}
+}
+@media (prefers-reduced-motion: reduce){
+  .lilypad.pad-built-glow::after{animation:none;opacity:1;}
+}
+
+                                                                            
+                                                                             
+                                                                          
+                                                                       
+                                                                           
+                                                                      
+                                                                        
+                                                                        
+                                                                      
+                                                                          
+                                                                        
+                                                                           
+                                                                          
+                                                  

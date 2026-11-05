@@ -1,0 +1,12 @@
+,[BUILD SKIP],[BUILD READ],[BUILD READ],[BUILD READ],[BUILD READ],[BUILD READ],[BUILD READ],[BUILD READ],[BUILD READ],[BUILD READ],[BUILD READ],[BUILD READ],[BUILD READ],[BUILD READ],[BUILD READ]
+,,Name,cost new seed,cost tending seed,flower lifetime (s),Frog Slots,Buff Earning Time,Buff Duration,buff_attack,buff_defense,buff_HP,desired fly count,fly spawn cooldown,fly eating cooldown,fly_drawn
+,1,lily,1,1,600,5,10,480,5,0,0,5,2,3.5,pink butterfly
+,2,whitelily,1,1,600,5,10,480,0,4,0,5,2,3.5,red butterfly
+,3,reed,2,1,600,5,10,480,0,0,20,6,1.5,2.5,green dragonfly
+,4,bluelily,1,1,600,5,10,480,10,0,0,6,1.5,2.5,blue firefly
+,5,daisy,1,1,600,6,10,600,0,8,0,6,1.5,2.5,pink butterfly
+,6,bluebell,1,1,600,6,10,600,0,0,30,7,1,2,pink butterfly
+,7,marigold,4,2,600,6,10,600,15,0,0,7,1,2,pink butterfly
+,8,lotus,5,2,600,6,10,600,0,10,0,7,1,2,pink butterfly
+,9,orchid,6,3,600,6,10,600,0,0,40,7,1,2,pink butterfly
+,10,emberbloom,8,4,600,5,10,600,20,0,0,7,1,2,pink butterfly

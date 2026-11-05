@@ -1,0 +1,23 @@
+,,,,,,,,,,,,,
+[BUILD READ],[BUILD READ],[BUILD READ],[BUILD SKIP],[BUILD READ],[BUILD READ],[BUILD READ],[BUILD READ],[BUILD SKIP],[BUILD SKIP],,[BUILD READ],[BUILD READ],[BUILD SKIP]
+level,damage_pct_of_pond_attack,fly_feed_cost,flies_cumulative,coverage_pct_of_pond,tap_increase_pct,tap_rate_min_per_s,tap_rate_max_per_s,tap_vfx_duration_s,tap_vfx_cooldown_s,,knob_constant,knob_value,knob_notes
+1,0.045,0,0,15.0%,30.0%,0,8,0.15,0.1,,tap_rate_min_per_s,0,"[RULED 2026-09-03] The bottom of the ruled tap-rate band: a player who never taps. The sim models 'no tapping' by leaving combat.tap unset, not by setting a rate of 0."
+2,0.051894,55176,55176,16.0%,32.4%,0,8,0.15,0.1,,tap_rate_max_per_s,8,"[RULED 2026-09-03, record S2] the top of the ruled band -- as fast as a player can physically tap. Tapping is free and unlimited, so this is the only cap on tap throughput."
+3,0.059843,60420,115596,17.0%,35.2%,0,8,0.15,0.1,,tap_rate_balance_avg_per_s,4,[RULED 2026-09-03] The average tap rate all balance math is sized at (4/s).
+4,0.06901,66156,181752,18.0%,38.3%,0,8,0.15,0.1,,tap_bypasses_boss_mitigation,1,"[RULED 2026-09-03] 1 = TRUE: tap damage is NOT reduced by boss defense, so the same tap is worth ~2.5x more against a 60%-mitigation deep boss. A rule rather than a tuning value."
+5,0.07958,72444,254196,19.0%,41.9%,0,8,0.15,0.1,,tap_free_and_unlimited,1,"[RULED 2026-09-03, record S2] 1 = TRUE, and the record marks it 'for now': no energy cost, no cooldown, no per-fight cap. Any future limit must still satisfy the design definition in A1."
+6,0.091773,79326,333522,21.0%,43.7%,0,8,0.15,0.1,,tapper_species,,"[OPEN -- COSMETIC] Which pond creature the Tapper IS. Deliberately blank: the tap has a diegetic body, but the species and art are a later cosmetic pick. No sim reads this."
+7,0.105831,86862,420384,22.0%,48.1%,0,8,0.15,0.1,,tap_progression_player_facing_form,,[OPEN] The player-facing form of tap progression BEYOND feeding the Tapper. Blank on purpose; the ladder in A:D is the whole mechanic today.
+8,0.122042,95112,515496,23.0%,53.1%,0,8,0.15,0.1,,,,
+9,0.140737,104148,619644,25.0%,56.3%,0,8,0.15,0.1,,"THE TAP SURGE (wave 3, RULED 2026-09-04)",,"heading. THE VARIABILITY HALF OF THE RULED +5%: the 5% is an EXPECTED value over a distribution, delivered by a short-lived, player-visible TAP SURGE. The four knobs below are the whole design."
+10,0.162297,114042,733686,27.0%,60.1%,0,8,0.15,0.1,,tap_surge_p_per_attempt,0.1,[RULED-PLAYTEST-START 2026-09-04] The probability that a surge is available for a given EXPEDITION ATTEMPT. This knob is the feel almost on its own.
+11,0.187157,124878,858564,28.0%,66.8%,0,8,0.15,0.1,,tap_surge_magnitude_mult,3.5,"[RULED-PLAYTEST-START 2026-09-04] How much stronger a surged tap is: a multiplier on col B's percentage, so a surge scales with the Tapper's level and the pond and never becomes a flat number."
+12,0.215827,136740,995304,30.0%,71.9%,0,8,0.15,0.1,,tap_surge_duration_attempts,1,"[RULED-PLAYTEST-START 2026-09-04] How many expedition ATTEMPTS one granted surge covers -- the whole attempt, win or lose. Measured in attempts and not in seconds on purpose."
+13,0.24889,149730,1145034,32.0%,77.8%,0,8,0.15,0.1,,tap_surge_hold_max,1,"[RULED-PLAYTEST-START 2026-09-04] How many UNSPENT surges a player may bank. 1 = no stockpiling, so a player who gets one is nudged to spend it now."
+14,0.287017,163956,1308990,34.0%,84.4%,0,8,0.15,0.1,,tap_surge_surfaced_as,player_visible_held_buff,"[RULED SHAPE 2026-09-04, PRESENTATION OPEN] The balance math assumes a surge is PLAYER-VISIBLE BEFORE THE ATTEMPT STARTS: granted between fights, shown in the tray, consumed by the next attempt."
+15,0.330984,179526,1488516,36.0%,91.9%,0,8,0.15,0.1,,tap_surge_ruled_expected_power_contribution,0.05,"[RULED 2026-09-04] The tap's EXPECTED contribution to pond power, as a fraction. A TARGET cell, not a tune: col B's scale and the two surge knobs above are solved against it."
+16,0.381686,196584,1685100,39.0%,97.9%,0,8,0.15,0.1,,tap_surge_measured_expected_contribution,0.0496,Model-internal receipt (measured tap-surge contribution); not config -- see READ SPEC.
+17,0.440154,215262,1900362,41.0%,107.4%,0,8,0.15,0.1,,tap_surge_measured_once_per_n_expeditions,12.99,Model-internal receipt (measured surge cadence); not config -- see READ SPEC.
+18,0.50758,235710,2136072,44.0%,115.4%,0,8,0.15,0.1,,,,
+19,0.585335,258102,2394174,47.0%,124.5%,0,8,0.15,0.1,,,,
+20,0.675,282618,2676792,50.0%,135.0%,0,8,0.15,0.1,,,,

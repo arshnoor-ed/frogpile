@@ -1,0 +1,142 @@
+                                                                     
+                                                               
+                                                                 
+                                           
+
+                                                                            
+                                                                      
+                                                                             
+                                                          
+
+                                                                                   
+                                                                                 
+                                                      
+                                                                        
+
+#flower-chooser {
+                                                                            
+                                                                  
+  position: fixed;
+  inset: 0;
+  left: 0; top: 0; transform: none;
+  z-index: 160;
+  min-width: 0; max-height: none;
+  padding: 0; border: 0; border-radius: 0; box-shadow: none;
+  background: transparent; animation: none; overflow: visible;
+  font-family: var(--kit-font);
+  color: var(--kit-text);
+}
+
+                                     
+#flower-chooser .fp-popup__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(7, 5, 20, 0.62);
+  animation: fp-popup-fade 180ms ease-out both;
+}
+@keyframes fp-popup-fade { from { opacity: 0; } to { opacity: 1; } }
+
+                                                                           
+                                                                   
+                                                                             
+body:has(#flower-chooser) #fx-layer { display: none !important; }
+
+                                                                    
+                                                             
+#flower-chooser .fp-popup__panel {
+  position: absolute;
+  top: calc(env(safe-area-inset-top) + 52px);
+  bottom: calc(var(--dock-clear, 90px) + 14px);
+  left: 0;
+  right: 0;
+  width: min(calc(100% - 20px), 420px);
+  max-height: 700px;
+  margin: 0 auto;
+}
+
+                                                                             
+#flower-chooser .fp-popup__body { padding: 0 clamp(10px, 4.1vw, 18px) 14px; }
+#flower-chooser .fp-flowerpick__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 6px;
+}
+#flower-chooser .fp-flowerpick__grid .kit-flowercard {
+  width: 100%;
+  min-width: 0;
+  height: 136px;
+}
+#flower-chooser .kit-flowercard__name { max-width: 100%; overflow: hidden; text-overflow: ellipsis; }
+
+                                                  
+#flower-chooser .fp-flowerpick__detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  margin-top: 12px;
+  padding: 0 4px;
+  text-align: center;
+}
+#flower-chooser .fp-flowerpick__detail .fp-flowerpick__name {
+  font: 800 15px / 1.1 var(--kit-font);
+  color: var(--kit-text);
+  -webkit-text-stroke: 3px var(--kit-ink-dark);
+  paint-order: stroke fill;
+}
+#flower-chooser .fp-flowerpick__hint,
+#flower-chooser .fp-flowerpick__desc {
+  font: 700 13px / 1.3 var(--kit-font);
+  color: var(--kit-text-muted);
+}
+
+                                                                         
+#flower-chooser .fp-plant-btn { width: 100%; }
+#flower-chooser .fp-plant-btn--pick,
+#flower-chooser .fp-plant-btn--short { font-size: 24px; }
+                                                                              
+                                                                     
+#flower-chooser .fp-plant-btn:disabled { filter: none; }
+
+#flower-chooser .kit-close:focus-visible { outline: 2px solid #ffe28a; outline-offset: 2px; }
+
+@media (prefers-reduced-motion: reduce) {
+  #flower-chooser .fp-popup__backdrop { animation: none; }
+}
+
+                                                                          
+                                                                           
+@media (max-height: 700px) {
+  #flower-chooser .fp-popup__panel { top: calc(env(safe-area-inset-top) + 48px); bottom: calc(var(--dock-clear, 90px) + 8px); }
+  #flower-chooser .kit-popup__header { padding-top: 12px; padding-bottom: 6px; }
+  #flower-chooser .kit-popup__title { font-size: 20px; }
+  #flower-chooser .kit-popup__subtitle { font-size: 12px; }
+  #flower-chooser .fp-flowerpick__grid .kit-flowercard { height: 118px; }
+  #flower-chooser .kit-flowercard__art { flex-basis: 40px; width: 40px; height: 40px; }
+  #flower-chooser .kit-flowercard__art > img,
+  #flower-chooser .kit-flowercard__art > .kit-flowercard__sil { left: 4px; top: 4px; width: 40px; height: 40px; }
+  #flower-chooser .fp-flowerpick__detail { margin-top: 8px; }
+  #flower-chooser .fp-flowerpick__hint,
+  #flower-chooser .fp-flowerpick__desc { font-size: 12px; }
+  #flower-chooser .kit-popup__footer { padding: 8px 14px 10px; }
+  #flower-chooser .fp-plant-btn.kit-btn--lg { height: 54px; }
+}
+@media (max-height: 600px) {
+  #flower-chooser .kit-popup__header { padding-top: 10px; padding-bottom: 4px; gap: 2px; }
+  #flower-chooser .fp-popup__body { padding-bottom: 8px; }
+  #flower-chooser .fp-flowerpick__grid .kit-flowercard { height: 104px; padding-top: 3px; padding-bottom: 4px; }
+  #flower-chooser .kit-flowercard__art { flex-basis: 34px; width: 34px; height: 34px; }
+  #flower-chooser .kit-flowercard__art > img,
+  #flower-chooser .kit-flowercard__art > .kit-flowercard__sil { left: 2px; top: 2px; width: 34px; height: 34px; }
+  #flower-chooser .fp-flowerpick__detail { margin-top: 6px; }
+}
+@media (max-width: 360px) {
+  #flower-chooser .kit-flowercard { padding-left: 3px; padding-right: 3px; }
+  #flower-chooser .kit-flowercard__name { font-size: 13px; }
+  #flower-chooser .kit-flowercard__effect { padding: 2px 6px 2px 4px; gap: 2px; }
+  #flower-chooser .kit-flowercard__effect b { font-size: 11px; }
+  #flower-chooser .kit-flowercard__effect .kit-insect { width: 15px; height: 15px; }
+  #flower-chooser .fp-plant-btn--plant { font-size: 22px; }
+  #flower-chooser .fp-plant-btn--pick,
+  #flower-chooser .fp-plant-btn--short { font-size: 20px; }
+}

@@ -1,0 +1,138 @@
+                                                                                  
+                                                                                 
+                                                                             
+                                                                           
+                                                                              
+                                                                           
+
+#cl-stage .cl-bloom { position: absolute; z-index: 3; pointer-events: none; --cl-ripe: 0; }
+#cl-stage .cl-bloom-ui { position: absolute; z-index: 96000; pointer-events: none; }
+
+                                                                               
+                                               
+#cl-stage .cl-bloom-body { position: absolute; inset: 0; transform-origin: 50% 94%; animation: clBloomSway 2.8s ease-in-out infinite; }
+@keyframes clBloomSway { 0%, 100% { rotate: -1.3deg; } 50% { rotate: 1.3deg; } }
+#cl-stage .cl-bloom-art {
+  display: block; width: 100%; height: 100%; object-fit: contain; transform-origin: 50% 94%;
+  transform: scale(calc(1 + var(--cl-ripe) * .08));
+  filter: drop-shadow(0 6px 7px rgba(0, 0, 0, .32)) drop-shadow(0 0 calc(3px + var(--cl-ripe) * 20px) rgba(255, 120, 205, calc(.2 + var(--cl-ripe) * .7)))
+    saturate(calc(1 + var(--cl-ripe) * .3)) brightness(calc(1 + var(--cl-ripe) * .08));
+  transition: transform .25s cubic-bezier(.2, 1.6, .4, 1);
+}
+#cl-stage .cl-bloom-shadow {
+  position: absolute; left: 10%; right: 10%; bottom: 0; height: 18%; translate: 0 32%; border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(16, 26, 8, .5), rgba(16, 26, 8, 0));
+}
+                                                                              
+#cl-stage .cl-bloom-rays {
+  position: absolute; left: 50%; top: 47%; width: 175%; aspect-ratio: 1; translate: -50% -50%; border-radius: 50%;
+  background: repeating-conic-gradient(from 0deg, rgba(255, 244, 190, .6) 0 7deg, rgba(255, 244, 190, 0) 7deg 22deg);
+  -webkit-mask: radial-gradient(closest-side, #000 18%, transparent 74%); mask: radial-gradient(closest-side, #000 18%, transparent 74%);
+  opacity: calc(var(--cl-ripe) * var(--cl-ripe) * .55); animation: clRaysSpin 10s linear infinite;
+}
+#cl-stage .cl-bloom.is-burst .cl-bloom-rays { animation: clRaysSpin 3.2s linear infinite, clRaysBlaze 1.6s ease-out forwards; }
+@keyframes clRaysSpin { to { rotate: 360deg; } }
+@keyframes clRaysBlaze { 0% { opacity: .3; scale: .4; } 16% { opacity: 1; scale: 1.18; } 60% { opacity: .85; scale: 1; } 100% { opacity: 0; scale: 1.12; } }
+                                                      
+#cl-stage .cl-bloom.is-spent .cl-bloom-art {
+  transform: scale(.93); filter: drop-shadow(0 6px 7px rgba(0, 0, 0, .3)) saturate(.7) brightness(.9);
+  transition: transform .9s ease, filter .9s ease;
+}
+
+                                                                              
+                                                        
+#cl-stage .cl-bloom-guide { position: absolute; inset: 0; }
+#cl-stage .cl-bloom-guide::before {
+  content: ""; position: absolute; left: calc(49% - 26px); top: calc(47% - 26px); width: 52px; height: 52px; border-radius: 50%;
+  border: 4px solid rgba(255, 255, 255, .9); box-shadow: 0 0 14px rgba(255, 150, 215, .9); animation: clBloomPulse .7s ease-out infinite;
+}
+@keyframes clBloomPulse { 0% { transform: scale(.35); opacity: 1; } 100% { transform: scale(1.5); opacity: 0; } }
+#cl-stage .cl-bloom-guide__bubble {
+  position: absolute; left: 50%; top: -8%; translate: -50% -100%; white-space: nowrap; padding: 7px 13px;
+  border: 2.5px solid #f4c653; border-radius: 14px; background: #30205d; color: #fff; font-size: 16px; font-weight: 900;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, .28), 0 0 16px rgba(255, 150, 215, .55); animation: clBloomBob 1s ease-in-out infinite;
+}
+#cl-stage .cl-bloom-guide__bubble::after {
+  content: ""; position: absolute; left: 50%; bottom: -9px; width: 14px; height: 14px; translate: -50% 0; rotate: 45deg;
+  background: #30205d; border-right: 2.5px solid #f4c653; border-bottom: 2.5px solid #f4c653;
+}
+@keyframes clBloomBob { 50% { transform: translateY(-5px) scale(1.04); } }
+#cl-stage .cl-bloom-guide__hand { position: absolute; left: calc(49% - 6px); top: calc(47% - 5.5px); width: 54px; height: auto; transform-origin: 11% 10%; animation: clBloomTapHand .7s ease-in-out infinite; }
+@keyframes clBloomTapHand { 0%, 100% { transform: translate(8px, 12px) scale(1); } 45% { transform: translate(0, 0) scale(.86); } }
+
+                            
+#cl-stage .cl-exclaim {
+  position: absolute; translate: -50% -100%; font-weight: 900; font-size: 30px; line-height: 1; color: #fff;
+  text-shadow: -2px -2px 0 #25184b, 2px -2px 0 #25184b, -2px 2px 0 #25184b, 2px 2px 0 #25184b, 0 3px 3px rgba(0, 0, 0, .45);
+  animation: clExclaim .9s cubic-bezier(.2, 1.6, .4, 1) forwards;
+}
+@keyframes clExclaim { 0% { transform: scale(.2) rotate(-20deg); opacity: 0; } 22% { transform: scale(1.35) rotate(6deg); opacity: 1; } 40% { transform: scale(1) rotate(0deg); } 78% { opacity: 1; } 100% { transform: translateY(-14px); opacity: 0; } }
+
+                                                           
+#cl-stage .cl-petals { position: absolute; width: 0; height: 0; }
+#cl-stage .cl-petals i {
+  position: absolute; left: -8px; top: -5px; width: 16px; height: 10px; border-radius: 70% 30% 70% 30%;
+  background: linear-gradient(135deg, #ffb0da, #ee4f9b); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .55), 0 1px 2px rgba(80, 0, 40, .3);
+}
+#cl-stage .cl-petals i.cl-petal--light { background: linear-gradient(135deg, #fff, #ffc8e6); }
+#cl-stage .cl-sparks--pollen i { left: -4px; top: -4px; width: 8px; height: 8px; background: #fff5a6; box-shadow: 0 0 7px 3px rgba(255, 200, 50, .9); }
+#cl-stage .cl-ring--bloom { border-width: 9px; border-color: #ff96d2; box-shadow: 0 0 20px rgba(255, 110, 195, .9), inset 0 0 14px rgba(255, 205, 240, .75); }
+#cl-stage .cl-flash[data-kind="harvest"] { background: radial-gradient(circle at 60% 62%, rgba(255, 255, 255, .96) 0%, rgba(255, 222, 242, .78) 42%, rgba(255, 150, 212, .5) 100%); }
+
+                                                                                  
+#cl-stage .cl-seed { width: 20px; }
+#cl-stage .cl-seedtoken {
+  position: absolute; width: 48px; height: 48px; margin: -24px 0 0 -24px; object-fit: contain;
+  filter: drop-shadow(0 0 10px rgba(255, 160, 220, .95)) drop-shadow(0 3px 3px rgba(0, 0, 0, .35));
+}
+#cl-stage .cl-ability--harvest { color: #ff9ad6; font-size: 26px; }
+#cl-stage .cl-harvest-word {
+  position: absolute; translate: -50% -50%; white-space: nowrap; font-weight: 900; font-size: 40px; line-height: 1; color: #ffe066;
+  text-shadow: -3px -3px 0 #4a1240, 3px -3px 0 #4a1240, -3px 3px 0 #4a1240, 3px 3px 0 #4a1240, 0 -3px 0 #4a1240, 0 3px 0 #4a1240,
+    -3px 0 0 #4a1240, 3px 0 0 #4a1240, 0 5px 6px rgba(0, 0, 0, .5), 0 0 22px rgba(255, 140, 210, .9);
+  animation: clHarvestWord 1.5s cubic-bezier(.2, 1.4, .4, 1) forwards;
+}
+@keyframes clHarvestWord {
+  0% { transform: scale(.2) rotate(-14deg); opacity: 0; }
+  14% { transform: scale(1.4) rotate(5deg); opacity: 1; }
+  26% { transform: scale(.94) rotate(-2deg); }
+  36% { transform: scale(1.04) rotate(0deg); }
+  75% { transform: translateY(-8px) scale(1); opacity: 1; }
+  100% { transform: translateY(-40px) scale(.9); opacity: 0; }
+}
+
+                                                                        
+                              
+#cl-stage .cl-plate--harvest {
+  grid-column: 1 / -1; justify-self: center; width: min(100%, 300px);
+  background: linear-gradient(180deg, rgba(122, 38, 112, .96), rgba(66, 22, 86, .96));
+}
+#cl-stage .cl-plate--harvest .cl-plate__art { background: #ffd8ef; overflow: hidden; }
+#cl-stage .cl-plate--harvest .cl-plate__art img { left: -3px; top: 4px; width: 44px; height: 32px; }
+#cl-stage .cl-plate--harvest .cl-plate__bar { max-width: none; }
+#cl-stage .cl-plate--harvest .cl-plate__bar i { background: linear-gradient(90deg, #ff79c6, #ffd34d); box-shadow: inset 0 2px 0 rgba(255, 255, 255, .45), 0 0 8px rgba(255, 140, 210, .8); }
+#cl-stage .cl-plate__seeds {
+  flex: 0 0 auto; display: flex; align-items: center; gap: 2px; padding: 2px 9px 2px 3px;
+  border: 2px solid var(--kit-ink-dark, #0d0a27); border-radius: 15px; background: #2a1a4f; opacity: .6; filter: grayscale(.7);
+}
+#cl-stage .cl-plate__seeds img { width: 28px; height: 28px; object-fit: contain; }
+#cl-stage .cl-plate__seeds b { font-weight: 900; font-size: 14px; color: #fff; }
+#cl-stage .cl-plate__seeds.is-got { opacity: 1; filter: none; border-color: #ffc83a; box-shadow: 0 0 12px rgba(255, 200, 58, .85); }
+
+                                                                        
+#cl-stage[data-harvest] .cl-bar--foe i { background: linear-gradient(270deg, #ff79c6, #ffd34d); }
+#cl-stage[data-harvest] .cl-bar--foe .cl-bar-trail { opacity: 0; }
+
+                                        
+#cl-stage .cl-stage--harvest { overflow: hidden; }
+#cl-stage .cl-stage--harvest img { width: 26px; height: 20px; object-fit: contain; }
+#cl-stage .cl-stage--harvest.cl-stage--next { background: #7a2f6c; }
+#cl-stage .cl-stage--harvest.cl-stage--cur { background: #ffd6ee; }
+#cl-stage .cl-pip.harvest:not(.done):not(.cur) { background: #ff8fcf; }
+
+                                    
+#cl-stage .cl-waveclear--harvest {
+  display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 24px;
+  border-color: #ff96d2; color: #ffe3f4; box-shadow: 0 0 28px rgba(255, 120, 200, .6);
+}
+#cl-stage .cl-waveclear--harvest img { width: 42px; height: 42px; object-fit: contain; flex: 0 0 auto; }

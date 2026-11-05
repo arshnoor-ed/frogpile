@@ -1,0 +1,8 @@
+                                                                           
+                                                                            
+                                                            
+#pond-zoom-vignette{
+  position:absolute;inset:0;z-index:6;pointer-events:none;opacity:0;
+  background:radial-gradient(ellipse 75% 70% at 50% 50%,rgba(26,16,6,0) 55%,rgba(26,16,6,.55) 100%);
+  will-change:opacity;
+}

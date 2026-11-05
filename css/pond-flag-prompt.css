@@ -1,0 +1,167 @@
+                                                                     
+                                                                        
+                                                                             
+                                                                             
+                                                                           
+                                                                      
+                                                                        
+#pond-flag-prompt {
+  position: fixed;
+  inset: 0;
+  z-index: 160;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  font-family: var(--kit-font);
+  color: var(--kit-text);
+}
+#pond-flag-prompt .pfp-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(9, 5, 24, 0.66);                    
+  animation: pfp-fade 600ms ease-out both;
+}
+@keyframes pfp-fade { from { opacity: 0; } to { opacity: 1; } }
+                                                                             
+                                                                        
+                                                            
+#pond-flag-prompt .kit-popup.pfp-popup { animation: pfp-rise 700ms cubic-bezier(.22, 1.2, .36, 1) 300ms both; }
+@keyframes pfp-rise {
+  from { opacity: 0; transform: translateY(56px) scale(.92); }
+  45%  { opacity: 1; }
+  to   { opacity: 1; transform: none; }
+}
+#pond-flag-prompt .pfp-mon { animation: pfp-swing 620ms cubic-bezier(.3, 1.4, .5, 1) 760ms both; }
+@keyframes pfp-swing {
+  from { opacity: 0; transform: translateY(-14%) rotate(-4deg); }
+  50%  { opacity: 1; }
+  to   { opacity: 1; transform: none; }
+}
+#pond-flag-prompt .pfp-stage {
+  position: relative;
+  width: min(100%, 380px);
+  max-height: 100%;
+  display: flex;
+  justify-content: center;
+}
+#pond-flag-prompt .pfp-popup { width: 100%; max-height: 100%; }
+#pond-flag-prompt .kit-popup__body { gap: 0; padding-bottom: 6px; }
+                                                                              
+#pond-flag-prompt .kit-popup__header { padding-left: 18px; padding-right: 18px; }
+body.pfp-open #tut-pointer { visibility: hidden !important; }
+
+                                                         
+                                                                          
+                                                                            
+#pond-flag-prompt .pfp-preview {
+  --pfp-w: min(210px, 56vw);
+  position: relative;
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+  margin: 2px -18px 0;
+  padding: 6px 0 0;
+  overflow: hidden;
+  background: radial-gradient(ellipse 60% 70% at 50% 45%, rgba(143, 94, 245, 0.45), transparent 70%);
+}
+#pond-flag-prompt .pfp-rays {
+  position: absolute;
+  left: 50%;
+  top: 42%;
+  width: 360px;
+  height: 360px;
+  margin: -180px 0 0 -180px;
+  border-radius: 50%;
+  background: repeating-conic-gradient(rgba(255, 236, 160, 0.16) 0 9deg, transparent 9deg 24deg);
+  -webkit-mask-image: radial-gradient(circle, #000 18%, transparent 62%);
+  mask-image: radial-gradient(circle, #000 18%, transparent 62%);
+  animation: pfp-spin 24s linear infinite;
+  pointer-events: none;
+}
+@keyframes pfp-spin { to { transform: rotate(360deg); } }
+#pond-flag-prompt .pfp-crop {
+  position: relative;
+  width: var(--pfp-w);
+  height: calc(var(--pfp-w) * 0.925);
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(180deg, #000 72%, transparent 100%);
+  mask-image: linear-gradient(180deg, #000 72%, transparent 100%);
+}
+#pond-flag-prompt .pfp-mon {
+  position: absolute;
+  top: calc(var(--pfp-w) / 0.56 * -0.3613);
+  left: calc(var(--pfp-w) / 0.56 * -0.22);
+  width: calc(var(--pfp-w) / 0.56);
+  aspect-ratio: 1024 / 1352;
+  transform-origin: 53% 40%;
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.45));
+}
+
+                           
+#pond-flag-prompt .pfp-sec {
+  display: block;
+  margin: 10px 2px 6px;
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--kit-text-muted);
+}
+#pond-flag-prompt .pfp-swatches {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);                                 
+  gap: 6px;
+}
+#pond-flag-prompt .pfp-sw {
+  aspect-ratio: 1 / 1;
+  min-width: 0;
+  padding: 0;
+  border: 3px solid var(--kit-ink-dark);
+  border-radius: 12px;
+  background-size: 100% 100%;
+  box-shadow: inset 0 3px 0 rgba(255, 255, 255, 0.28), inset 0 -4px 0 rgba(0, 0, 0, 0.22);
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+#pond-flag-prompt .pfp-sw:active { transform: scale(0.92); }
+#pond-flag-prompt .pfp-sw.on {
+  border-color: #fff0a3;
+  box-shadow: 0 0 0 2px var(--kit-ink-dark), 0 0 12px rgba(255, 209, 102, 0.75),
+    inset 0 3px 0 rgba(255, 255, 255, 0.28), inset 0 -4px 0 rgba(0, 0, 0, 0.22);
+  transform: scale(1.08);
+}
+#pond-flag-prompt .pfp-name {
+  width: 100%;
+  min-height: 48px;
+  box-sizing: border-box;
+  padding: 8px 12px;
+  border: 3px solid var(--kit-frame-rim-lo);
+  border-radius: 14px;
+  background: var(--kit-ink-dark);
+  font: 800 22px / 1.2 var(--kit-font);
+  letter-spacing: 0.03em;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;                                        
+}
+#pond-flag-prompt .pfp-name::placeholder { color: var(--kit-text-muted); }
+#pond-flag-prompt .pfp-name:focus { outline: 3px solid #fff0a3; outline-offset: 1px; }
+
+                                                             
+@media (max-width: 360px) {
+  #pond-flag-prompt .pfp-swatches { gap: 5px; }
+  #pond-flag-prompt .pfp-sw { border-width: 2px; border-radius: 10px; }
+}
+@media (max-height: 640px) {
+  #pond-flag-prompt .pfp-preview { --pfp-w: min(132px, 42vw); }
+  #pond-flag-prompt .kit-popup__header { padding-top: 12px; }
+  #pond-flag-prompt .pfp-sec { margin-top: 8px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #pond-flag-prompt .pfp-backdrop,
+  #pond-flag-prompt .pfp-rays,
+  #pond-flag-prompt .kit-popup.pfp-popup,
+  #pond-flag-prompt .pfp-mon { animation: none; }
+}

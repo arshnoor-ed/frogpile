@@ -1,0 +1,75 @@
+                                                                                 
+                                                                                 
+                                                                           
+.fg-ring {
+  position: absolute; pointer-events: none; z-index: 2;
+  border-radius: 50%; border: 2px solid rgba(255, 255, 255, .85);
+  box-shadow: 0 0 6px rgba(120, 190, 220, .6);
+  transform: translate(-50%, -50%);
+}
+                                                                                
+                                                                  
+.frog-stack .fa-pat {
+  position: absolute; pointer-events: none; z-index: 3;
+  width: calc(var(--fs-frame, var(--fs-zoom)) * .085); aspect-ratio: 1;
+  border-radius: 50%; border: 2px solid rgba(255, 255, 255, .9);
+  box-shadow: 0 0 4px rgba(255, 255, 255, .7);
+}
+.frog-stack img.fa-swoosh {
+  left: calc(var(--fs-l) + var(--fs-frame, var(--fs-zoom)) * .17);
+  top: calc(var(--fs-t) + var(--fs-frame, var(--fs-zoom)) * .55);
+  width: calc(var(--fs-frame, var(--fs-zoom)) * .24); height: auto;
+  z-index: 3; transform-origin: 50% 50%;
+  filter: brightness(2.2) drop-shadow(0 0 3px #fff);
+}
+.fg-drop {
+  position: absolute; pointer-events: none; z-index: 5;
+  border-radius: 50%;
+                                                                         
+  background: radial-gradient(circle at 35% 35%, #fff, rgba(214, 240, 252, .95) 50%, rgba(110, 185, 220, .95));
+  box-shadow: 0 0 0 1px rgba(40, 120, 165, .55), 0 1px 2px rgba(20, 70, 100, .35);
+  transform: translate(-50%, -50%);
+}
+                                                                             
+                                                                                 
+                                                                             
+                                                                               
+                                                       
+.wander-frog .frog-stack, #cl-stage .cl-frog .frog-stack {
+  transform-origin: calc(var(--fs-x) + var(--fs-frame, var(--fs-zoom)) * .5531)
+                    calc(var(--fs-y) + var(--fs-frame, var(--fs-zoom)) * .7625);
+}
+                                                                                       
+                                                                            
+.frog-stack.fs-flopped img.fs-body, .frog-stack.fs-flopped img.fs-arm,
+.frog-stack.fs-flopped img.fs-blink { visibility: hidden !important; }
+.frog-stack.fs-flopped img.fs-flop { visibility: visible !important; }
+                                                                                                      
+                                                  
+.frog-stack.fs-croaking img.fs-body, .frog-stack.fs-croaking img.fs-blink { visibility: hidden !important; }
+.frog-stack.fs-croaking img.fs-croak { visibility: visible !important; }
+                                                                                                     
+                                                           
+.fg-bonk, .fg-bonk-ring, .fg-bonk-line { position: absolute; pointer-events: none; z-index: 6; opacity: 0; }                                       
+.fg-bonk svg { display: block; width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 0 6px rgba(255, 244, 190, .95)); }
+.fg-bonk-out { fill: #ffd84a; stroke: #4a3423; stroke-width: 5; stroke-linejoin: round; }
+.fg-bonk-in { fill: #fffbe6; }
+.fg-bonk-ring { box-sizing: border-box; border-radius: 50%; border: 3px solid rgba(255, 255, 255, .95); }
+.fg-bonk-line { border-radius: 99px; background: #fff; box-shadow: 0 0 0 1.5px rgba(74, 52, 35, .8); transform-origin: 50% 50%; }
+                                                                                                 
+.fg-dizzy { position: absolute; width: 0; height: 0; pointer-events: none; z-index: 3; opacity: 0; }
+.fg-dizzy-star { position: absolute; left: 0; top: 0; display: block; }
+.fg-dizzy-star svg { display: block; width: 100%; height: 100%; overflow: visible; }
+.fg-dizzy-star polygon { fill: #ffd84a; stroke: #4a3423; stroke-width: 1.8; stroke-linejoin: round; }
+
+                                                                                                                      
+                                                                                                                           
+                                                                                        
+.fg-bubble, .fg-goo, .fg-pop { position: absolute; pointer-events: none; box-sizing: border-box; border-radius: 50%; }
+.fg-bubble {
+  z-index: 3; border: 2px solid #121214;
+  background: radial-gradient(circle at 34% 30%, rgba(255, 255, 255, .6) 0 13%, rgba(104, 104, 112, .96) 15% 38%, #38383d 72%);
+}
+.fg-goo { z-index: 2; background: #2d2d32; border: 2px solid #121214; }
+.fg-pop { z-index: 3; border: 2px solid rgba(36, 36, 42, .85); }
+.cl-frog .fg-bubble, .cl-frog .fg-pop, .cl-frog .fg-goo { z-index: -1; }

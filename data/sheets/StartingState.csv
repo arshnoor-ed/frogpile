@@ -1,0 +1,18 @@
+
+,[BUILD READ],[BUILD READ],[BUILD SKIP],[BUILD READ],[BUILD SKIP]
+,key,section,display_name,value,notes
+,tadpoles,currency,tadpoles,10,"[RULED 2026-10-23] one tadpole hatches exactly one frog (designer). Opening L3 + L1 costs 10 tadpoles = 10 L0 equivalents, leaving no reserve or pending eggs. Intro TV demo stock is separate."
+,flies,currency,flies,0,"starting fly wallet, integer. flies are the flower-produced soft currency; the wallet starts empty and fills from the first bloom."
+,gems,currency,gems,25,"starting gem wallet, integer. premium currency; this is the only premium grant at first boot."
+,seeds,currency,seeds,0,"starting seed wallet, integer. seeds pay to plant and to tend flowers. 0 (user, 2026-10-17): the first seeds are the Pink Lily seeds Expedition 5 brings back."
+,wood,currency,wood,0,"starting wood wallet, integer. wood is harvested by frog labour, so it starts empty -- there are no frogs at boot to have harvested any."
+,stone,currency,stone,0,"starting stone wallet, integer. harvested by frog labour like wood; starts empty for the same reason."
+,bones,currency,bones,0,"starting bone wallet, integer. Bones come from SACRIFICE only and are spent only on the slot FREEZE; no expedition pays them, so the wallet starts empty. [RULED, rulings section 26 / v8 4.1]"
+,frogs,pond,frogs,0,"frogs standing in the pond at first boot, integer. The pond starts EMPTY on purpose: the first frogs come from hatching the boot tadpoles. Do not spawn a starter frog on top of this."
+,hatching_pads,pond,hatching pads,3,"hatching lilypads owned at first boot, integer. This count is the frog-supply ceiling until more are bought. The hatch_timer_merges derivation is retired [rulings section 8]."
+,flower_pads,pond,flower pads,3,"flower pads owned at first boot, integer. All boot pads count as in bloom on step 1, which is what makes boot happiness land at its start value. Also the base the buildable pad cap is measured from."
+,pond_level,pond,pond level,0,"pond expansions owned at first boot, integer, 0-based. it is the row index into the PondTiers ladder, so 0 means the game boots on tier 0's frog / tadpole / pad / insect caps."
+,dual_hatching,unlock,dual hatching lilypad,0,"0/1 ownership flag, integer. 0 = not owned at boot. once bought it doubles the frogs each hatch produces, from the step after purchase. never starts owned."
+,triple_hatching,unlock,triple hatching upgrade,0,"0/1 ownership flag, integer. 0 = not owned at boot. once bought it triples hatch output instead of doubling it, and it can only be bought after dual_hatching. never starts owned."
+,frog_market,unlock,frog market,0,"0/1 ownership flag, integer. 0 = not built at boot. once built it opens the market / gacha frog intake from the step after. never starts owned."
+,family_tickets,item,family tickets,0,"Family Tickets a new player starts with, integer (user 2026-10-17). A ticket, used on an expedition's sealed trait drop, hands over that family's whole set plus its weapon and shield in one go; more cost gems in the Shop. The FTUE prompts using one on stage 2 and stage 3. 0 (user 2026-10-20): the three free ones are caught in stage 2's tadpole web instead (DropTables exp2_web_tickets)."

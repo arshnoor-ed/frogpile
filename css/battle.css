@@ -1,0 +1,672 @@
+                                                                                
+                                                                          
+
+                                                                            
+                                                                               
+                                                                          
+                                                                  
+                                                                              
+                                                                               
+                                                            
+
+                                                                             
+                                                                         
+                                                                        
+                                                                      
+                                                                           
+                                                                            
+                                                                              
+                                                                        
+                                                                             
+                                            
+                                                                                   
+
+#cl-stage {
+  --cl-ink: var(--kit-text, #f0f2f4);
+  --cl-ink-soft: var(--kit-text-muted, #a7afb8);
+  --cl-line: var(--kit-ink-dark, rgba(255,255,255,0.14));
+  --cl-w: min(100vw, 440px);                                                                               
+  position: fixed;
+  inset: 0;
+  z-index: 480;
+  background: linear-gradient(180deg,#5fb4e6 0%,#86ccef 42%,#a6dbf2 60%);
+  color: var(--cl-ink);
+  font-family: var(--kit-font, 'Baloo 2', sans-serif);
+  display: flex;
+  flex-direction: column;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  overflow: hidden;
+}
+
+                                                                               
+                                                                                
+                                                                                  
+                                                                              
+                                                                               
+                                                                      
+                                                                            
+                                                                 
+#cl-stage .cl-top {
+  position: relative;
+  z-index: 9;
+  display: grid;
+  grid-template-columns: 40px 1fr 40px;
+  align-items: start;
+  padding: max(12px, calc(env(safe-area-inset-top) + 6px)) 16px 0;
+  pointer-events: none;
+}
+#cl-stage .cl-back { grid-column: 1; pointer-events: auto; }
+#cl-stage .cl-gear { grid-column: 3; width: 40px; height: 40px; pointer-events: auto; }
+                                                         
+body:has(#cl-stage) #settings-popup { z-index: 490; }
+
+                                                                         
+                                                                          
+                                                                    
+#cl-stage .cl-stagetrack, #cl-stage .cl-plates { position: relative; z-index: 9; pointer-events: none; }
+#cl-stage .cl-stagetrack {
+  align-self: center; display: flex; align-items: center; gap: 6px; max-width: calc(100% - 32px); box-sizing: border-box;
+  margin-top: 12px; padding: 6px 10px; border: 2px solid var(--kit-ink-dark, #0d0a27); border-radius: 18px;
+  background: rgba(26, 22, 80, .92); overflow: hidden;
+}
+#cl-stage .cl-stagetrack:empty { display: none; }
+#cl-stage .cl-stage {
+  flex: 0 0 auto; box-sizing: border-box; width: 28px; height: 28px; display: grid; place-items: center;
+  border: 2px solid var(--kit-ink-dark, #0d0a27); border-radius: 14px; background: #3a3380;
+  font-weight: 800; font-size: 13px; line-height: 1.05; color: #fff;
+}
+#cl-stage .cl-stage--done { background: #3fcb5a; }
+#cl-stage .cl-stage--cur { background: #ffc83a; color: #3a2408; }
+#cl-stage .cl-stage--boss:not(.cl-stage--done) { border-color: #ffc83a; background: #6b3a2a; color: #fff; }
+#cl-stage .cl-stage-link { flex: 0 1 10px; min-width: 4px; height: 3px; border-radius: 1.5px; background: #3a3380; }
+#cl-stage .cl-stage-link.done { background: #3fcb5a; }
+#cl-stage .cl-plates {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 180px)); justify-content: space-between; gap: 6px;
+  margin-top: 4px; padding: 0 14px;
+}
+#cl-stage .cl-plate {
+  box-sizing: border-box; min-width: 0; display: flex; align-items: center; gap: 8px; padding: 6px 10px 6px 6px;
+  border: 2px solid var(--kit-ink-dark, #0d0a27); border-radius: 16px; background: rgba(26, 22, 80, .92);
+}
+#cl-stage .cl-plate__art {
+  position: relative; flex: 0 0 auto; box-sizing: border-box; width: 42px; height: 42px;
+  border: 1.5px solid var(--kit-ink-dark, #0d0a27); border-radius: 21px; background: #3a3380;
+}
+#cl-stage .cl-plate__art img { position: absolute; left: 1.5px; top: 2.5px; width: 36px; height: 36px; object-fit: contain; }
+#cl-stage .cl-plate__weak {
+  position: absolute; left: 26.5px; top: 24.5px; box-sizing: border-box; width: 18px; height: 18px; display: grid; place-items: center;
+  border: 1.5px dashed #8f88c9; border-radius: 9px; background: #26215c;
+  font-weight: 800; font-size: 10px; line-height: 1; color: #b9b1f6;
+}
+#cl-stage .cl-plate__info { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+#cl-stage .cl-plate__name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 800; font-size: 12px; line-height: 1.05; color: #fff; }
+#cl-stage .cl-plate__bar {
+  position: relative; display: block; box-sizing: border-box; width: 100%; max-width: 110px; height: 12px;
+  border: 1.5px solid var(--kit-ink-dark, #0d0a27); border-radius: 6px; background: #0d0a27;
+}
+#cl-stage .cl-plate__bar i {
+  position: absolute; left: -1.5px; top: -1.5px; height: 12px; max-width: calc(100% + 3px); border-radius: 6px;
+  background: #f4506f; box-shadow: inset 0 2px 0 rgba(255, 255, 255, .35); transition: width .15s linear;
+}
+                                                  
+#cl-stage .cl-payout {
+  position: absolute; z-index: 9; left: 50%; transform: translateX(-50%);
+  bottom: calc(max(18px, calc(env(safe-area-inset-bottom) + 8px)) + 45px);
+  box-sizing: border-box; max-width: calc(100% - 32px); display: flex; align-items: center; gap: 8px;
+  padding: 4px 12px 4px 6px; border: 2px solid #ffc83a; border-radius: 14px; background: rgba(42, 31, 122, .95);
+  pointer-events: none;
+}
+#cl-stage .cl-payout > span:last-child { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 800; font-size: 11px; line-height: 1.05; color: #fff; }
+                                                                             
+#cl-stage .cl-wavehead {
+  grid-column: 2;
+  justify-self: center;
+  margin-top: -3.5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 14px 7px;
+  border-radius: 16px;
+  background: var(--kit-ink-dark, #0d0a27);
+}
+#cl-stage .cl-wavelabel { font-weight: 800; font-size: 13px; line-height: normal; color: #fff; white-space: nowrap; }
+#cl-stage .cl-pips { display: flex; justify-content: center; gap: 5px; }
+                                                                                  
+#cl-stage .cl-tier { margin: -2px 0 -1px; padding: 1px 8px; border-radius: 999px; font-weight: 900; font-size: 9px; line-height: 1.3; letter-spacing: .1em; color: #fff; }
+#cl-stage .cl-tier--hard { background: #f07a1a; }
+#cl-stage .cl-tier--extreme { background: #d4213a; box-shadow: 0 0 8px rgba(255, 60, 80, .7); }
+#cl-stage .cl-pip { box-sizing: border-box; width: 10px; height: 10px; border-radius: 50%; border: 1px solid #000; background: #453b85; display: inline-block; }
+#cl-stage .cl-pip.done { background: #73d94d; }
+#cl-stage .cl-pip.cur { background: #ffd14d; }
+#cl-stage .cl-pip.boss { border-radius: 3px; background: var(--kit-danger-face-a, #f22f39); }
+#cl-stage .cl-pip.boss.done { background: #73d94d; }
+#cl-stage .cl-pip.boss.cur { background: #ffd14d; }
+
+                                                                                                              
+                                           
+#cl-stage .cl-vsrow {
+  position: relative;
+  z-index: 9;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 14px minmax(0, 1fr);
+  grid-template-rows: auto 22px auto;
+  padding: 8px 16px 0;
+  color: #fff;
+  text-shadow: 0 1px 0 rgba(13, 10, 39, .35);
+  pointer-events: none;
+}
+#cl-stage .cl-side { display: contents; }
+#cl-stage .cl-sidename {
+  grid-row: 1;
+  align-self: end;
+  margin-bottom: 6px;
+  font-weight: 800;
+  font-size: 12px;
+  line-height: 1.25;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+#cl-stage .cl-side--party > * { grid-column: 1; }
+#cl-stage .cl-side--foe > * { grid-column: 3; text-align: right; }
+#cl-stage .cl-bar {
+  grid-row: 2;
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  height: 22px;
+  border: 2.5px solid #fff;
+  border-radius: 11px;
+  background: var(--kit-ink-dark, #0d0a27);
+  overflow: hidden;
+}
+#cl-stage .cl-bar i { position: relative; z-index: 1; display: block; height: 100%; width: 100%; border-radius: 8.5px; background: #6cd043; transition: width .15s linear; }
+#cl-stage .cl-bar--foe i { background: #ed4554; margin-left: auto; }
+                                                                           
+                                                   
+#cl-stage .cl-bar { position: relative; }
+#cl-stage .cl-bar-trail { position: absolute; top: 0; bottom: 0; left: 0; border-radius: 8.5px; background: #fff1a6; transition: width .5s cubic-bezier(.5,0,.75,0) .35s; }
+#cl-stage .cl-bar--foe .cl-bar-trail { left: auto; right: 0; }
+                                                                         
+                                  
+#cl-stage[data-danger]:not([data-danger="0"]) .cl-side--party .cl-bar { animation: clBarDanger .9s ease-in-out infinite; }
+#cl-stage[data-danger]:not([data-danger="0"]) .cl-side--party .cl-bar i { background: linear-gradient(180deg, #ff9b45, #e8352f); }
+#cl-stage[data-danger="3"] .cl-side--party .cl-bar { animation-duration: .55s; }
+@keyframes clBarDanger { 0%, 100% { border-color: #fff; box-shadow: 0 0 0 0 rgba(255,40,40,0); } 50% { border-color: #ff6060; box-shadow: 0 0 12px 3px rgba(255,40,40,.8); } }
+                                                               
+#cl-stage .cl-bar i::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: url('../assets/ui2/kit/art/star-texture.jpg') 0 0 / 141.92px 70.96px;
+  mix-blend-mode: overlay;
+  opacity: .55;
+}
+#cl-stage .cl-sidelabel, #cl-stage .cl-hp {
+  grid-row: 3;
+  margin-top: 5px;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: normal;
+  white-space: pre;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+                                                                                  
+                                                                                    
+#cl-stage .cl-bg { position: absolute; left: 0; right: 0; background-repeat: repeat-x; pointer-events: none; }
+#cl-stage .cl-far { top: 2%; height: 50%; z-index: 0; background-image: url('../assets/expeditions/meadow/stage_bg_loop.png'); background-size: 216% auto; background-position: 0 bottom; }
+#cl-stage .cl-mid { top: 24%; height: 42%; z-index: 1; background-image: url('../assets/expeditions/meadow/stage_mid_loop.png'); background-size: 228% auto; background-position: 0 bottom; }
+#cl-stage .cl-floor { bottom: 0; height: 46%; z-index: 2; background-image: url('../assets/expeditions/meadow/stage_combat.png'); background-size: 100% auto; background-position: 0 top; }
+                                                                             
+                                                                           
+                      
+#cl-stage .cl-fore { bottom: 0; height: calc((100% + 130px) * .2); z-index: 95000; background-image: url('../assets/expeditions/meadow/stage_fore_loop.png'); background-size: 200% auto; background-position: 0 bottom; }
+                                                                         
+                                                                                      
+                                                                                       
+                                                                                   
+                                                                                       
+                                                                                       
+                                                                                   
+                                                                                      
+                                                                               
+                                                                                
+                                                                                       
+                                                                                      
+                                                                                     
+                                                                                 
+                                                                                
+                                                                       
+#cl-stage[data-stage|="mirewood"] { background: linear-gradient(180deg,#6aa7a3 0%,#8dbfb4 30%,#b3d6c6 46%,#b3d6c6 calc(54% - 6px),#1f9787 calc(54% - 6px)); }
+#cl-stage[data-stage|="mirewood"] .cl-far { top: auto; bottom: calc(46% + var(--cl-w) * .13); height: calc(var(--cl-w) * .6); background-image: url('../assets/expeditions/mirewood/stage_bg_loop.png'); background-size: 480% auto; }
+#cl-stage[data-stage|="mirewood"] .cl-mid { top: auto; bottom: calc(46% - var(--cl-w) * .04); height: calc(var(--cl-w) * .47); background-image: url('../assets/expeditions/mirewood/stage_mid_loop.png'); background-size: 400% auto; --cl-x: calc(var(--cl-w) * -.55); background-position: var(--cl-x) bottom; }
+#cl-stage[data-stage="mirewood-2"] .cl-mid { background-image: url('../assets/expeditions/mirewood/stage_mid_loop_2.png'); }
+#cl-stage[data-stage="mirewood-3"] .cl-mid { background-image: url('../assets/expeditions/mirewood/stage_mid_loop_3.png'); --cl-x: calc(var(--cl-w) * -.9); }
+#cl-stage[data-stage|="mirewood"] .cl-floor { background-image: url('../assets/expeditions/mirewood/stage_combat.png'); background-size: 200% auto; }
+#cl-stage[data-stage|="mirewood"] .cl-fore { height: calc(var(--cl-w) * .32); background-image: url('../assets/expeditions/mirewood/stage_fore_loop.png'); background-size: 480% auto; }
+                                                                                  
+                                                                                    
+                                                                                       
+                                                                                 
+                                                                            
+#cl-stage[data-stage|="reedmarsh"] .cl-mid { top: auto; bottom: calc(46% - var(--cl-w) * .09); height: calc(var(--cl-w) * .5); background-size: 400% auto; }
+#cl-stage[data-stage="reedmarsh-1"] .cl-mid { background-image: url('../assets/expeditions/meadow/stage_mid_loop_1.png'); }
+#cl-stage[data-stage="reedmarsh-2"] .cl-mid { background-image: url('../assets/expeditions/meadow/stage_mid_loop_2.png'); }
+#cl-stage[data-stage="reedmarsh-3"] .cl-mid { background-image: url('../assets/expeditions/meadow/stage_mid_loop_3.png'); }
+                                                                                        
+                          
+#cl-stage[data-stage|="autumngrove"] { background: linear-gradient(180deg,#7ec3ea 0%,#a9d8f0 30%,#d9ecf0 46%,#d9ecf0 calc(54% - 6px),#0aa0d8 calc(54% - 6px)); }
+#cl-stage[data-stage|="autumngrove"] .cl-far { top: auto; bottom: calc(46% + var(--cl-w) * .14); height: calc(var(--cl-w) * .7); background-image: url('../assets/expeditions/autumngrove/stage_bg_loop.png'); background-size: 480% auto; }
+#cl-stage[data-stage|="autumngrove"] .cl-mid { top: auto; bottom: calc(46% - var(--cl-w) * .04); height: calc(var(--cl-w) * .55); background-image: url('../assets/expeditions/autumngrove/stage_mid_loop.png'); background-size: 400% auto; --cl-x: calc(var(--cl-w) * -.7); background-position: var(--cl-x) bottom; }
+#cl-stage[data-stage|="autumngrove"] .cl-floor { background-image: url('../assets/expeditions/autumngrove/stage_combat.png'); background-size: 200% auto; }
+#cl-stage[data-stage|="autumngrove"] .cl-fore { height: calc(var(--cl-w) * .32); background-image: url('../assets/expeditions/autumngrove/stage_fore_loop.png'); background-size: 480% auto; }
+                                                                                                                       
+                                                                                                                          
+                                                                                                                        
+                                                                                                                  
+                                                                                                                        
+                                                                                                                         
+                                                                                                                        
+                                                                                                                      
+                                                                                                                  
+                                                                                                                     
+                                                                                                                                                                                                          
+#cl-stage[data-stage="lagoon"] { background: linear-gradient(180deg,#4fb2ea 0%,#7cc8f1 9%,#a9dcf6 17%,#d2eefa 25%,#e4f6fb calc(54% - 6px),#26b9e2 calc(54% - 6px)); }
+#cl-stage[data-stage="lagoon"] .cl-far { top: auto; bottom: calc(46% - var(--cl-w) * .2727); height: calc(var(--cl-w) * .8732); background-image: url('../assets/expeditions/lagoon/stage_bg_loop.png'); background-size: 424.53% auto; --cl-x: calc(var(--cl-w) * -.5634); background-position: var(--cl-x) bottom; }
+#cl-stage[data-stage="lagoon"] .cl-mid { background-image: none; }
+#cl-stage[data-stage="lagoon"] .cl-floor { height: calc(46% + var(--cl-w) * .0734); background-image: url('../assets/expeditions/lagoon/stage_combat.png'); background-size: 200% auto; }
+#cl-stage[data-stage="lagoon"] .cl-fore { bottom: max(0px, calc((100% + 130px) * .46 - var(--cl-w) * .8455)); height: calc(var(--cl-w) * .3233); background-image: url('../assets/expeditions/lagoon/stage_fore_loop.png'); background-size: 425.78% auto; --cl-x: calc(var(--cl-w) * -.5634); background-position: var(--cl-x) bottom; }
+                                                                                                                             
+#cl-stage[data-stage="lagoon"] .cl-frog { filter: saturate(1.15) contrast(1.1) drop-shadow(0 6px 7px rgba(0,0,0,.36)); }
+#cl-stage[data-stage="lagoon"] .cl-foe { filter: saturate(1.12) contrast(1.08) drop-shadow(0 6px 8px rgba(0,0,0,.35)); }
+                                                                                                              
+                                                                                                           
+                                                                                                              
+                                                                                                                 
+                                                                                                                
+                                                                                                           
+                                                                                                            
+                                                                                                              
+                                                                                                      
+                                                                                                                   
+                                                                                                               
+                                       
+#cl-stage[data-stage="autumngrove-blight"] { background: linear-gradient(180deg,#43295f 0%,#74407f 7%,#b25c8a 13%,#e08a8f 18%,#f4b29c 23%,#f7c8a8 calc(54% - 6px),#5f3163 calc(54% - 6px)); }
+#cl-stage[data-stage="autumngrove-blight"] .cl-far { bottom: calc(46% + var(--cl-w) * .12); height: calc(var(--cl-w) * .74); background-image: url('../assets/expeditions/blightgrove/stage_bg_loop.png'); }
+#cl-stage[data-stage="autumngrove-blight"] .cl-mid { bottom: calc(46% - var(--cl-w) * .06); height: calc(var(--cl-w) * .61); background-image: url('../assets/expeditions/blightgrove/stage_mid_loop.png'); }
+#cl-stage[data-stage="autumngrove-blight"] .cl-floor { height: calc(46% + var(--cl-w) * .1457); background-image: url('../assets/expeditions/blightgrove/stage_combat.png'); }
+#cl-stage[data-stage="autumngrove-blight"] .cl-fore { height: calc(var(--cl-w) * .35); background-image: url('../assets/expeditions/blightgrove/stage_fore_loop.png'); background-size: 360% auto; }
+                                                                                                             
+                                                                                                                 
+#cl-stage[data-stage="autumngrove-blight"] .cl-frog { filter: saturate(1.15) contrast(1.1) drop-shadow(0 6px 7px rgba(0,0,0,.36)); }
+                                                                                                                   
+                                                                                   
+#cl-stage[data-stage="autumngrove-blight"] .cl-foe { filter: saturate(1.18) contrast(1.1) drop-shadow(0 0 7px rgba(178, 84, 255, .9)) drop-shadow(0 6px 8px rgba(0,0,0,.35)); }
+                                                                                                                     
+                                                                                                                    
+                                              
+#cl-stage .cl-foe:is([data-catalog="reedmarsh_boss_reaper_giant"],[data-catalog="ftuestage5_hollow_reaper"]) { filter: saturate(1.18) contrast(1.1) drop-shadow(0 0 9px rgba(190, 96, 255, .95)) drop-shadow(0 0 22px rgba(150, 60, 240, .6)) drop-shadow(0 6px 8px rgba(0,0,0,.3)); }
+#cl-stage .cl-foe:is([data-catalog="reedmarsh_boss_reaper_giant"],[data-catalog="ftuestage5_hollow_reaper"])::before {
+  content: ''; position: absolute; left: -12%; top: 4%; width: 112%; height: 92%; z-index: -1; pointer-events: none; border-radius: 50%;
+  background: radial-gradient(ellipse at 50% 58%, rgba(196, 110, 255, .55), rgba(150, 60, 240, .25) 45%, rgba(130, 40, 230, 0) 70%);
+  animation: clBossAura 2.6s ease-in-out infinite;
+}
+@keyframes clBossAura { 0%, 100% { opacity: .7; scale: .95; } 50% { opacity: 1; scale: 1.06; } }
+@media (prefers-reduced-motion: reduce) { #cl-stage .cl-foe:is([data-catalog="reedmarsh_boss_reaper_giant"],[data-catalog="ftuestage5_hollow_reaper"])::before { animation: none; } }
+#cl-stage .cl-arena { position: absolute; inset: 130px 0 0; z-index: 6; }
+#cl-stage .cl-party, #cl-stage .cl-foes { position: absolute; top: calc(50vh - 130px); bottom: 40px; pointer-events: none; }
+#cl-stage .cl-party { left: 8px; width: 37%; }
+#cl-stage .cl-frog { position: absolute; display: grid; place-items: center; transform-origin: top left; filter: drop-shadow(0 6px 7px rgba(0,0,0,.32)); }
+#cl-stage .cl-hop, #cl-stage .cl-strike { transform-origin: bottom center; }
+                                                                             
+                                                                        
+                                                                           
+#cl-stage .cl-frog-face { transform: scaleX(-1); display: block; transform-origin: 50% 100%; animation: clFrogIdle 1.1s ease-in-out infinite; }
+@keyframes clFrogIdle { 0%, 100% { scale: 1 1; } 50% { scale: 1.035 .965; } }
+#cl-stage.cl-traveling .cl-frog-face { animation-play-state: paused; }
+#cl-stage .cl-frog .frog-stack { --fs-x: 0%; --fs-y: 0%; }
+                                                                              
+#cl-stage .cl-frog-face .frog-stack { --fs-frame: 140px; }
+                                                                                
+                                                
+#cl-stage .cl-frog-face img { width: 140px; height: auto; object-fit: contain; }
+                                                                                
+#cl-stage .cl-frog-face .fs-weapon-arm { width: 140px; height: 140px; }
+#cl-stage .cl-frog-fallback { font-size: 100px; }
+#cl-stage .cl-foes { right: 8px; width: 52%; }
+#cl-stage .cl-foe { position: absolute; filter: drop-shadow(0 6px 8px rgba(0,0,0,.35)); }
+#cl-stage .cl-foe img { display: block; width: 100%; height: auto; object-fit: contain; }
+                                                                       
+#cl-stage .cl-frog--hurt .cl-frog-face { filter: sepia(calc(var(--cl-hurt) * .85)) saturate(calc(1 + var(--cl-hurt))) hue-rotate(calc(var(--cl-hurt) * -35deg)) brightness(calc(1 - var(--cl-hurt) * .3)); }
+#cl-stage .cl-frog--hurt .cl-hop { animation: clTired 1.6s ease-in-out infinite; }
+#cl-stage.cl-between-waves .cl-hop { animation-play-state: paused; }
+@keyframes clTired { 0%,100% { transform: rotate(-2deg) translateY(0); } 50% { transform: rotate(2deg) translateY(3px); } }
+                                                                             
+                                                                          
+                                              
+#cl-stage .cl-frog--hurt[data-crit="1"] .cl-hop { animation: clTired 1.3s ease-in-out infinite, clCritFlash .8s ease-in-out infinite; }
+#cl-stage .cl-frog--hurt[data-crit="2"] .cl-hop { animation: clTired .9s ease-in-out infinite, clCritFlash .5s ease-in-out infinite; }
+#cl-stage .cl-frog--hurt[data-crit="3"] .cl-hop { animation: clTired .6s ease-in-out infinite, clCritFlash .3s ease-in-out infinite; }
+#cl-stage.cl-between-waves .cl-frog--hurt[data-crit]:not([data-crit="0"]) .cl-hop { animation-play-state: paused, running; }
+                                                                                
+                                                                                 
+#cl-stage.cl-celebrating .cl-frog--hurt .cl-hop { animation: none; }
+@keyframes clCritFlash {
+  0%, 100% { filter: brightness(1) sepia(0) saturate(1) hue-rotate(0deg) drop-shadow(0 0 0 rgba(255,30,30,0)); }
+  50% { filter: brightness(1.25) sepia(1) saturate(7) hue-rotate(-50deg) drop-shadow(0 0 8px rgba(255,30,30,.95)); }
+}
+#cl-stage .cl-waveclear { position: absolute; z-index: 10; top: 37%; left: 12%; right: 12%; padding: 16px; border: 3px solid #ffc83a; border-radius: 16px; text-align: center; background: rgba(32,24,77,.94); color: #ffd84a; text-shadow: 0 3px 0 #120b33; font-size: 27px; font-weight: 900; pointer-events: none;
+  box-shadow: 0 0 24px rgba(255,200,58,.45); animation: clBannerIn .55s cubic-bezier(.2,1.5,.4,1) both; }
+@keyframes clBannerIn { 0% { transform: scale(.2) rotate(-8deg); opacity: 0; } 60% { transform: scale(1.12) rotate(2deg); opacity: 1; } 100% { transform: scale(1) rotate(0deg); } }
+
+                                                                           
+                                                                         
+                                                                              
+                                                                           
+                                   
+#cl-stage .cl-world { position: absolute; inset: 0; z-index: 0; transform-origin: 50% 55%; }
+#cl-stage .cl-danger, #cl-stage .cl-flash { position: absolute; inset: 0; z-index: 8; pointer-events: none; }
+                                                                           
+                                                                               
+#cl-stage .cl-danger { opacity: var(--cl-danger, 0); }
+#cl-stage .cl-danger::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse 78% 68% at 50% 55%, rgba(255,0,0,0) 48%, rgba(220,20,30,.5) 80%, rgba(150,0,10,.85) 100%); animation: clHeartbeat 1.1s ease-in-out infinite; }
+#cl-stage:not([data-danger]) .cl-danger::before, #cl-stage[data-danger="0"] .cl-danger::before { animation: none; }
+#cl-stage[data-danger="2"] .cl-danger::before { animation-duration: .8s; }
+#cl-stage[data-danger="3"] .cl-danger::before { animation-duration: .55s; }
+@keyframes clHeartbeat { 0%, 100% { opacity: .45; } 14% { opacity: 1; } 28% { opacity: .6; } 42% { opacity: .95; } 70% { opacity: .5; } }
+                                                                           
+                                                          
+#cl-stage .cl-flash { opacity: 0; background: radial-gradient(ellipse 80% 70% at 50% 55%, rgba(255,40,40,.06) 30%, rgba(230,20,30,.6) 80%, rgba(170,0,10,.9) 100%); }
+#cl-stage .cl-flash[data-kind="death"] { background: radial-gradient(ellipse 80% 70% at 50% 55%, rgba(255,40,40,.32) 15%, rgba(200,0,20,.88) 100%); }
+#cl-stage .cl-flash[data-kind="boss"] { background: radial-gradient(circle at 50% 55%, rgba(255,255,255,.95) 0%, rgba(255,250,220,.7) 60%, rgba(255,240,200,.4) 100%); }
+                                                                   
+#cl-stage .cl-sparks { position: absolute; width: 0; height: 0; }
+#cl-stage .cl-sparks i { position: absolute; left: -4px; top: -4px; width: 8px; height: 8px; border-radius: 50%; background: #fffbe0; box-shadow: 0 0 6px 2px rgba(255,214,90,.9); }
+#cl-stage .cl-sparks--frog i { background: #ffd8cf; box-shadow: 0 0 6px 3px rgba(255,50,40,.95); }
+#cl-stage .cl-sparks--kill i { left: -5px; top: -5px; width: 10px; height: 10px; background: #fff; box-shadow: 0 0 8px 3px rgba(255,200,60,.95); }
+#cl-stage .cl-sparks--tap i { left: -3px; top: -3px; width: 6px; height: 6px; background: #fff7c2; box-shadow: 0 0 5px 2px rgba(255,216,74,.9); }
+#cl-stage .cl-sparks--poof i { left: -7px; top: -7px; width: 14px; height: 14px; background: rgba(255,255,255,.85); box-shadow: 0 0 8px 4px rgba(255,255,255,.6); }
+                                         
+#cl-stage .cl-ring { position: absolute; box-sizing: border-box; border: 5px solid #fff6c8; border-radius: 50%; translate: -50% -50%; animation: clRing .42s cubic-bezier(.2,.8,.3,1) forwards; }
+#cl-stage .cl-ring--frog { border-color: #ff5b4d; box-shadow: 0 0 12px rgba(255,40,40,.8); }
+#cl-stage .cl-ring--kill { border-width: 7px; border-color: #fff; box-shadow: 0 0 16px rgba(255,210,80,.9), inset 0 0 12px rgba(255,210,80,.6); }
+#cl-stage .cl-ring--poof { border-width: 10px; border-color: rgba(255,255,255,.9); }
+@keyframes clRing { 0% { transform: scale(.15); opacity: 1; } 70% { opacity: .8; } 100% { transform: scale(1); opacity: 0; border-width: 1px; } }
+                                                  
+#cl-stage .cl-result:not([hidden]) { animation: clScrimIn .3s ease-out both; }
+#cl-stage .cl-result:not([hidden]) .kit-panel { animation: clCardPop .5s cubic-bezier(.2,1.5,.4,1) .08s both; }
+@keyframes clScrimIn { from { background: rgba(0,0,0,0); } }
+@keyframes clCardPop { 0% { transform: scale(.3); opacity: 0; } 65% { transform: scale(1.08); opacity: 1; } 100% { transform: scale(1); } }
+
+#cl-stage .cl-fx { position: absolute; inset: 0; pointer-events: none; z-index: 5; }
+                                                                         
+                                                                                
+#cl-stage .cl-dmg {
+  position: absolute;
+  font-weight: 900;
+  font-size: 22px;
+  line-height: 1;
+  white-space: nowrap;
+  color: #fff;
+  text-shadow: -2px -2px 0 #25184b, 2px -2px 0 #25184b, -2px 2px 0 #25184b, 2px 2px 0 #25184b,
+    0 -2px 0 #25184b, 0 2px 0 #25184b, -2px 0 0 #25184b, 2px 0 0 #25184b, 0 3px 3px rgba(0,0,0,.45);
+  translate: -50% -100%;
+  animation: clDmgPop .7s ease-out forwards;
+}
+#cl-stage .cl-dmg--frog { color: #ff4d4d; font-size: 25px; }
+@keyframes clDmgPop {
+  0% { transform: translateY(6px) scale(.4); opacity: 0; }
+  14% { transform: translateY(-4px) scale(1.4); opacity: 1; }
+  30% { transform: translateY(-8px) scale(1); opacity: 1; }
+  70% { opacity: 1; }
+  100% { transform: translateY(-38px) scale(.95); opacity: 0; }
+}
+                                                                            
+#cl-stage .cl-dmg--big { font-size: 32px; animation-name: clDmgBig; animation-duration: .82s; }
+#cl-stage .cl-dmg--frog.cl-dmg--big { color: #ff3434; }
+@keyframes clDmgBig {
+  0% { transform: translateY(8px) scale(.3) rotate(-10deg); opacity: 0; }
+  14% { transform: translateY(-6px) scale(1.5) rotate(5deg); opacity: 1; }
+  28% { transform: translateY(-10px) scale(1) rotate(0deg); opacity: 1; }
+  70% { opacity: 1; }
+  100% { transform: translateY(-46px) scale(.95); opacity: 0; }
+}
+#cl-stage .cl-dmg--tap {
+  color: var(--kit-gold-gloss-a, #ffd84a); font-size: 24px;
+  translate: -50% -50%;
+  animation-name: clTargetHit;
+}
+                                                                             
+@keyframes clTargetHit {
+  from { transform: scale(.7); opacity: 0; }
+  18% { transform: scale(1.08); opacity: 1; }
+  to { transform: scale(1); opacity: 0; }
+}
+#cl-stage .cl-tapfx {
+  position: absolute;
+  width: 46px; height: 46px;
+  margin: -23px 0 0 -23px;
+  border-radius: 50%;
+  border: 3px solid rgba(255,255,255,.85);
+  box-shadow: 0 0 14px var(--kit-gold-glow, rgba(255,220,120,.7));
+  animation: clPulse .42s ease-out forwards;
+}
+@keyframes clPulse { from { transform: scale(.3); opacity: .9; } to { transform: scale(1.5); opacity: 0; } }
+
+                                                                                   
+#cl-stage .cl-tapnote {
+  position: absolute;
+  z-index: 9;
+  bottom: max(18px, calc(env(safe-area-inset-bottom) + 8px));
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: calc(100% - 32px);
+  box-sizing: border-box;
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: var(--kit-ink-dark, #0d0a27);
+  color: #fff;
+  font-weight: 800;
+  font-size: 13px;
+  line-height: normal;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  pointer-events: none;
+}
+
+                                                                          
+                                                                           
+                                                                            
+#cl-stage [hidden] { display: none !important; }
+#cl-stage .cl-leaveconfirm, #cl-stage .cl-result {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,.55);
+  padding: 24px;
+}
+                                                                            
+                                                                
+#cl-stage .cl-result .kit-panel {
+  max-width: 320px;
+}
+#cl-stage .cl-result-card {
+  padding: 18px 20px;
+  text-align: center;
+}
+                                                                             
+                                                                             
+                                                          
+#cl-stage .cl-leaveconfirm { background: rgba(9, 5, 24, .66); padding: 16px; }
+#cl-stage .cl-leaveconfirm-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 320px;
+  max-width: 100%;
+}
+#cl-stage .cl-leaveconfirm-badge {
+  position: relative;
+  z-index: 1;
+  width: 138px;
+  height: 92px;
+  margin-bottom: -28px;
+  object-fit: contain;
+  pointer-events: none;
+}
+#cl-stage .cl-leaveconfirm .kit-confirm { width: 100%; }
+#cl-stage .cl-leaveconfirm-title, #cl-stage .cl-result-title { font-weight: 900; font-size: 18px; margin-bottom: 8px; color: var(--cl-ink); }
+#cl-stage .cl-leaveconfirm-sub, #cl-stage .cl-result-sub { font-size: 13px; color: var(--cl-ink-soft); margin-bottom: 16px; }
+#cl-stage .cl-leaveconfirm-btns { display: flex; gap: 10px; justify-content: center; }
+
+                                                                             
+                                                                               
+#cl-stage .cl-impact {
+  position: absolute; width: 38px; height: 38px; margin: -19px;
+  border-radius: 50%; background: #fff6b8;
+  box-shadow: 0 0 18px 9px #ffc942; opacity: 0;
+  animation: clImpact .26s ease-out .14s forwards;
+}
+@keyframes clImpact {
+  0% { opacity: 1; transform: scale(.3); }
+  40% { opacity: .95; transform: scale(1.1); }
+  100% { opacity: 0; transform: scale(1.6); }
+}
+#cl-stage .cl-dodge { color: #c5fbff; white-space: nowrap; font-size: 23px; }
+.fam-ability { margin: 10px 14px; font-size: 13px; line-height: 1.4; color: var(--kit-text, #f0f2f4); display: flex; align-items: center; gap: 8px; }
+.fam-ability__ico { flex: none; width: 34px; height: 30px; object-fit: contain; }
+
+                                                                           
+                                                                           
+                                                                          
+#cl-stage .cl-ability { font-size: 20px; animation-duration: .9s; }
+#cl-stage .cl-ability--freeze { color: #a6ecff; }
+#cl-stage .cl-ability--slow { color: #e7c48f; }
+#cl-stage .cl-ability--burn { color: #d29bff; }
+#cl-stage .cl-ability--stealth { color: #c4b2ff; }
+#cl-stage .cl-ability--poison { color: #9dff5c; }
+#cl-stage .cl-ability--crit { color: #ffd84a; font-size: 24px; }
+#cl-stage .cl-ability--double { color: #a9d6ff; }
+#cl-stage .cl-ability--shield { color: #b5dcff; font-size: 22px; }
+#cl-stage .cl-dmg--heal { color: #7dff7a; font-size: 23px; }
+#cl-stage .cl-dmg--burn { color: #d29bff; font-size: 17px; }
+#cl-stage .cl-dmg--poison { color: #9dff5c; font-size: 17px; }
+#cl-stage .cl-sparks--heal i { background: #e6ffe0; box-shadow: 0 0 6px 3px rgba(80,230,90,.9); }
+#cl-stage .cl-sparks--poison i { width: 10px; height: 10px; background: #c9ff9c; box-shadow: 0 0 8px 3px rgba(110,220,40,.85); }
+#cl-stage .cl-sparks--ice i { background: #f2fdff; box-shadow: 0 0 6px 3px rgba(120,215,255,.95); }
+#cl-stage .cl-sparks--burn i { background: #f1dcff; box-shadow: 0 0 6px 3px rgba(170,90,255,.9); }
+#cl-stage .cl-ring--heal { border-color: #7dff7a; box-shadow: 0 0 12px rgba(80,230,90,.8); }
+#cl-stage .cl-ring--poison { border-width: 8px; border-color: rgba(140,230,60,.8); box-shadow: 0 0 18px rgba(110,220,40,.7); }
+#cl-stage .cl-ring--shield { border-color: #a8d8ff; box-shadow: 0 0 14px rgba(110,180,255,.9), inset 0 0 10px rgba(110,180,255,.6); }
+#cl-stage .cl-foe[data-slowed] .cl-foe-motion { filter: saturate(.55) brightness(.92) drop-shadow(0 0 6px rgba(200,160,90,.9)); }
+#cl-stage .cl-foe[data-burning] .cl-foe-motion { animation: clAbilityBurn .5s ease-in-out infinite alternate; }
+#cl-stage .cl-foe[data-frozen] .cl-foe-motion { filter: saturate(.35) brightness(1.18) drop-shadow(0 0 9px rgba(140,230,255,.95)); animation: none; }
+@keyframes clAbilityBurn {
+  from { filter: drop-shadow(0 0 5px rgba(180,100,255,.8)); }
+  to { filter: drop-shadow(0 0 11px rgba(200,120,255,1)) brightness(1.08); }
+}
+                                                                   
+#cl-stage .cl-frog[data-shield]::after {
+  content: ''; position: absolute; left: 50%; top: 52%; width: 118px; height: 118px; translate: -50% -50%;
+  border-radius: 50%; border: 3px solid rgba(168,216,255,.85); pointer-events: none;
+  background: radial-gradient(circle, rgba(140,200,255,0) 58%, rgba(140,200,255,.28));
+  box-shadow: 0 0 12px rgba(110,180,255,.7), inset 0 0 14px rgba(110,180,255,.45);
+}
+
+                                                                         
+                                                                          
+#cl-stage .cl-party, #cl-stage .cl-foes { inset: 0; width: auto; }
+#cl-stage .cl-foe-motion { width: 100%; height: calc(100% - 18px); display: grid; place-items: center; transform-origin: 50% 100%; }
+#cl-stage .cl-foe img { width: 100%; height: 100%; object-fit: contain; transform-origin: 50% 100%; animation: clFoeIdle 1.3s ease-in-out infinite; }
+                                                                                            
+                                                                                                 
+#cl-stage .cl-foe--frames .cl-foe-motion { position: relative; }
+#cl-stage .cl-foe--frames .cl-foe-motion img { position: absolute; max-width: none; object-fit: fill; }
+@keyframes clFoeIdle { 0%, 100% { scale: 1 1; } 50% { scale: .975 1.03; } }
+#cl-stage .cl-cohort-count { display: block; position: absolute; top: calc(100% - 18px); left: -4px; right: -4px; font-size: 9px; line-height: 12px; color: white; text-align: center; text-shadow: 0 1px 3px #000; }
+#cl-stage .cl-cohort-count[hidden] { display: none; }
+#cl-stage .cl-art-pending { font-size: 11px; text-align: center; }
+#cl-stage .cl-roster-pages { position: absolute; right: 12px; bottom: 60px; z-index: 100001; border: 1px solid #bdb1ef; background: #332558; color: white; border-radius: 12px; padding: 7px 12px; font: inherit; font-size: 11px; }
+#cl-stage .cl-foe--dead { pointer-events: none; animation: clDeath .3s .5s forwards; }
+@keyframes clDeath { to { opacity: 0; } }
+#cl-stage .cl-burst { position: absolute; object-fit: contain; margin: 0; translate: -50% -50%; animation: clGodotBurst .5s linear forwards; }
+@keyframes clGodotBurst { 0% { transform: scale(.5); opacity: 1; } 50% { transform: scale(1); opacity: 1; } 100% { transform: scale(1); opacity: 0; } }
+#cl-stage .cl-projectile { position: absolute; width: auto; max-width: 140px; object-fit: contain; translate: -50% -50%; filter: drop-shadow(0 0 2px #fff) drop-shadow(0 0 7px rgba(255,255,255,.85)); }
+                                                                                           
+                                                                                                    
+#cl-stage .cl-shot, #cl-stage .cl-splash { position: absolute; max-width: none; margin: 0; object-fit: fill; pointer-events: none; }
+#cl-stage .cl-shot { filter: drop-shadow(0 0 5px rgba(190,255,60,.7)); }
+                                                                                              
+                                                                                                       
+#cl-stage .cl-foe .cl-lash { animation: none; pointer-events: none; }
+#cl-stage .cl-foe .cl-lash[hidden] { display: none; }
+#cl-stage .cl-foe .cl-lash--vine { transform-origin: 100% 50%; }
+                                                                         
+                                                                               
+                                                                                 
+                                                                             
+                                            
+#cl-stage .cl-orbs { position: absolute; width: 0; height: 0; pointer-events: none; --orb: 15px; }
+#cl-stage .cl-orbs i, #cl-stage .cl-orbs b {
+  position: absolute; left: calc(var(--orb) / -2); top: calc(var(--orb) / -2); width: var(--orb); height: var(--orb);
+  border-radius: 50%; will-change: transform, opacity;
+}
+                                                                                           
+#cl-stage .cl-orbs--hard i { background: radial-gradient(circle, #fffbe8 0 20%, #ffe066 32%, #ff9a1f 44%, #7a2600 49% 53%, rgba(255,150,40,.45) 58%, rgba(255,120,20,0) 72%); }
+#cl-stage .cl-orbs--extreme i { background: radial-gradient(circle, #fff 0 18%, #ff9ce6 30%, #f0309a 43%, #4a0630 48% 53%, rgba(240,60,160,.45) 58%, rgba(200,30,120,0) 72%); }
+#cl-stage .cl-orbs b { left: calc(var(--orb) * -1.4); top: calc(var(--orb) * -1.4); width: calc(var(--orb) * 2.8); height: calc(var(--orb) * 2.8); }
+#cl-stage .cl-orbs--hard b { background: radial-gradient(circle, rgba(255,246,200,.95) 0 18%, rgba(255,170,40,.55) 40%, rgba(255,140,26,0) 70%); }
+#cl-stage .cl-orbs--extreme b { background: radial-gradient(circle, rgba(255,235,250,.95) 0 18%, rgba(240,60,160,.55) 40%, rgba(200,30,120,0) 70%); }
+#cl-stage .cl-fx { z-index: 100000; }
+                                                                        
+#cl-stage .cl-tapstar { position: absolute; width: 0; height: 0; }
+#cl-stage .cl-tapstar img { position: absolute; left: -29px; top: -26px; width: 58px; height: auto; animation: clTapStar .3s ease-out forwards; }
+#cl-stage .cl-tapstar::after { content: ""; position: absolute; left: 15px; top: -22px; width: 7px; height: 7px; border-radius: 50%; background: #fffbe8; opacity: 0; animation: clTapSpark .3s ease-out forwards; }
+@keyframes clTapStar {
+  0% { transform: scale(.35) rotate(-12deg); opacity: 1; }
+  30% { transform: scale(1.1) rotate(0deg); opacity: 1; }
+  65% { transform: scale(.38) rotate(10deg); opacity: .9; }
+  100% { transform: scale(.1) rotate(16deg); opacity: 0; }
+}
+@keyframes clTapSpark { 0%, 35% { opacity: 0; transform: scale(.4); } 60% { opacity: 1; transform: scale(1); } 100% { opacity: 0; transform: translate(4px, -4px) scale(.6); } }
+                                                                     
+#cl-stage .cl-bonepile { position: absolute; width: 0; height: 0; }
+#cl-stage .cl-bone { position: absolute; left: 0; top: 0; height: auto; translate: -50% -50%; filter: drop-shadow(0 2px 2px rgba(0,0,0,.3)); }
+
+                                                                           
+#cl-stage .cl-tap-guide { position:absolute; z-index:10; top:154px; left:50%; transform:translateX(-50%); display:flex; align-items:center; gap:8px; padding:7px 12px; border:2px solid #f4c653; border-radius:14px; background:#30205d; color:#fff; font-size:14px; font-weight:800; white-space:nowrap; pointer-events:none; }
+#cl-stage .cl-tap-guide img { width:36px; height:36px; animation:clGuideTap .8s ease-in-out infinite; }
+@keyframes clGuideTap { 50% { transform:translateY(5px); } }
+
+                                                                        
+#cl-stage .cl-tappopup { position: absolute; inset: 0; z-index: 30; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,.65); padding: 24px; }
+#cl-stage .cl-tappopup .kit-panel { width: 100%; max-width: 320px; }
+#cl-stage .cl-tappopup-card { padding: 24px 20px; text-align: center; }
+#cl-stage .cl-tappopup .cl-leaveconfirm-title { font-size: 23px; line-height: 1.2; }
+#cl-stage .cl-tappopup .cl-leaveconfirm-sub { font-size: 17px; line-height: 1.4; }
+
+                                                                              
+.cl-playback { position:absolute; right:8px; bottom:100px; z-index:30; display:flex; align-items:center; gap:5px; font:12px system-ui,sans-serif; }
+.cl-playback button { padding:6px 9px; border:1px solid #9fba69; border-radius:8px; background:#293c27; color:#fff8de; cursor:pointer; }
+.cl-playback button:disabled { opacity:.4; cursor:not-allowed; filter:grayscale(.6); }
+.cl-playback-note { padding:3px 7px; border-radius:6px; background:#000a; color:#ffd9a5; font-size:10px; white-space:nowrap; }
+
+                                                                                    
+#cl-stage[data-stage="frost-pending"] .cl-far { background-image: url('../assets/expeditions/frost-pending.svg'); background-size: 100% 100%; }
+#cl-stage[data-stage="storm-pending"] .cl-far { background-image: url('../assets/expeditions/storm-pending.svg'); background-size: 100% 100%; }
+#cl-stage[data-stage="frost-pending"] .cl-mid,
+#cl-stage[data-stage="storm-pending"] .cl-mid { background-image: none; }

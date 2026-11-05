@@ -1,0 +1,102 @@
+  
+                                                                      
+                                                                             
+                                                                        
+                                                                                
+  
+                                                                            
+                                                                            
+                                                                            
+                                                                             
+                                                     
+   
+
+                                                                             
+.lilypad.flower-pad.flowered{
+  width:calc(64px * var(--fb-scale,1)); height:calc(50px * var(--fb-scale,1)); animation:none; z-index:3;
+}
+                                                                               
+                                                                           
+                                                                             
+                                                             
+.lilypad.flower-pad.flowered .pad-flower{ width:calc(44px * var(--fb-scale,1)); max-height:calc(46px * var(--fb-scale,1)); object-fit:contain; object-position:50% 100%; bottom:50%; pointer-events:auto; }
+.lilypad.flower-pad.flowered .pad-flower.bud{ width:calc(26px * var(--fb-scale,1)); }
+.fb-station{
+  position:absolute; left:50%; top:50%; width:var(--fb-ring-width,180px); height:var(--fb-ring-height,128px); pointer-events:none; z-index:4; transform:translate(-50%,-50%);
+}
+                                                                              
+                                                                             
+                                                                            
+                                                                               
+.fb-slot{
+  position:absolute; left:50%; top:50%; width:var(--fb-seat-width,64px); height:var(--fb-seat-height,32px);
+  pointer-events:none; visibility:hidden;
+}
+                                                                         
+.lilypad.flower-pad.flowered .pad-flower{ transition:scale .14s ease-out; }
+body.frog-dragging .lilypad.flower-pad.fb-drop-hover .pad-flower{ scale:1.18; }
+                                                                             
+                                                                              
+                                                        
+.wander-frog.flower-seated{ width:var(--fb-frog-size,48px); height:var(--fb-frog-size,48px); }
+.fb-station-full{
+  display:none; position:absolute; left:50%; top:65%; transform:translateX(-50%);
+  padding:2px 8px; border-radius:8px; background:#d97a1f; color:white;
+  font:800 11px/1.3 'Baloo 2',sans-serif; pointer-events:none;
+}
+body.frog-dragging .fb-station-full{ display:block; }
+                                                                      
+.pad-flower.fb-placeholder{ outline:2px dashed rgba(255,255,255,.6); outline-offset:2px; border-radius:50%; }
+
+                                                                                           
+#flower-chooser .flower-pick{ position:relative; }
+#flower-chooser .fp-seed{ width:56px; height:56px; object-fit:contain; display:block; margin:8px auto 2px; }
+#flower-chooser .fp-name{
+  font:800 12px/1.15 'Baloo 2',sans-serif; text-align:center; text-transform:capitalize;
+  padding:0 4px; margin-bottom:4px; overflow-wrap:break-word; hyphens:auto;
+}
+#flower-chooser .fp-placeholder-tag{
+  position:absolute; top:2px; right:6px; font:800 9px/1 'Baloo 2',sans-serif; letter-spacing:.02em;
+  color:#fff; background:rgba(0,0,0,.45); border-radius:5px; padding:2px 5px;
+}
+
+                                                                               
+                                                                           
+                                                                             
+                                                                 
+.fb-bslots{ display:flex; flex-direction:column; gap:6px; }
+.fb-bslot{
+  display:flex; align-items:center; gap:8px; min-height:34px;
+  border-radius:var(--kit-card-face-radius, 11px); padding:4px 9px;
+}
+.fb-bslot-filled{ background:rgba(0,0,0,.16); }
+                                                                            
+                                                                            
+.fb-bslot-pills{ flex:1 1 auto; min-width:0; display:flex; flex-wrap:wrap; gap:4px; }
+.fb-bslot-filled .fb-pill{ flex:0 1 auto; min-width:0; }
+.fb-bslot-filled .kit-pill__label{ overflow:hidden; text-overflow:ellipsis; }
+.fb-bslot-timer{
+  flex:0 0 auto; font:800 12px/1 'Baloo 2',sans-serif; color:#ffe28a; min-width:34px; text-align:right;
+  font-variant-numeric:tabular-nums;
+}
+.fb-bslot-empty{
+  justify-content:center; border:2px dashed rgba(255,255,255,.3);
+  background:rgba(255,255,255,.04);
+}
+.fb-bslot-ghost{ font:800 14px/1 'Baloo 2',sans-serif; color:rgba(255,255,255,.35); }
+
+                                                                            
+                                                                        
+.wander-butterfly.fb-snack{ transition:left .7s cubic-bezier(.3,.8,.4,1), top .7s cubic-bezier(.5,-.4,.5,1.2); }
+                                                                               
+.float-text.fb-buff-float{
+  color:#fff; background:var(--fb-tone,#ee4553); font-size:15px; line-height:1.35; padding:0 8px; border-radius:10px;
+  box-shadow:inset 0 -2px 0 rgba(0,0,0,.22), 0 2px 6px rgba(0,0,0,.25); text-shadow:0 1px 0 rgba(0,0,0,.3);
+  animation-duration:1.5s;
+}
+.flower-buff-pips .eq-ring-seg.filled{background:#f4a4d5;box-shadow:0 0 5px #f4a4d5;}
+#flower-inspect-focus{position:absolute;inset:0;pointer-events:none;}
+                                                                        
+                                                                            
+                                                                             
+#flower-inspect-focus > div{position:fixed;z-index:99999;background:#808080;mix-blend-mode:saturation;backdrop-filter:grayscale(1);pointer-events:none;}

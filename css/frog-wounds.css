@@ -1,0 +1,56 @@
+                                                                              
+                                                                     
+                                                                
+.frog-wound {
+  position: absolute;
+  box-sizing: border-box;
+  border-style: solid;
+  border-color: #fff;
+  border-radius: 999px;
+  background: var(--kit-ink-dark, #0d0a27);
+  overflow: hidden;
+  pointer-events: none;
+}
+.frog-wound > i {
+  display: block;
+  height: 100%;
+  width: calc(var(--fw-share, 1) * 100%);
+  border-radius: inherit;
+  background: #6cd043;
+  transition: width 1s linear;
+}
+
+                                                                                 
+                                                                               
+                                                                                 
+                                                          
+.frog-hop > .frog-wound {
+  left: 50%;
+  top: -24%;
+  width: 62%;
+  height: calc(10px * var(--pond-obj, 1));
+  border-width: calc(2px * var(--pond-obj, 1));
+  transform: translateX(-50%);
+  z-index: 5;
+}
+.wander-frog[style*="scaleX(-1)"] .frog-wound { transform: translateX(-50%) scaleX(-1); }
+.wander-frog.dragging .frog-wound { opacity: 0; }
+
+                                                                                         
+                                                                                           
+                                                                                            
+                           
+.xp-row-health {
+  display: flex; align-items: center; gap: 6px;
+  max-width: 100%; box-sizing: border-box; padding: 3px 8px 3px 5px; border-radius: 7px;
+  background: rgba(13, 10, 39, .6);
+}
+.xp-row-health[hidden] { display: none; }
+.xp-row-health .xp-meter__bar { flex: 0 0 64px; }
+.xp-row-health .xp-meter__fill { width: calc(var(--fw-share, 1) * (100% + 3px)); background: #6cd043; transition: width 1s linear; }
+.xp-row-health__txt { font-weight: 800; font-size: 11px; line-height: 1.15; color: #ffb3bd; white-space: nowrap; }
+.xp-row.is-wounded .kit-party-row__stat:first-child b { color: #d5212c; }
+
+                                                                     
+.fi-stat.fi-stat--wounded b { color: #d5212c; }
+.fi-stat.fi-stat--wounded .kit-statcell__note { background: #f22f39; color: #fff; }

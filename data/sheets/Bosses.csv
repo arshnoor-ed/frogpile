@@ -1,0 +1,49 @@
+,[BUILD SKIP],[BUILD READ],[BUILD READ],[BUILD READ],[BUILD READ],[BUILD READ],[BUILD READ],[BUILD READ],[BUILD SKIP],[BUILD SKIP]
+,Sno,Boss ID,Boss Name,Enemy HP,Enemy Attack,Enemy Defense,Attack Cadence (s),Frogs Hit Per Attack,Power,type
+,1,reedmarsh_miniboss_bunny,Bunny Boss,151,19,19,1.36,3,64.13766214855632,miniboss
+,2,reedmarsh_miniboss_toad,Swamp Toad,200,20,25,1.5,3,77.45966692414834,miniboss
+,66,reedmarsh_miniboss_toadstool_mole,Toadstool Mole,200,20,25,1.5,3,77.45966692414834,miniboss
+,3,reedmarsh_miniboss_warden,Swamp Warden,150,50,20,1.5,3,100,miniboss
+,4,reedmarsh_miniboss_heron,Swamp Heron,150.6627,10.21,25,2.2,3,39.663922671674136,miniboss
+,5,reedmarsh_swampboss,Reed Marsh Boss,600,50,30,1.3,5,240.1922307076307,main boss
+,7,mirewood_swampjaw_bloom,Swampjaw Bloom,250,40,5,1.2,3,102.06207261596576
+,11,mirewood_moss_wolf,Moss Wolf,300,45,10,1.25,3,127.27922061357856
+,10,mirewood_lichen_stag,Lichen Stag,400,35,15,1.3,3,137.28129459672883
+,6,mirewood_boss_colossus,Mirewood Colossus,650,55,45,1.25,5,304.8770243885229
+,9,mirewood_swampjaw_bloom_giant,Swampjaw Bloom,351,26,10,1.25,5,104.64798134699016
+,8,mirewood_boss_colossus_giant,Mirewood Colossus,552,34,50,2.15,5,174.79290071262872
+,12,autumngrove_boss_monarch_giant,Autumngrove Monarch,740,41,75,2.05,5,265.141471671257
+,13,autumngrove_boss_monarch,Autumngrove Monarch,184.5246,12.5,75,2.05,5,73.10583082080389
+,14,autumngrove_maple_stag,Maple Stag,120,35,20,1.3,3,80.38369524685004,miniboss,"[PROPOSED 2026-11-02] build: gave this placeholder (was 29/7.81/15/1.2, an Enemies-tier stat block copied onto a Bosses row) real miniboss-grade stats so Expeditions!E16's finale stops being '54 copies of a boss' (captain's own cited example). Count recomputed to keep wave power on trend. Not FTUE (expeditions 1-5 use only ftuestage/reedmarsh ids)."
+,15,autumngrove_ember_stump,Ember Stump,140,38,25,1.3,3,95.95672101365442,miniboss,[PROPOSED 2026-11-02] build: see maple_stag note.
+,16,autumngrove_leaf_badger,Leaf Badger,160,42,28,1.3,3,111.3829154141417,miniboss,[PROPOSED 2026-11-02] build: see maple_stag note.
+,66,ftuestage1_swamp_heron_miniboss,Swamp Heron,151,10.21,25,2.2,3,39.66,miniboss
+,67,ftuestage1_swamp_toad_miniboss,Swamp Toad,200,20,25,1.5,3,77.46,miniboss
+,68,ftuestage2_moss_wolf,Moss Wolf,151,10.21,25,2.2,3,39.66,miniboss
+,69,ftuestage2_lichen_stag_miniboss,Lichen Stag,200,20,25,1.5,3,77.46,miniboss
+,70,ftuestage2_colossus_miniboss,Colossus,158,50,20,1.4,3,100,miniboss
+,71,ftuestage2_swampjaw_bloom,Swampjaw Bloom,200,20,25,1.5,3,77.46,miniboss
+,72,ftuestage3_maple_stag,Maple Stag,150.6627,10.21,25,2.2,3,39.663922671674136,miniboss
+,73,ftuestage3_ember_stump,Ember Stump,200,20,25,1.5,3,77.46,miniboss
+,74,ftuestage3_leaf_badger,Leaf Badger,150,50,20,1.5,3,100,miniboss
+,75,ftuestage4_rock_lurker,Rock Lurker,151,10.21,25,2.2,3,39.66,miniboss
+,76,ftuestage4_lagoon_seal,Lagoon Seal,200,20,25,1.5,3,77.46,miniboss
+,77,ftuestage4_kelp_shaman,Kelp Shaman,150,50,20,1.5,3,100,miniboss
+,78,ftuestage4_orca_corsair,Orca Corsair,150,50,20,1.5,3,100,miniboss
+,79,ftuestage5_blight_badger,Blight Badger,151,10.21,25,2.2,3,39.66,miniboss
+,80,ftuestage5_blight_stork,Blight Stork,200,20,25,1.5,3,77.46,miniboss
+,81,ftuestage5_blight_beast,Blight Beast,150,50,20,1.5,3,100,miniboss
+,82,ftuestage5_hollow_reaper,Hollow Reaper,600,50,30,1.3,5,240.19,main boss
+,401,ftuestage1_swamp_heron_miniboss_hard,Swamp Heron (Hard),167.19,11.3,25,2.2,3
+,501,reedmarsh_miniboss_warden_extreme,Swamp Warden (Extreme),211.02,70.34,20,1.5,3
+,502,ftuestage5_blight_stork_extreme,Blight Stork (Extreme),213.34,21.33,25,1.5,3
+,100,frostbound_swampjaw_bloom,Frost Swampjaw Bloom,375,60,5,1.2,3,153.09310892394862
+,101,frostbound_swampjaw_bloom_giant,Frost Swampjaw Bloom Giant,526,39,10,1.25,5,156.89741871681636
+,102,frostbound_moss_wolf,Frost Moss Wolf,450,67.5,10,1.25,3,190.91883092036784
+,103,frostbound_lichen_stag,Frost Lichen Stag,600,52.5,15,1.3,3,205.92194189509323
+,104,frostbound_boss_colossus,Frost Boss Colossus,975,82.5,45,1.25,5,457.3155365827844
+,105,stormcalled_boss_monarch,Storm Boss Monarch,278,18.75,75,2.05,5,109.8987893583866
+,106,stormcalled_maple_stag,Storm Maple Stag,180,52.5,20,1.3,3,120.57554287027506
+,107,stormcalled_ember_stump,Storm Ember Stump,210,57,25,1.3,3,143.93508152048162
+,108,stormcalled_leaf_badger,Storm Leaf Badger,240,63,28,1.3,3,167.07437312121255
+,109,stormcalled_boss_monarch_giant,Storm Boss Monarch Giant,1110,61.5,75,2.05,5,397.71220750688553

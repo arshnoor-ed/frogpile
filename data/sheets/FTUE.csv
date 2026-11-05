@@ -1,0 +1,358 @@
+[BUILD READ],[BUILD READ],[BUILD READ]
+parameter,value,description
+tadflow_rule,output_roster,[RULED 2026-10-23] One tadpole hatches one frog; tadpole amounts equal L0-equivalents. Guided hatches conserve target rosters; grants are authored ONLY in StartingState and DropTables. Replayed income remains ordinary gameplay; no wallet or egg trimming.
+loop3_target_l0,0,Exact output roster; L4 count includes complete families. FTUE hatch rolls are steered to conserve this output; tadpole quantities are derived from it.
+loop3_target_l1,1,Exact output roster; L4 count includes complete families. FTUE hatch rolls are steered to conserve this output; tadpole quantities are derived from it.
+loop3_target_l2,0,Exact output roster; L4 count includes complete families. FTUE hatch rolls are steered to conserve this output; tadpole quantities are derived from it.
+loop3_target_l3,0,Exact output roster; L4 count includes complete families. FTUE hatch rolls are steered to conserve this output; tadpole quantities are derived from it.
+loop3_target_l4,2,Exact output roster; L4 count includes complete families. FTUE hatch rolls are steered to conserve this output; tadpole quantities are derived from it.
+loop5_target_l0,0,Exact output roster; L4 count includes complete families. FTUE hatch rolls are steered to conserve this output; tadpole quantities are derived from it.
+loop5_target_l1,1,Exact output roster; L4 count includes complete families. FTUE hatch rolls are steered to conserve this output; tadpole quantities are derived from it.
+loop5_target_l2,1,Exact output roster; L4 count includes complete families. FTUE hatch rolls are steered to conserve this output; tadpole quantities are derived from it.
+loop5_target_l3,1,Exact output roster; L4 count includes complete families. FTUE hatch rolls are steered to conserve this output; tadpole quantities are derived from it.
+loop5_target_l4,3,Exact output roster; L4 count includes complete families. FTUE hatch rolls are steered to conserve this output; tadpole quantities are derived from it.
+text_objective_current,Current Objective,"[PROPOSED 2026-10-27] js/objective-stack.js ObjectiveStack.render() front-card badge label; used by every stacked objective across loops (Loop 3 pond-expansion tap goal / bones fallback, Loop 4 equipment-crafting harvest detour)."
+text_objective_step,Step {number},[PROPOSED 2026-10-27] js/objective-stack.js ObjectiveStack.render() step-number label ({number} = 1-based step index); shown on the front card and the locked next card. Used by every stacked objective across loops.
+text_lock_objective_step1,Lock the {family} trait,"[PROPOSED 2026-10-27] js/objective-stack.js ObjectiveStack.render() Step 1 label for the lock-then-merge stack (js/ftue-tooltips.js tooltip-4b / tooltip-goal-lock: a same-slot merge is held back until the clashing trait is locked). Tokens: {family} = the trait's family name (e.g. Bunny, Forest Spirit). Used by ftue-tooltips.js:lockObjectiveBannerHTML."
+text_lock_objective_step2,Merge the frogs,"[PROPOSED 2026-10-27] js/objective-stack.js ObjectiveStack.render() Step 2 label for the lock-then-merge stack, shown locked until Step 1, then active until the held merge completes. Used by ftue-tooltips.js:lockObjectiveBannerHTML."
+text_not_enough_resource,Not enough {resource}!,"[PROPOSED 2026-10-31] js/no-tadpole-note.js's generalised resource-shortfall bubble (index.html notEnoughResourceNote()): headline on the HUD pill of whatever currency a refused action was short of (e.g. a Workshop craft short of stone). Tokens: {resource} = the currency's lowercase display word (wood/stone/bones/...). Used across any loop/screen that spends wood, stone or bones, not just one loop. NOT YET ON THE LIVE SHEET as of this commit (code ships the fallback above; added here per the local-only-knob precedent this tab already documents) -- the sheets worker should add this row to the live [EXPORT] FTUE GLOBAL block (next to text_objective_current/text_objective_step) on its next pass."
+loop0_player_merges,3,[RULED 2026-10-15] Current build behavior.
+loop0_direct_frogs,4,[RULED 2026-10-15] Current build behavior.
+loop0_direct_batch_size,2,[RULED 2026-10-15] Current build behavior.
+loop0_total_frogs,8,[RULED 2026-10-15] Current build behavior.
+loop0_autoplay_tick_ms,1000,[RULED 2026-10-15] Current build behavior.
+loop0_autoplay_hatch_ready_ms,2650,[RULED 2026-10-15] Current build behavior.
+text_intro_drag_verb,Drag,js/ftue-steps.js intro bold verb; Used by ftue-steps.js:startDriver
+text_intro_drag_instruction, frogs together to merge them!,js/ftue-steps.js intro continuation (leading space intentional); Used by ftue-steps.js:startDriver
+text_intro_pop_verb,Tap,js/ftue-steps.js intro bold verb; Used by ftue-steps.js:startDriver
+text_intro_pop_instruction, the tadpoles to pop them!,js/ftue-steps.js intro continuation (leading space intentional); Used by ftue-steps.js:startDriver
+text_tooltip_1_title,"New trait, unlocked!",js/ftue-tooltips.js tooltip-1 title; Used by ftue-tooltips.js:tooltip-1
+text_tooltip_1_button,Nice!,js/ftue-tooltips.js tooltip-1 button; Used by ftue-tooltips.js:tooltip-1
+text_tooltip_1_caption,Every merge sprouts a brand-new trait. Freaky and stronger!,js/ftue-tooltips.js tooltip-1 caption; Used by ftue-tooltips.js:tooltip-1
+text_art_tooltip_1_new,NEW!,"Legacy illustration tooltip-1.png, new label; shown in the tooltip-1 coach card. Edits cover the baked label; original artwork remains for unchanged wording."
+text_art_traits,Traits,js/ftue-tooltips.js illustration label; Used by ftue-tooltips.js:traitsHTML
+loop1_target_body_size,3,[RULED 2026-10-15] Current build behavior.
+loop1_party_count,2,[RULED 2026-10-15] Current build behavior.
+loop1_companion_body_size,1,[RULED 2026-10-15] Current build behavior.
+step_launch_loop,1,[RULED 2026-10-15] Current build behavior.
+step_launch_expedition_no,1,[RULED 2026-10-15] Current build behavior.
+step_launch_force_loss,0,[RULED 2026-10-15] Current build behavior.
+step_launch_protected_wave_policy,none,[RULED 2026-10-15] Current build behavior.
+exp1_tap_popup_party_hp_fraction,0.5,[RULED 2026-10-15] Current build behavior.
+exp1_guaranteed_trait_family,bunny,[RULED 2026-10-15] Current build behavior.
+exp1_guaranteed_trait_slot,aura,[RULED 2026-10-15] Current build behavior.
+text_l1_hatch,Hatch a tadpole,"js/ftue-steps.js objective / matching step metadata; Used by ftue-steps.js:loop1BannerActive, ftue-steps.js:renderLoop1Banner"
+text_l1_merge,Merge a frog,"js/ftue-steps.js objective / matching step metadata; Used by ftue-steps.js:loop1BannerActive, ftue-steps.js:renderLoop1Banner"
+text_l1_launch,Clear an Expedition,"js/ftue-steps.js objective / matching step metadata; Used by ftue-steps.js:loop1BannerActive, ftue-steps.js:renderLoop1Banner"
+text_l1_level,Hatch and merge a stronger party,"js/ftue-steps.js objective; Tokens: {level} = target body level; Used by ftue-steps.js:loop1BannerActive, ftue-steps.js:renderLoop1Banner"
+text_tooltip_2_title,Traits stack up!,js/ftue-tooltips.js tooltip-2 title; Used by ftue-tooltips.js:tooltip-2
+text_tooltip_2_button,Got it!,js/ftue-tooltips.js tooltip-2 button; Used by ftue-tooltips.js:tooltip-2
+text_tooltip_2_caption,Merge two trait-y frogs and the new one keeps both!,js/ftue-tooltips.js tooltip-2 caption; Used by ftue-tooltips.js:tooltip-2
+text_tooltip_4a_title,Every merge is a roll!,js/ftue-tooltips.js tooltip-4a title; Used by ftue-tooltips.js:tooltip-4a
+text_tooltip_4a_button,Got it!,js/ftue-tooltips.js tooltip-4a button; Used by ftue-tooltips.js:tooltip-4a
+text_tooltip_4a_caption,Which trait sprouts is totally random. Every merge could be the rare one!,js/ftue-tooltips.js tooltip-4a caption; Used by ftue-tooltips.js:tooltip-4a
+text_tooltip_exp_title,Out of tadpoles!,js/ftue-tooltips.js tooltip-exp title; Used by ftue-tooltips.js:tooltip-exp
+text_tooltip_exp_button,Let’s explore!,js/ftue-tooltips.js tooltip-exp button; Used by ftue-tooltips.js:tooltip-exp
+text_tooltip_exp_caption,Our pile is hungry to level up! Find new tadpoles on an expedition!,js/ftue-tooltips.js tooltip-exp caption; Used by ftue-tooltips.js:tooltip-exp
+text_art_tooltip_exp_empty,ALL GONE!,"Legacy illustration tooltip-exp.png, empty label; shown in the tooltip-exp coach card. Edits cover the baked label; original artwork remains for unchanged wording."
+text_tooltip_exp_unlock_title,Expedition unlocked!,js/ftue-tooltips.js tooltip-exp-unlock title; Used by ftue-tooltips.js:tooltip-exp-unlock
+text_tooltip_exp_unlock_button,Let’s go!,js/ftue-tooltips.js tooltip-exp-unlock button; Used by ftue-tooltips.js:tooltip-exp-unlock
+text_tooltip_exp_unlock_caption,Expedition unlocked!,js/ftue-tooltips.js tooltip-exp-unlock caption; Used by ftue-tooltips.js:tooltip-exp-unlock
+text_art_expedition,Expedition,js/ftue-tooltips.js illustration label; Used by ftue-tooltips.js:tooltip-exp-unlock
+text_art_unlocked,UNLOCKED!,"js/ftue-tooltips.js illustration label; Used by ftue-tooltips.js:tooltip-exp-unlock, ftue-tooltips.js:tooltip-grimoire, ftue-tooltips.js:tooltip-shop, ftue-tooltips.js:tooltip-harvest"
+text_tooltip_tadpoles_title,New tadpoles!,js/ftue-tooltips.js tooltip-tadpoles title; Used by ftue-tooltips.js:tooltip-tadpoles
+text_tooltip_tadpoles_button,Let’s conquer!,js/ftue-tooltips.js tooltip-tadpoles button; Used by ftue-tooltips.js:tooltip-tadpoles
+text_tooltip_tadpoles_caption,"Later we can use them to hatch more frogs. For now, let’s conquer more territory!",js/ftue-tooltips.js tooltip-tadpoles caption; Used by ftue-tooltips.js:tooltip-tadpoles
+text_art_later,LATER,js/ftue-tooltips.js illustration label; Used by ftue-tooltips.js:tooltip-tadpoles
+text_art_now,NOW!,"js/ftue-tooltips.js illustration label; Used by ftue-tooltips.js:tooltip-tadpoles, ftue-tooltips.js:tooltip-hatch"
+text_art_later_use_them_to_hatch_more_frogs,"Later, use them to hatch more frogs!",js/ftue-tooltips.js illustration label; Used by ftue-tooltips.js:tooltip-tadpoles
+text_art_for_now_let_s_conquer_more_territory,"For now, let’s conquer more territory!",js/ftue-tooltips.js illustration label; Used by ftue-tooltips.js:tooltip-tadpoles
+text_combat_tap_title,Your frogs need backup!,"js/combat-live.js teaching popup; Used by combat-live.js:tipCard, combat-live.js:showTapPopup"
+text_combat_tap_caption,Tap the field to strike! Every tap is bonus damage!,js/combat-live.js teaching popup; Used by combat-live.js:tipCard
+text_combat_tap_button,Let’s go!,js/combat-live.js tap lesson continue; Used by combat-live.js:tipCard
+text_combat_tap_guide,Tap to help your frogs!,js/combat-live.js teaching guide / reaction; Used by combat-live.js:tipCard
+text_combat_rewind,Rewind!,js/combat-live.js teaching guide / reaction; Used by combat-live.js:tipCard
+text_combat_retry,Let’s try that again!,js/combat-live.js teaching popup; Used by combat-live.js:rewindTapLesson
+text_combat_phew,"Phew, that was close!",js/combat-live.js teaching guide / reaction; Used by combat-live.js:showPhew
+text_combat_thanks,Glad you helped!,js/combat-live.js teaching guide / reaction; Used by combat-live.js:showPhew
+text_art_combat_tap_help,Help!,"Legacy illustration combat-tap.png, help label; shown in the combat-tap coach card. Edits cover the baked label; original artwork remains for unchanged wording."
+ftue_a8_frog_count_target,2,Retry checks the living finished Bunny plus its L1 companion after merges; never a historical headcount latch.
+loop2_finished_bunny_count,1,[RULED 2026-10-15] Current build behavior.
+step_attempt2_loop,2,[RULED 2026-10-15] Current build behavior.
+step_attempt2_expedition_no,2,[RULED 2026-10-15] Current build behavior.
+step_attempt2_force_loss,1,[RULED 2026-10-15] Current build behavior.
+step_attempt2_protected_wave_policy,first_boss_else_final,[RULED 2026-10-15] Current build behavior.
+step_reattempt_loop,2,[RULED 2026-10-15] Current build behavior.
+step_reattempt_expedition_no,2,[RULED 2026-10-15] Current build behavior.
+step_reattempt_force_loss,0,[RULED 2026-10-15] Current build behavior.
+step_reattempt_protected_wave_policy,none,[RULED 2026-10-15] Current build behavior.
+exp2_scripted_loss_boss_damage_multiplier,0,[RULED 2026-10-15] Current build behavior.
+exp2_scripted_loss_tap_damage,1,[RULED 2026-10-15] Current build behavior.
+loop2_retry_min_companions,1,"Exactly one surviving companion, checked after the finishing merge."
+loop2_companion_body_size,1,Retry output: one complete Bunny L4 + one L1; no reserve or eggs.
+text_l2_expedition,Clear Expedition 2,"js/ftue-steps.js objective / matching step metadata; Used by ftue-steps.js:onExpeditionDispatch, ftue-steps.js:renderLoop2Banner"
+text_return_pond,Return to your pond,"js/ftue-steps.js objective / matching step metadata; Used by ftue-steps.js:renderLoop2Banner, ftue-steps.js:renderLoop4Banner, ftue-steps.js:renderLoop5Banner"
+text_l2_retry_population,Hatch and merge a stronger party,js/ftue-steps.js objective / matching step metadata; Used by ftue-steps.js:renderLoop2Banner
+text_l2_evolve,Completely evolve 1 frog,"js/ftue-steps.js objective / matching step metadata; Used by ftue-steps.js:onExpeditionDispatch, ftue-steps.js:renderLoop2Banner"
+text_l2_codex,Check your codex,"js/ftue-steps.js objective / matching step metadata; Used by ftue-steps.js:onExpeditionDispatch, ftue-steps.js:renderLoop2Banner"
+text_hatch_remaining_merges,Complete all possible merges,"[RULED 2026-10-30] js/ftue-steps.js hatchObjectiveBanner()/hatchMergeGuidanceActive(); shown as the Step 2 label whenever the player runs out of tadpoles with mergeable frogs still on the pond (works across every loop that uses the hatch objective, not Loop 2 only). The game already calls text('text_hatch_remaining_merges','Complete all possible merges') -- this row was simply missing, so it was silently running on the hardcoded fallback string."
+text_tooltip_3a_title,Remember the Bunny Aura?,js/ftue-tooltips.js tooltip-3a title; Used by ftue-tooltips.js:tooltip-3a
+text_tooltip_3a_button,Got it!,js/ftue-tooltips.js tooltip-3a button; Used by ftue-tooltips.js:tooltip-3a
+text_tooltip_3a_caption,It completes your Bunny family! Full family = Dodge in combat!,js/ftue-tooltips.js tooltip-3a caption; Used by ftue-tooltips.js:tooltip-3a
+text_art_tooltip_3a_loot,EXPEDITION LOOT,"Legacy illustration tooltip-3a.png, loot label; shown in the tooltip-3a coach card. Edits cover the baked label; original artwork remains for unchanged wording."
+text_art_1_stays,1 stays,js/ftue-tooltips.js illustration label; Used by ftue-tooltips.js:cell
+text_art_vs,VS,js/ftue-tooltips.js illustration label; Used by ftue-tooltips.js:cell
+text_tooltip_4b_title,Same slot! One will disappear!,js/ftue-tooltips.js tooltip-4b title; Used by ftue-tooltips.js:tooltip-4b
+text_tooltip_4b_button,Lock it!,js/ftue-tooltips.js tooltip-4b button; Used by ftue-tooltips.js:tooltip-4b
+text_tooltip_4b_caption,Locked traits always survive the merge.,js/ftue-tooltips.js tooltip-4b caption; Used by ftue-tooltips.js:tooltip-4b
+text_tooltip_3b_title,Full family!,js/ftue-tooltips.js tooltip-3b title; Used by ftue-tooltips.js:tooltip-3b
+text_tooltip_3b_button,Got it!,js/ftue-tooltips.js tooltip-3b button; Used by ftue-tooltips.js:tooltip-3b
+text_tooltip_3b_caption,4 matching Bunny traits! Evolve your frog in the Grimoire.,js/ftue-tooltips.js tooltip-3b caption; Used by ftue-tooltips.js:tooltip-3b
+text_tooltip_grimoire_title,Grimoire unlocked!,js/ftue-tooltips.js tooltip-grimoire title; Used by ftue-tooltips.js:tooltip-grimoire
+text_tooltip_grimoire_button,Let’s look!,js/ftue-tooltips.js tooltip-grimoire button; Used by ftue-tooltips.js:tooltip-grimoire
+text_tooltip_grimoire_caption,Every trait you find is kept in the Grimoire!,js/ftue-tooltips.js tooltip-grimoire caption; Used by ftue-tooltips.js:tooltip-grimoire
+text_art_grimoire,Grimoire,js/ftue-tooltips.js illustration label; Used by ftue-tooltips.js:tooltip-grimoire
+text_tooltip_hatch_title,Time to hatch!,js/ftue-tooltips.js tooltip-hatch title; Used by ftue-tooltips.js:tooltip-hatch
+text_tooltip_hatch_button,Let’s hatch!,js/ftue-tooltips.js tooltip-hatch button; Used by ftue-tooltips.js:tooltip-hatch
+text_tooltip_hatch_caption,You have new tadpoles! Start hatching again to grow more frogs.,js/ftue-tooltips.js tooltip-hatch caption; Used by ftue-tooltips.js:tooltip-hatch
+text_art_new,NEW!,js/ftue-tooltips.js illustration label; Used by ftue-tooltips.js:tooltip-hatch
+text_art_you_have_new_tadpoles,You have new tadpoles!,js/ftue-tooltips.js illustration label; Used by ftue-tooltips.js:tooltip-hatch
+text_art_start_hatching_again,Start hatching again!,js/ftue-tooltips.js illustration label; Used by ftue-tooltips.js:tooltip-hatch
+text_tooltip_bones_title,Need bones!,js/ftue-tooltips.js tooltip-bones title; Used by ftue-tooltips.js:tooltip-bones
+text_tooltip_bones_button,Got it!,js/ftue-tooltips.js tooltip-bones button; Used by ftue-tooltips.js:tooltip-bones
+text_tooltip_bones_caption,Locking a trait costs bones! Sacrifice a spare frog to get some!,js/ftue-tooltips.js tooltip-bones caption; Used by ftue-tooltips.js:tooltip-bones
+text_art_tooltip_bones_empty,NO BONES!,"Legacy illustration tooltip-bones.png, empty label; shown in the tooltip-bones coach card. Edits cover the baked label; original artwork remains for unchanged wording."
+text_art_tooltip_bones_sacrifice,Sacrifice for bones,"Legacy illustration tooltip-bones.png, sacrifice label; shown in the tooltip-bones coach card. Edits cover the baked label; original artwork remains for unchanged wording."
+text_tooltip_rematch_title,Payback time!,js/ftue-tooltips.js tooltip-rematch title; Used by ftue-tooltips.js:tooltip-rematch
+text_tooltip_rematch_button,Let’s go!,js/ftue-tooltips.js tooltip-rematch button; Used by ftue-tooltips.js:tooltip-rematch
+text_tooltip_rematch_caption,Our new special frog is ready! Let’s go beat this guy’s butt!,js/ftue-tooltips.js tooltip-rematch caption; Used by ftue-tooltips.js:tooltip-rematch
+text_art_tooltip_rematch_frog,BUNNY FROG,"Legacy illustration tooltip-rematch.png, frog label; shown in the tooltip-rematch coach card. Edits cover the baked label; original artwork remains for unchanged wording."
+text_art_tooltip_rematch_versus,VS,"Legacy illustration tooltip-rematch.png, versus label; shown in the tooltip-rematch coach card. Edits cover the baked label; original artwork remains for unchanged wording."
+text_aura_pool_tip_title,In your gene pool!,js/ftue-tooltips.js auraPoolTip title; Used by ftue-tooltips.js:auraPoolTip
+text_aura_pool_tip_button,Got it!,js/ftue-tooltips.js auraPoolTip button; Used by ftue-tooltips.js:auraPoolTip
+text_aura_pool_tip_caption,"Your Bunny Aura can sprout in merges now, but only as a frog’s 4th trait. Evolve a frog all the way to get it!",js/ftue-tooltips.js auraPoolTip caption; Used by ftue-tooltips.js:auraPoolTip
+text_art_gene_pool,GENE POOL,js/ftue-tooltips.js illustration label; Used by ftue-tooltips.js:art
+text_art_4th_trait,4TH TRAIT!,js/ftue-tooltips.js illustration label; Used by ftue-tooltips.js:art
+text_art_it_sprouts_as_a_frog_s_4th_trait,It sprouts as a frog’s 4th trait!,js/ftue-tooltips.js illustration label; Used by ftue-tooltips.js:art
+text_art_evolve_a_frog_all_the_way,Evolve a frog all the way,js/ftue-tooltips.js illustration label; Used by ftue-tooltips.js:art
+text_combat_dodge_title,Family power: Dodge!,js/combat-live.js teaching popup; Used by combat-live.js:tipCard
+text_combat_dodge_caption,Your Bunny frog dodged the hit! Full families unlock combat powers!,js/combat-live.js teaching popup; Used by combat-live.js:tipCard
+text_combat_dodge_button,Awesome!,js/combat-live.js Dodge lesson continue; Used by combat-live.js:tipCard
+text_art_combat_dodge_dodge,Dodge!,"Legacy illustration combat-dodge.png, dodge label; shown in the combat-dodge coach card. Edits cover the baked label; original artwork remains for unchanged wording."
+text_ticket_tip_title,Family Ticket!,js/ftue-tooltips.js ticketTip title; Used by ftue-tooltips.js:ticketTip
+text_ticket_tip_button,Got it!,js/ftue-tooltips.js ticketTip button; Used by ftue-tooltips.js:ticketTip
+text_ticket_try,TRY IT!,js/family-ticket.js prompted ticket CTA; Used by family-ticket.js:stageOf
+text_ticket_caption,Use {ticket} to get every {family} piece{gear} at once!,"js/ftue-tooltips.js coach card; Tokens: {ticket} = ticket source phrase, {family} = reward family, {gear} = optional gear phrase; Used by ftue-tooltips.js:ticketTip"
+text_ticket_art_title,"One ticket, the whole set!",js/ftue-tooltips.js coach card; Used by ftue-tooltips.js:ticketTip
+text_ticket_art_subtitle,Every {family} piece{gear},"js/ftue-tooltips.js coach card; Tokens: {family} = reward family, {gear} = optional gear phrase; Used by ftue-tooltips.js:ticketTip"
+text_ticket_from_web,a ticket you freed from the web,js/ftue-tooltips.js ticket coach illustration; Used by ftue-tooltips.js:ticketTip
+text_ticket_source,a ticket,js/ftue-tooltips.js ticket coach illustration; Used by ftue-tooltips.js:ticketTip
+text_ticket_web_tag,FROM THE WEB,js/ftue-tooltips.js ticket coach illustration; Used by ftue-tooltips.js:ticketTip
+text_ticket_tag,TICKET,js/ftue-tooltips.js ticket coach illustration; Used by ftue-tooltips.js:ticketArtHTML
+text_ticket_gear, and its gear,js/ftue-tooltips.js ticket caption gear suffix; Used by ftue-tooltips.js:ticketTip
+text_ticket_art_gear, + its gear,js/ftue-tooltips.js ticket illustration gear suffix; Used by ftue-tooltips.js:ticketTip
+text_aura_reminder_caption,It completes your Bunny family! Full family = Dodge in combat!,js/aura-reminder.js loss receipt art alt; Used by aura-reminder.js:receiptHTML; js/aura-reminder.js E2 loss receipt caption; edited wording replaces the baked image caption; Used by aura-reminder.js:receiptHTML
+text_aura_reminder_title,Remember the Bunny Aura?,js/aura-reminder.js E2 loss receipt; Used by aura-reminder.js:receiptHTML
+goal_family_id,forestSpirit,[PROPOSED 2026-10-19] The family the goal asks for (frog-traits.js family id). Shown as Complete the <family> frog by matching traits.
+goal_family_roll_lean,0.5,[PROPOSED 2026-10-19] Share of new merge rolls that land the goal family piece while the goal runs. The rest keep the ordinary odds so Bunny still rolls. 0 turns the skew off.
+goal_lock_lesson_price_bones,0,"[PROPOSED 2026-10-19] Bones for the goal lock lesson's guided lock (js/ftue-tooltips.js tooltip-goal-lock: a merge would cost a goal family piece, so the player locks it). 0 = free, so the lesson never stalls on Need bones! (E1+E2 pay ~20-26 bones and tip 4b's lock already spends 20). Blank = the usual freeze price."
+pond_expansion_target_tier,1,[RULED 2026-10-15] Current build behavior.
+cap_trigger_pond_expansion_enabled,1,"[ACCEPTED 2026-10-27, relocated same day] On/off for the frog-cap trigger (js/ftue-steps.js onFrogCapHatchBlocked): 1 = hitting the frog cap on a hatch attempt, with Expedition 4 already cleared, makes the expansion the priority objective right away (Loop 3's own pond-expansion step is retired outright -- this is the ONLY door into Tier 1 during the FTUE now). Hitting the cap any earlier just flashes the HUD frog-count pill red. 0 = the trigger never fires. Blank reads as 1."
+text_l3_expand,Expand your pond,"js/ftue-steps.js objective / matching step metadata; Used by ftue-steps.js:renderFamilyGoalBanner, ftue-steps.js:renderExpansionBanner"
+text_family_goal,Complete the {family} frog by matching traits,js/ftue-steps.js objective; Tokens: {family} = goal family name; Used by ftue-steps.js:renderFamilyGoalBanner
+text_l3_bones,Win an expedition for {need}{bones},"js/ftue-steps.js objective; Tokens: {need} = bone shortfall, {bones} = singular/plural bone suffix; Used by ftue-steps.js:renderLoop3Banner"
+text_tooltip_pond_mats_title,Your pond is full!,js/ftue-tooltips.js tooltip-pond-mats title; Used by ftue-tooltips.js:tooltip-pond-mats
+text_tooltip_pond_mats_button,Let’s expand!,js/ftue-tooltips.js tooltip-pond-mats button; Used by ftue-tooltips.js:tooltip-pond-mats
+text_tooltip_pond_mats_caption,Our frog army has filled the pond! Expand it to make room for more.,js/ftue-tooltips.js tooltip-pond-mats caption; Used by ftue-tooltips.js:tooltip-pond-mats
+text_art_pond_full,FULL!,js/ftue-tooltips.js illustration label; Used by ftue-tooltips.js:tooltip-pond-mats
+text_art_bigger_pond,BIGGER POND!,js/ftue-tooltips.js illustration label; Used by ftue-tooltips.js:tooltip-pond-mats
+text_art_our_frog_army_is_growing,Our frog army has filled the pond!,js/ftue-tooltips.js illustration label; Used by ftue-tooltips.js:tooltip-pond-mats
+text_art_harvest_wood_amp_stone_to_grow_the_pond,Expand it to make room for more!,js/ftue-tooltips.js illustration label; Used by ftue-tooltips.js:tooltip-pond-mats
+text_flag_title,Your pond grew!,js/pond-flag-prompt.js first expansion prompt; Used by pond-flag-prompt.js:popupHTML
+text_flag_subtitle,Make it yours: pick a flag and name your pond.,js/pond-flag-prompt.js first expansion prompt; Used by pond-flag-prompt.js:popupHTML
+text_flag_button,Raise the flag!,js/pond-flag-prompt.js first expansion prompt; Used by pond-flag-prompt.js:popupHTML
+text_flag_colour,Flag colour,js/pond-flag-prompt.js first expansion field label; Used by pond-flag-prompt.js:popupHTML
+text_flag_name,Pond name,js/pond-flag-prompt.js first expansion field label; Used by pond-flag-prompt.js:popupHTML
+text_flag_placeholder,My Pod,js/pond-flag-prompt.js name input placeholder; Used by pond-flag-prompt.js:popupHTML
+text_tooltip_upgrades_title,Upgrades unlocked!,js/ftue-tooltips.js tooltip-upgrades title; Used by ftue-tooltips.js:tooltip-upgrades
+text_tooltip_upgrades_button,Let’s look!,js/ftue-tooltips.js tooltip-upgrades button; Used by ftue-tooltips.js:tooltip-upgrades
+text_tooltip_upgrades_caption,Grow your pond and craft gear! Spend wood and stone in Upgrades!,js/ftue-tooltips.js tooltip-upgrades caption; Used by ftue-tooltips.js:tooltip-upgrades
+text_art_tooltip_upgrades_pond,BIGGER POND,"Legacy illustration tooltip-upgrades.png, pond label; shown in the tooltip-upgrades coach card. Edits cover the baked label; original artwork remains for unchanged wording."
+text_art_tooltip_upgrades_gear,NEW GEAR,"Legacy illustration tooltip-upgrades.png, gear label; shown in the tooltip-upgrades coach card. Edits cover the baked label; original artwork remains for unchanged wording."
+text_art_tooltip_upgrades_new,NEW!,"Legacy illustration tooltip-upgrades.png, new label; shown in the tooltip-upgrades coach card. Edits cover the baked label; original artwork remains for unchanged wording."
+text_tooltip_pads_title,More hatching pads!,js/ftue-tooltips.js tooltip-pads title; Used by ftue-tooltips.js:tooltip-pads
+text_tooltip_pads_button,Got it!,js/ftue-tooltips.js tooltip-pads button; Used by ftue-tooltips.js:tooltip-pads
+text_tooltip_pads_caption,Build more hatching pads to hatch more tadpoles at once!,js/ftue-tooltips.js tooltip-pads caption; Used by ftue-tooltips.js:tooltip-pads
+text_art_build,BUILD,js/ftue-tooltips.js illustration label; Used by ftue-tooltips.js:tooltip-pads
+text_art_more_frogs,MORE FROGS!,"js/ftue-tooltips.js illustration label; Used by ftue-tooltips.js:tooltip-pads, ftue-tooltips.js:tooltip-shop-packs"
+text_art_build_more_hatching_pads,Build more hatching pads!,js/ftue-tooltips.js illustration label; Used by ftue-tooltips.js:tooltip-pads
+text_art_hatch_more_tadpoles_at_once,Hatch more tadpoles at once!,js/ftue-tooltips.js illustration label; Used by ftue-tooltips.js:tooltip-pads
+text_goal_lock_tip_button,Lock it!,js/ftue-tooltips.js goalLockTip button; Used by ftue-tooltips.js:goalLockTip
+text_goal_lock_title,Lock the {family} trait!,js/ftue-tooltips.js coach card; Tokens: {family} = goal family; Used by ftue-tooltips.js:goalLockTip
+text_goal_lock_caption,Only one trait stays in a slot. Lock the {family} one and the merge keeps it!,js/ftue-tooltips.js coach card; Tokens: {family} = goal family; Used by ftue-tooltips.js:goalLockTip
+text_art_lock_it,LOCK IT!,js/ftue-tooltips.js illustration label; Used by ftue-tooltips.js:goalLockArtHTML
+text_art_full_set,FULL SET!,"js/ftue-tooltips.js illustration label; Used by ftue-tooltips.js:goalLockArtHTML, ftue-tooltips.js:ticketArtHTML"
+text_art_locked_traits_always_stay,Locked traits always stay!,js/ftue-tooltips.js illustration label; Used by ftue-tooltips.js:goalLockArtHTML
+text_goal_lock_art_subtitle,Keep every {family} trait,js/ftue-tooltips.js coach illustration; Tokens: {family} = family name; Used by ftue-tooltips.js:goalLockArtHTML
+text_lock_safety_title,Don't forget to lock!,"[ACCEPTED 2026-10-27] js/ftue-tooltips.js lockSafetyTip title; shown only when the family goal finishes without the player ever seeing a real same-slot clash (captain playtest: ""Better to have it twice than not at all"" -- the lock lesson must appear). Used by ftue-tooltips.js:lockSafetyTip"
+text_lock_safety_button,Lock it!,[ACCEPTED 2026-10-27] js/ftue-tooltips.js lockSafetyTip button; Used by ftue-tooltips.js:lockSafetyTip
+text_lock_safety_caption,Lock a {family} trait so a future merge can never take it away.,[ACCEPTED 2026-10-27] js/ftue-tooltips.js coach card; Tokens: {family} = the finished family's name; Used by ftue-tooltips.js:lockSafetyTip
+text_lock_safety_art_subtitle,Keep your {family} trait safe,[ACCEPTED 2026-10-27] js/ftue-tooltips.js coach illustration; Tokens: {family} = family name; Used by ftue-tooltips.js:lockSafetyArtHTML
+text_family_found_tip_title,New trait family found!,js/ftue-tooltips.js familyFoundTip title; Used by ftue-tooltips.js:familyFoundTip
+text_family_found_tip_button,Let’s look!,js/ftue-tooltips.js familyFoundTip button; Used by ftue-tooltips.js:familyFoundTip
+text_family_found_caption,You found every {family} trait! Meet your new family in the Grimoire!,js/ftue-tooltips.js coach card; Tokens: {family} = found family; Used by ftue-tooltips.js:familyFoundTip
+text_art_all_found,ALL FOUND!,js/ftue-tooltips.js illustration label; Used by ftue-tooltips.js:familyFoundArtHTML
+text_art_new_family,NEW FAMILY!,js/ftue-tooltips.js illustration label; Used by ftue-tooltips.js:familyFoundArtHTML
+text_art_meet_your_new_family_in_the_grimoire,Meet your new family in the Grimoire,js/ftue-tooltips.js illustration label; Used by ftue-tooltips.js:familyFoundArtHTML
+text_family_found_art_title,Every {family} trait found!,js/ftue-tooltips.js coach illustration; Tokens: {family} = family name; Used by ftue-tooltips.js:familyFoundArtHTML
+text_family_unlocked_tip_button,Let’s merge!,js/ftue-tooltips.js familyUnlockedTip button; Used by ftue-tooltips.js:familyUnlockedTip
+text_family_unlocked_title,{family} unlocked!,js/ftue-tooltips.js coach card; Tokens: {family} = found family; Used by ftue-tooltips.js:familyUnlockedTip
+text_family_unlocked_caption,All {count} {family} traits are in your gene pool! Merge them onto one frog to complete the family.,"js/ftue-tooltips.js coach card; Tokens: {count} = family trait count, {family} = found family; Used by ftue-tooltips.js:familyUnlockedTip"
+text_art_one_frog,ONE FROG!,js/ftue-tooltips.js illustration label; Used by ftue-tooltips.js:familyUnlockedArtHTML
+text_family_unlocked_art_subtitle,Complete the {family} frog,js/ftue-tooltips.js coach illustration; Tokens: {family} = family name; Used by ftue-tooltips.js:familyUnlockedArtHTML
+text_family_unlocked_art_title,Merge all {count} onto one frog!,js/ftue-tooltips.js coach illustration; Tokens: {count} = family trait count; Used by ftue-tooltips.js:familyUnlockedArtHTML
+text_family_unlocked_count,{count} TRAITS,js/ftue-tooltips.js family-unlocked art tag. Tokens: {count} = number of family traits; Used by ftue-tooltips.js:familyUnlockedArtHTML
+text_auto_tip_title,Auto expeditions!,js/ftue-tooltips.js autoTip title; Used by ftue-tooltips.js:autoTip
+text_auto_tip_button,Show me!,js/ftue-tooltips.js autoTip button; Used by ftue-tooltips.js:autoTip
+text_auto_caption,Send your frogs on auto! They replay the stage and bring back more {family} pieces!,js/ftue-tooltips.js coach card; Tokens: {family} = auto stage family; Used by ftue-tooltips.js:autoTip
+text_art_auto,AUTO,js/ftue-tooltips.js illustration label; Used by ftue-tooltips.js:autoArtHTML
+text_art_more,MORE!,js/ftue-tooltips.js illustration label; Used by ftue-tooltips.js:autoArtHTML
+text_art_your_frogs_replay_it_on_their_own,Your frogs replay it on their own!,js/ftue-tooltips.js illustration label; Used by ftue-tooltips.js:autoArtHTML
+text_auto_art_subtitle,More {family} pieces!,js/ftue-tooltips.js coach illustration; Tokens: {family} = family name; Used by ftue-tooltips.js:autoArtHTML
+step_expedition3_loop,4,[RULED 2026-10-15] Current build behavior.
+step_expedition3_expedition_no,3,[RULED 2026-10-15] Current build behavior.
+step_expedition3_force_loss,0,[RULED 2026-10-15] Current build behavior.
+step_expedition3_protected_wave_policy,none,[RULED 2026-10-15] Current build behavior.
+step_expedition4_loop,4,[RULED 2026-10-15] Current build behavior.
+step_expedition4_expedition_no,4,[RULED 2026-10-15] Current build behavior.
+step_expedition4_force_loss,0,[RULED 2026-10-15] Current build behavior.
+step_expedition4_protected_wave_policy,none,[RULED 2026-10-15] Current build behavior.
+first_craft_harvest_wood,0,"[RULED 2026-11-03] Retired -- the sword is affordable from wood alone at every real wallet roll (Expedition 3's win pays its whole wood price), so a forced wood floor made the harvest lesson visibly demand wood the player never needed (QA batch item 5). The mandatory floor moved to stone; see first_craft_harvest_stone (row 357). Kept at 0, not deleted, so any save/reader still touching this key reads an inert number rather than a missing one."
+first_craft_harvest_stone,20,"[RULED 2026-11-03] Always earn this much automatic stone before the first weapon, regardless of wallet (replaces first_craft_harvest_wood, row 246 -- stone, not wood, is the resource genuinely short at this point; QA batch item 5)."
+text_l4_first_harvest,Harvest {amount} stone with your frogs,[RULED 2026-11-03] Mandatory first craft harvest objective; amount from first_craft_harvest_stone (was wood -- QA batch item 5).
+first_weapon_item_id,common_sword_twig_sword,[RULED 2026-10-15] Current build behavior.
+first_weapon_material_extra,0,"[RULED 2026-10-19] 0: the first sword's quote never asks beyond the wallet; was 20, which forced a harvest. Auto harvesting arrives with the first gear the player can't afford, never before the first sword and shield (Expedition 3's win pays them)."
+first_weapon_material_rounding,5,[RULED 2026-10-15] Current build behavior.
+first_shield_item_id,common_shield_wicker_round,"[PROPOSED 2026-10-19] The shield Loop 4's lesson crafts after the first sword (user: a frog wears a weapon AND a shield before Expedition 4). Bark Round, the first standard-issue shield. A held set shield blueprint takes its place at its price."
+first_shield_material_extra,0,"[RULED 2026-10-19] 0: the first shield's quote never asks beyond the wallet, same as the sword; was 20. Expedition 3's win pays the sword and shield's whole price (DropTables exp3_win wood/stone), so this only keeps the shield within reach if the player already spent it; harvesting waits for the first craft that comes up short."
+ftue_family_gear_from_expedition,3,"[PROPOSED 2026-10-19] While the FTUE runs, a family drop or Family Ticket on an earlier expedition pays its traits only, no gear blueprints (user: blueprints first come at stage 3, so stage 2's Forest Spirit pack has no Branch Staff / Bark Ward). After the FTUE every stage pays its gear."
+text_l4_expedition3,Clear Expedition 3,"js/ftue-steps.js objective / matching step metadata; Used by ftue-steps.js:harvestPointerTarget, ftue-steps.js:renderLoop4Banner"
+text_l4_craft_preview,Craft equipment,"js/ftue-steps.js objective / matching step metadata; Used by ftue-steps.js:harvestPointerTarget, ftue-steps.js:renderLoop4Banner"
+text_l4_shield,Equip a shield,"js/ftue-steps.js objective / matching step metadata; Used by ftue-steps.js:harvestPointerTarget, ftue-steps.js:renderLoop4Banner"
+text_l4_dispatch,Dispatch frogs to harvest,"js/ftue-steps.js objective / matching step metadata; Used by ftue-steps.js:harvestPointerTarget, ftue-steps.js:renderLoop4Banner"
+text_l4_harvest,Harvest for equipment crafting,"js/ftue-steps.js objective / matching step metadata; Used by ftue-steps.js:harvestGoalHTML, ftue-steps.js:harvestPointerTarget, ftue-steps.js:renderLoop4Banner"
+text_l4_craft,Finish making Equipment,"js/ftue-steps.js objective / matching step metadata; Used by ftue-steps.js:harvestPointerTarget, ftue-steps.js:renderLoop4Banner"
+text_l4_expedition4,Clear Expedition 4,"js/ftue-steps.js objective / matching step metadata; Used by ftue-steps.js:harvestPointerTarget, ftue-steps.js:renderLoop4Banner"
+text_l4_harvest_title,Put your frogs to work,js/ftue-steps.js Loop 4 Harvesting guided goal; Used by ftue-steps.js:harvestGoalHTML
+text_l4_harvest_explanation,Send frogs to gather wood and mine stone. It speeds up crafting!,js/ftue-steps.js Loop 4 Harvesting guided goal; Used by ftue-steps.js:harvestGoalHTML
+text_l4_harvest_instruction,Send frogs to gather wood and mine stone.,js/ftue-steps.js Loop 4 Harvesting guided goal; Used by ftue-steps.js:harvestGoalHTML
+text_tooltip_gear_title,Let’s gear up to come back stronger!,js/ftue-tooltips.js tooltip-gear title; Used by ftue-tooltips.js:tooltip-gear
+text_tooltip_gear_button,Let’s craft!,js/ftue-tooltips.js tooltip-gear button; Used by ftue-tooltips.js:tooltip-gear
+text_tooltip_gear_caption,Craft your blueprint into a weapon! Equip it and your frog hits harder!,js/ftue-tooltips.js tooltip-gear caption; Used by ftue-tooltips.js:tooltip-gear
+text_art_blueprint,BLUEPRINT,js/ftue-tooltips.js illustration label; Used by ftue-tooltips.js:tooltip-blueprint
+text_art_craft_gear,CRAFT GEAR!,js/ftue-tooltips.js illustration label; Used by ftue-tooltips.js:tooltip-blueprint
+text_art_equip_gear_to_hit_even_harder,Equip gear to hit even harder!,js/ftue-tooltips.js illustration label; Used by ftue-tooltips.js:tooltip-blueprint
+text_art_blueprints_craft_new_gear,Blueprints craft new gear!,js/ftue-tooltips.js illustration label; Used by ftue-tooltips.js:tooltip-blueprint
+text_art_tooltip_gear_blueprint,BLUEPRINT,"Legacy illustration tooltip-gear.png, blueprint label; shown in the tooltip-gear coach card. Edits cover the baked label; original artwork remains for unchanged wording."
+text_art_tooltip_gear_atk,+ATK,"Legacy illustration tooltip-gear.png, atk label; shown in the tooltip-gear coach card. Edits cover the baked label; original artwork remains for unchanged wording."
+text_tooltip_mats_title,Need materials!,js/ftue-tooltips.js tooltip-mats title; Used by ftue-tooltips.js:tooltip-mats
+text_tooltip_mats_button,Let’s harvest!,js/ftue-tooltips.js tooltip-mats button; Used by ftue-tooltips.js:tooltip-mats
+text_tooltip_mats_caption,Not enough wood and stone! Send frogs to harvest more!,js/ftue-tooltips.js tooltip-mats caption; Used by ftue-tooltips.js:tooltip-mats
+text_art_tooltip_mats_short,NOT ENOUGH!,"Legacy illustration tooltip-mats.png, short label; shown in the tooltip-mats coach card. Edits cover the baked label; original artwork remains for unchanged wording."
+text_tooltip_harvest_title,"To speed up crafting, put your frogs to work!",js/ftue-tooltips.js tooltip-harvest title; Used by ftue-tooltips.js:tooltip-harvest
+text_tooltip_harvest_button,Let’s harvest!,js/ftue-tooltips.js tooltip-harvest button; Used by ftue-tooltips.js:tooltip-harvest
+text_tooltip_harvest_caption,Harvesting unlocked! Send frogs to gather wood and stone for you!,js/ftue-tooltips.js tooltip-harvest caption; Used by ftue-tooltips.js:tooltip-harvest
+text_art_harvesting,Harvesting,js/ftue-tooltips.js illustration label; Used by ftue-tooltips.js:tooltip-harvest
+text_tooltip_blueprint_title,You’re on a roll!,js/ftue-tooltips.js tooltip-blueprint title; Used by ftue-tooltips.js:tooltip-blueprint
+text_tooltip_blueprint_button,Nice!,js/ftue-tooltips.js tooltip-blueprint button; Used by ftue-tooltips.js:tooltip-blueprint
+text_tooltip_blueprint_caption,Equip gear to hit even harder! Blueprints craft new gear!,js/ftue-tooltips.js tooltip-blueprint caption; Used by ftue-tooltips.js:tooltip-blueprint
+text_l3_hatchpad_build,Build a hatching pad to hatch more frogs,"js/ftue-steps.js objective; Used by ftue-steps.js:renderHatchPadBanner. [RULED 2026-10-30] Relocated here from the Loop 3 block (key unchanged) -- it now fires in Loop 5, after Expedition 4: hatchPadGuidanceActive() requires ftueLoop===5 && ftueL5Step==='hatch_pad'."
+ftue_flowers_enabled,0,0 skips the Loop 5 flower lesson and all flower/seed teaching cards; Flower Pad appears after FTUE. 1 restores the optional lesson after an E5 loss.
+step_expedition5_loop,5,[RULED 2026-10-15] Current build behavior.
+step_expedition5_expedition_no,5,[RULED 2026-10-15] Current build behavior.
+step_expedition5_force_loss,0,[RULED 2026-10-15] Current build behavior.
+step_expedition5_protected_wave_policy,none,[RULED 2026-10-15] Current build behavior.
+text_l5_grow_roster,Hatch and merge a stronger party,js/ftue-steps.js objective / matching step metadata; Used by ftue-steps.js:renderLoop5Banner
+text_l5_shop,Visit the Shop,"js/ftue-steps.js objective / matching step metadata; Used by ftue-steps.js:renderLoop4Banner, ftue-steps.js:renderLoop5Banner"
+text_l5_plant,Plant a flower,js/flower-tutorial.js Loop 5 objective; Used by flower-tutorial.js:label
+text_l5_inspect,Tap your frog to see its flower buffs,js/flower-tutorial.js Loop 5 objective; Used by flower-tutorial.js:label
+text_l5_seat,Drag a frog onto a flower to earn expedition buffs,js/flower-tutorial.js Loop 5 objective; Used by flower-tutorial.js:label
+text_l5_recall,Return a harvest worker to idle for flower buffs,js/flower-tutorial.js Loop 5 objective; Used by flower-tutorial.js:label
+text_l5_wait,Wait for your expedition frogs to return,js/flower-tutorial.js Loop 5 objective; Used by flower-tutorial.js:label
+text_l5_hatch,Hatch a frog for flower buffs,js/flower-tutorial.js Loop 5 objective; Used by flower-tutorial.js:label
+text_l5_charge,Keep frog seated for flower buffs,js/flower-tutorial.js Loop 5 objective; Used by flower-tutorial.js:label
+text_l5_expedition,Clear Expedition 5,js/flower-tutorial.js Loop 5 objective; Used by flower-tutorial.js:label
+text_l5_earn_seeds,Earn {need} seed{plural} from expedition rewards to plant a flower,"js/flower-tutorial.js Loop 5 objective; Tokens: {need} = minimum seeds, {plural} = plural suffix; Used by flower-tutorial.js:label"
+text_tooltip_seeds_title,Pink Lily seeds!,js/ftue-tooltips.js tooltip-seeds title; Used by ftue-tooltips.js:tooltip-seeds
+text_tooltip_seeds_button,Nice!,js/ftue-tooltips.js tooltip-seeds button; Used by ftue-tooltips.js:tooltip-seeds
+text_tooltip_seeds_caption,Seeds grow flowers! Flowers power up your frogs!,js/ftue-tooltips.js tooltip-seeds caption; Used by ftue-tooltips.js:tooltip-seeds
+text_art_seeds,SEEDS,js/ftue-tooltips.js illustration label; Used by ftue-tooltips.js:tooltip-seeds
+text_art_pink_lily,PINK LILY!,js/ftue-tooltips.js illustration label; Used by ftue-tooltips.js:tooltip-seeds
+text_art_seeds_grow_flowers,Seeds grow flowers!,js/ftue-tooltips.js illustration label; Used by ftue-tooltips.js:tooltip-seeds
+text_art_flowers_power_up_your_frogs,Flowers power up your frogs!,js/ftue-tooltips.js illustration label; Used by ftue-tooltips.js:tooltip-seeds
+text_tooltip_flower_boost_title,Power up with flowers!,js/ftue-tooltips.js tooltip-flower-boost title; Used by ftue-tooltips.js:tooltip-flower-boost
+text_tooltip_flower_boost_button,Back to the pond!,js/ftue-tooltips.js tooltip-flower-boost button; Used by ftue-tooltips.js:tooltip-flower-boost
+text_tooltip_flower_boost_caption,"That boss is too tough! Plant your Pink Lily seeds, seat a frog on the flower and take its buffs into the fight!",js/ftue-tooltips.js tooltip-flower-boost caption; Used by ftue-tooltips.js:tooltip-flower-boost
+text_art_too_tough,TOO TOUGH!,js/ftue-tooltips.js illustration label; Used by ftue-tooltips.js:tooltip-flower-boost
+text_art_buffs,BUFFS!,js/ftue-tooltips.js illustration label; Used by ftue-tooltips.js:tooltip-flower-boost
+text_art_plant_your_pink_lily_seeds,Plant your Pink Lily seeds!,js/ftue-tooltips.js illustration label; Used by ftue-tooltips.js:tooltip-flower-boost
+text_art_take_flower_buffs_into_the_fight,Take flower buffs into the fight!,js/ftue-tooltips.js illustration label; Used by ftue-tooltips.js:tooltip-flower-boost
+text_combat_flower_guide,Tap the flower!,js/combat-live.js teaching guide / reaction; Used by combat-live.js:buildBloom
+text_combat_web_guide,Tap the web!,js/combat-live.js teaching guide / reaction; Used by combat-live.js:buildWeb
+text_tooltip_plant_title,Plant your seeds!,js/ftue-tooltips.js tooltip-plant title; Used by ftue-tooltips.js:tooltip-plant
+text_tooltip_plant_button,Let’s plant!,js/ftue-tooltips.js tooltip-plant button; Used by ftue-tooltips.js:tooltip-plant
+text_tooltip_plant_caption,"Frogs sitting on flowers get stronger for expeditions! Plant a Pink Lily, then seat a frog on it!",js/ftue-tooltips.js tooltip-plant caption; Used by ftue-tooltips.js:tooltip-plant
+text_art_plant,PLANT,js/ftue-tooltips.js illustration label; Used by ftue-tooltips.js:tooltip-plant
+text_art_stronger,STRONGER!,js/ftue-tooltips.js illustration label; Used by ftue-tooltips.js:tooltip-plant
+text_art_frogs_on_flowers_get_stronger,Frogs on flowers get stronger!,js/ftue-tooltips.js illustration label; Used by ftue-tooltips.js:tooltip-plant
+text_art_seat_one_there_before_expeditions,Seat one there before expeditions!,js/ftue-tooltips.js illustration label; Used by ftue-tooltips.js:tooltip-plant
+text_tooltip_shop_title,Shop unlocked!,js/ftue-tooltips.js tooltip-shop title; Used by ftue-tooltips.js:tooltip-shop
+text_tooltip_shop_button,Let’s look!,js/ftue-tooltips.js tooltip-shop button; Used by ftue-tooltips.js:tooltip-shop
+text_tooltip_shop_caption,"The Shop is open! Get Family Tickets, special frogs and frog packs!",js/ftue-tooltips.js tooltip-shop caption; Used by ftue-tooltips.js:tooltip-shop
+text_art_shop,Shop,js/ftue-tooltips.js illustration label; Used by ftue-tooltips.js:tooltip-shop
+text_tooltip_shop_ticket_title,Family Tickets!,js/ftue-tooltips.js tooltip-shop-ticket title; Used by ftue-tooltips.js:tooltip-shop-ticket
+text_tooltip_shop_ticket_button,Nice!,js/ftue-tooltips.js tooltip-shop-ticket button; Used by ftue-tooltips.js:tooltip-shop-ticket
+text_tooltip_shop_ticket_caption,Use one on an expedition’s trait drop to get a whole family’s traits{gear}!,"[RULED 2026-10-31] Added the {gear} token: this card wrongly promised gear even when Purchasables family_ticket effect_value.grants_blueprints=0 (tickets grant traits only per captain ruling M4). {gear} = text_ticket_gear (' and its gear') when enabled, else blank. Used by js/ftue-tooltips.js tooltip-shop-ticket."
+text_shop_ticket_art_title,"One ticket, a whole family!",js/ftue-tooltips.js ticket coach illustration; Used by ftue-tooltips.js:tooltip-shop-ticket
+text_shop_ticket_art_subtitle,Every trait{gear},"[RULED 2026-10-31] Added the {gear} token, same reason as text_tooltip_shop_ticket_caption (row 334): tickets grant traits only unless Purchasables family_ticket effect_value.grants_blueprints=1. {gear} = text_ticket_art_gear (' + its gear') when enabled, else blank. Used by js/ftue-tooltips.js tooltip-shop-ticket."
+text_shop_ticket_desc,"Use one on an expedition's trait drop: the whole family set{gear}, in one go.","[RULED 2026-10-31] New row (item #8): the Shop's own Family Ticket card description (index.html, near FamilyTicket.price()), previously hardcoded and wrongly always mentioning gear. {gear} = text_ticket_gear (' and its gear') when Purchasables family_ticket effect_value.grants_blueprints=1, else blank."
+text_tooltip_shop_mutant_title,Special families!,js/ftue-tooltips.js tooltip-shop-mutant title; Used by ftue-tooltips.js:tooltip-shop-mutant
+text_tooltip_shop_mutant_button,Cool!,js/ftue-tooltips.js tooltip-shop-mutant button; Used by ftue-tooltips.js:tooltip-shop-mutant
+text_tooltip_shop_mutant_caption,Mutant frogs bring family traits you can’t find anywhere else!,js/ftue-tooltips.js tooltip-shop-mutant caption; Used by ftue-tooltips.js:tooltip-shop-mutant
+text_art_mutant,MUTANT,js/ftue-tooltips.js illustration label; Used by ftue-tooltips.js:tooltip-shop-mutant
+text_art_shop_only,SHOP ONLY!,js/ftue-tooltips.js illustration label; Used by ftue-tooltips.js:tooltip-shop-mutant
+text_art_special_family_traits,Special family traits!,js/ftue-tooltips.js illustration label; Used by ftue-tooltips.js:tooltip-shop-mutant
+text_art_only_in_the_shop,Only in the Shop,js/ftue-tooltips.js illustration label; Used by ftue-tooltips.js:tooltip-shop-mutant
+text_tooltip_shop_packs_title,Frog packs!,js/ftue-tooltips.js tooltip-shop-packs title; Used by ftue-tooltips.js:tooltip-shop-packs
+text_tooltip_shop_packs_button,Let’s go!,js/ftue-tooltips.js tooltip-shop-packs button; Used by ftue-tooltips.js:tooltip-shop-packs
+text_tooltip_shop_packs_caption,Grab packs of frogs to merge and grow your army!,js/ftue-tooltips.js tooltip-shop-packs caption; Used by ftue-tooltips.js:tooltip-shop-packs
+text_art_packs,PACKS,js/ftue-tooltips.js illustration label; Used by ftue-tooltips.js:tooltip-shop-packs
+text_art_packs_of_frogs_to_merge,Packs of frogs to merge!,js/ftue-tooltips.js illustration label; Used by ftue-tooltips.js:tooltip-shop-packs
+text_art_grow_your_army_faster,Grow your army faster,js/ftue-tooltips.js illustration label; Used by ftue-tooltips.js:tooltip-shop-packs
+text_art_0_b_left,0 && b.left,js/ftue-tooltips.js illustration label; Used by ftue-tooltips.js:onScreen
+text_art_edge_above_bottom,=EDGE && above.bottom,js/ftue-tooltips.js illustration label; Used by ftue-tooltips.js:at
+text_art_0_cx,=0 && cx,js/ftue-tooltips.js illustration label; Used by ftue-tooltips.js:frame
+text_art_0_cy,=0 && cy,js/ftue-tooltips.js illustration label; Used by ftue-tooltips.js:frame
+ftue_a8_frog_count_alt,10,"[PROPOSED-PLACEHOLDER 2026-09-10] A8's named alternative, to swap in if 5 clears too quickly. Open item 2 of the FTUE spec; not a second live value."
+ftue_a10_level2_frog_count,5,"[PROPOSED-PLACEHOLDER 2026-09-10] A10 'Have 5 frogs at level 2.' They must be simultaneous; four, or five including a level-1, does not complete it."
+ftue_a10_min_body_level,2,"[PROPOSED-PLACEHOLDER 2026-09-10] A10's body level, 'or above'. Split from the count so the objective text and the completion check read one pair of cells."
+ftue_a11_target_pond_tier,1,[RULED 2026-09-10] A11 'Upgrade your pond.' The tier the tutorial buys. Tier 0 is the boot state.
+ftue_a11_cost_tadpoles,0,"MIRROR, not authored here."
+ftue_a11_cost_wood,200,"MIRROR, not authored here."
+ftue_a11_cost_stone,200,"MIRROR, not authored here."
+ftue_a9_reward_share_of_a11_cost,0.8,"[PROPOSED-PLACEHOLDER 2026-09-10] THE DIAL. Wood and stone below are this share of the tier-1 upgrade cost. Retune here, not in the two cells under it."
+ftue_a9_reward_wood,160,DERIVED from the dial above; do not hand-edit.
+ftue_a9_reward_stone,160,DERIVED from the dial above; do not hand-edit.
+ftue_a9_reward_tadpoles,12,"[PROPOSED-PLACEHOLDER 2026-09-10] Tadpoles the A9 reward pays: enough to hatch the level-1 frogs A10 needs, on top of the boot stock. Absolute rather than derived."
+ftue_a9_reward_bones,0,"[RULED 2026-09-10] 0. Bones buy freeze, and freeze is out of the FTUE by decision."
+ftue_a9_reward_gems,0,[RULED 2026-09-10] 0. Gems are ruled out of expedition rewards workbook-wide.
+ftue_a9_reward_seeds,0,"[RULED 2026-09-10] 0, matching the ladder: seeds were closed 2026-09-04."
+ftue_a9_reward_flies,0,"[RULED 2026-09-10] 0, matching the ladder: flies are ruled out."
+ftue_a9_reward_equipment_drops,0,"[RULED 2026-09-10] 0. Equipment is not introduced in the FTUE, so a drop would land in UI that is still suppressed."
+ftue_a9_guaranteed_win,1,[RULED 2026-09-10] 1 = TRUE. 'The first expedition is a guaranteed win.'
+ftue_tadpoles_per_hatch_assumed,1,"[PROPOSED-PLACEHOLDER 2026-09-10 -- NO HOME IN THE WORKBOOK] The tadpole cost of ONE hatch, not authored anywhere: hatching is modelled as a RATE, never a price. The receipts below rest on it."
+a10_frogs_to_hatch,10,"DERIVED. Level-1 frogs the player must hatch to hold ftue_a10_level2_frog_count frogs at level ftue_a10_min_body_level, since a level-n frog is 2^(n-1) level-1 frogs merged."
+check_a10_tadpoles_covered,pass - the boot stock plus the A9 payout funds A10,"DERIVED receipt. Answers open item 3 of the FTUE spec, which warns the tutorial deadlocks if the stock cannot fund reaching the target."
+check_a9_short_of_a11,pass - A9 alone does not buy the upgrade,DERIVED receipt. 'The cost should be met by the A9 rewards PLUS a little ordinary play.'
+check_a9_covers_most_of_a11,pass - A9 covers at least half the upgrade,DERIVED receipt. The other side of the same sizing rule.
+text_pond_full,Pond full!,[RULED 2026-11-04] Bubble on the pond-count HUD pill when a ready hatch is refused because the pond is at its frog cap (same treatment as the no-tadpoles bubble). No tokens. Used by index.html hatch capacity guard via js/no-tadpole-note.js (QA batch item 7).

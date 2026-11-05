@@ -1,0 +1,246 @@
+                                                                     
+                                                                              
+                                                                           
+                                                                       
+                                                                       
+                                                                              
+
+                                                                          
+                                                                     
+                                                                             
+                                                                        
+
+:root {
+                                                                         
+                                                
+  --violet\/400-dialog: #8657f3;
+  --dialog\/body: #c5b0f0;
+  --glass-text-muted: #d3c4f5;
+                                                                          
+  --kit-lit-line: rgba(219, 214, 255, 0.4);
+                                                                         
+  --kit-title-stroke: var(--kit-ink-dark);
+}
+
+                                                                     
+                                                                         
+                                                                        
+                                                                         
+                                                                           
+                              
+                                                                        
+.kit-popup {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+  border: 5px solid var(--violet\/400-dialog);
+  border-radius: 22px;
+  background-color: var(--kit-surface);
+  background-image:
+    linear-gradient(color-mix(in srgb, var(--kit-surface) 47%, transparent), color-mix(in srgb, var(--kit-surface) 47%, transparent)),
+    url("../../assets/ui2/grimoire/bg_pattern.jpg");
+  background-size: auto, cover;
+  background-position: center;
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.45), inset 0 2px 0 var(--kit-lit-line);
+  font-family: var(--kit-font);
+  color: var(--kit-text);
+  animation: kit-popup-in 180ms ease-out both;
+}
+@keyframes kit-popup-in { from { opacity: 0; transform: scale(0.92); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .kit-popup { animation: none; } }
+.kit-popup__header {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 18px 54px 8px;
+  text-align: center;
+}
+.kit-popup__title {
+  margin: 0;
+  font-weight: 800;
+  font-size: 22px;
+  line-height: 1.1;
+  letter-spacing: 0.44px;
+  text-transform: uppercase;
+  color: var(--kit-text);
+  -webkit-text-stroke: 4px var(--kit-title-stroke);
+  paint-order: stroke fill;
+}
+.kit-popup__subtitle { margin: 0; font-weight: 700; font-size: 13px; line-height: 1.3; color: var(--kit-text-muted); }
+.kit-popup__close { position: absolute; top: 7px; right: 9px; z-index: 1; }
+.kit-popup__tabs { flex: 0 0 auto; padding: 0 18px 10px; }
+.kit-popup__body {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  padding: 0 18px 14px;
+}
+                                                                          
+.kit-popup__slot {
+  flex: 1 1 auto;
+  min-height: 120px;
+  border: 1.5px dashed var(--kit-text-muted);
+  border-radius: 14px;
+  background: var(--kit-ink-dark);
+}
+.kit-popup__footer {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 12px 18px 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+                                                                         
+                                                                    
+.kit-popup__cta { width: 100%; font-size: 26px; }
+
+                                                                     
+                                                                        
+                                                                    
+                                                                          
+                                                                        
+                                                                   
+                                                    
+                                                                        
+.kit-confirm {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 320px;
+  max-width: 100%;
+  padding: 14px 10px 10px;
+  border: 5px solid var(--violet\/400-dialog);
+  border-radius: 22px;
+  background-color: #6642db;
+  background-image:
+    linear-gradient(180deg, rgba(133, 97, 245, 0.47), rgba(102, 66, 219, 0.47)),
+    url("../../assets/ui2/grimoire/bg_pattern.jpg");
+  background-size: auto, cover;
+  background-position: center;
+  box-shadow: inset 0 2px 0 var(--kit-lit-line);
+  font-family: var(--kit-font);
+  color: var(--kit-text);
+  text-align: center;
+  isolation: isolate;
+}
+.kit-confirm::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: 17px;
+  background: url("../../assets/ui2/grimoire/active_texture.jpg") 0 0 / 141.92px 70.96px repeat;
+  mix-blend-mode: screen;
+  opacity: 0.12;
+  pointer-events: none;
+}
+.kit-confirm--danger { filter: drop-shadow(0 16px 20px rgba(0, 0, 0, 0.6)); }
+.kit-confirm__title {
+  margin: 0;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 1;
+  color: var(--kit-text);
+  white-space: nowrap;
+  -webkit-text-stroke: 4px var(--kit-title-stroke);
+  paint-order: stroke fill;
+}
+.kit-confirm__inner {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  padding: 16px 14px 14px;
+  border: 2px solid rgba(18, 10, 46, 0.6);
+  border-radius: 16px;
+  background: #1f1752;
+  overflow: hidden;
+}
+.kit-confirm__body { margin: 0; width: 100%; font-weight: 700; font-size: 14px; line-height: 1.5; color: var(--dialog\/body); }
+.kit-confirm__meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 10px;
+  border: 1px solid var(--glass-text-muted);
+  border-radius: 11px;
+  background: var(--kit-ink-dark);
+  font-weight: 800;
+  font-size: 15px;
+  line-height: 1;
+  color: var(--kit-text);
+}
+.kit-confirm__meta img { width: 16px; height: 16px; object-fit: contain; flex: 0 0 auto; }
+.kit-confirm__actions { display: flex; gap: 8px; width: 100%; padding-top: 4px; }
+                                                                     
+                                                   
+.kit-confirm__actions > .kit-btn { flex: 1 1 0; min-width: 0; font-size: 19px; }
+
+                                                                     
+                                                                      
+                                                                         
+                                                        
+                                                                        
+.kit-page-header {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 18px;
+  font-family: var(--kit-font);
+  color: var(--kit-text);
+}
+.kit-page-header__titles { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 2px; }
+.kit-page-header__title {
+  margin: 0;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 1;
+  color: var(--kit-text);
+  -webkit-text-stroke: 3px var(--kit-title-stroke);
+  paint-order: stroke fill;
+}
+.kit-page-header__subtitle {
+  margin: 0;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 1.3;
+  color: var(--kit-text-muted);
+}
+.kit-page-header__power {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 10px;
+  border: 1.5px solid var(--kit-feature-border);
+  border-radius: 999px;
+  background: var(--kit-gold-face-a);
+  font-weight: 800;
+  font-size: 17px;
+  line-height: 1;
+  color: var(--kit-text);
+  -webkit-text-stroke: 3px var(--kit-title-stroke);
+  paint-order: stroke fill;
+}
+.kit-page-header__power img { width: 15.14px; height: 17px; object-fit: contain; flex: 0 0 auto; }

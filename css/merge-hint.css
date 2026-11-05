@@ -1,0 +1,28 @@
+                                                                             
+                                                                              
+                                                                             
+                                                                         
+                                                              
+                                                                        
+.wander-frog .frog-art{ transition:filter .28s ease-out; }
+.wander-frog.merge-hint .frog-art{
+  filter:drop-shadow(0 0 2px rgba(255,250,215,.95)) drop-shadow(0 0 8px rgba(255,212,84,.78));
+}
+.wander-frog.merge-hint.merge-target .frog-art{
+  filter:drop-shadow(0 0 3px rgba(255,252,225,1)) drop-shadow(0 0 12px rgba(255,206,64,.95));
+}
+.wander-frog.merge-hint:not(.merge-target) .frog-art{
+  transform-origin:50% 92%;
+  animation:mergeHintHop 1.5s var(--mh-delay,0s) ease-in-out infinite;
+}
+                                                              
+@keyframes mergeHintHop{
+  0%,44%,100%{ translate:0 0; scale:1 1; }
+  6%{ translate:0 0; scale:1.07 .9; }
+  16%{ translate:0 -15%; scale:.94 1.08; }
+  25%{ translate:0 0; scale:1.1 .88; }
+  33%{ translate:0 0; scale:.97 1.04; }
+}
+@media (prefers-reduced-motion: reduce){
+  .wander-frog.merge-hint:not(.merge-target) .frog-art{ animation:none; }
+}

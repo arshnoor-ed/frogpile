@@ -1,0 +1,114 @@
+                                                                        
+                                                                          
+                                                                  
+                                       
+
+.ft-ticket { display: block; width: 100%; height: 100%; overflow: visible; }
+
+                                                                       
+#claim-modal .xr-reveal-row {
+  display: flex; align-items: stretch; justify-content: center; gap: 10px;
+  width: min(380px, 100%); margin-top: 28px;
+}
+#claim-modal .xr-reveal-row > .xr-reveal-btn { flex: 1 1 0; min-width: 0; width: auto; margin-top: 0; padding: 0 10px; font-size: 19px; }
+#claim-modal .xr-ticket-btn {
+  position: relative; flex: 0 0 auto; display: flex; align-items: center; gap: 8px;
+  padding: 0 16px 0 10px; text-align: left;
+}
+#claim-modal .xr-ticket-btn__icon { flex: none; width: 40px; height: 28px; transform: rotate(-10deg); filter: drop-shadow(0 2px 0 rgba(13, 10, 38, .45)); }
+#claim-modal .xr-ticket-btn__text { display: flex; flex-direction: column; align-items: flex-start; gap: 3px; line-height: 1; }
+#claim-modal .xr-ticket-btn__text b { font-weight: 800; font-size: 16px; white-space: nowrap; }
+#claim-modal .xr-ticket-btn__text small { font-weight: 800; font-size: 11px; opacity: .92; white-space: nowrap; }
+                                                                             
+#claim-modal .xr-ticket-btn.is-prompted { animation: ft-ticket-pulse 1.3s ease-in-out infinite; }
+                                                                                
+#claim-modal .xr-ticket-btn__try {
+  position: absolute; top: -13px; right: 6px; z-index: 2; padding: 3px 7px; pointer-events: none;
+  border: 2px solid var(--kit-ink-dark, #0d0a27); border-radius: 9px; background: #ffc83a;
+  font-weight: 800; font-size: 11px; line-height: 1; color: #3a2408; transform: rotate(6deg);
+}
+@keyframes ft-ticket-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 200, 58, .0), 0 0 14px 2px rgba(255, 120, 200, .55); }
+  50% { box-shadow: 0 0 0 6px rgba(255, 200, 58, .55), 0 0 22px 6px rgba(255, 120, 200, .8); }
+}
+@media (max-width: 360px) {
+  #claim-modal .xr-reveal-row > .xr-reveal-btn { font-size: 16px; }
+  #claim-modal .xr-ticket-btn { padding: 0 12px 0 8px; gap: 6px; }
+  #claim-modal .xr-ticket-btn__text b { font-size: 14px; }
+}
+
+                                                                                
+#claim-modal .xr-full { gap: 12px; }
+#claim-modal .xr-full .xr-title-text { margin: 0; }
+#claim-modal .xr-full .xr-piece__line { color: #fff; text-shadow: 0 2px 0 rgba(13, 10, 38, .7), 0 0 8px rgba(13, 10, 38, .6); }
+#claim-modal .xr-full__eyebrow {
+  display: flex; align-items: center; gap: 8px; margin: 0;
+  font-weight: 800; font-size: 13px; letter-spacing: .08em; color: #fff;
+}
+#claim-modal .xr-full__eyebrow .ft-ticket { width: 34px; height: 24px; transform: rotate(-10deg); }
+#claim-modal .xr-full__fam { margin: -4px 0 4px; font-weight: 800; font-size: 22px; line-height: 1; color: #ffe08a; text-shadow: 0 3px 0 rgba(13, 10, 38, .55); }
+#claim-modal .xr-full__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; width: min(360px, 100%); }
+#claim-modal .xr-full__piece {
+  box-sizing: border-box; min-width: 0; display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 8px 4px 8px;
+  border: 3px solid var(--kit-ink-dark, #0d0a27); border-radius: 18px;
+  background: radial-gradient(50% 50% at 50% 45%, #b6f27a 0%, #98d866 30%, #6fb44a 65%, #3e8a2a 100%);
+  box-shadow: 0 0 14px 2px rgba(255, 200, 58, .55);
+  animation: ft-piece-in .42s cubic-bezier(.2, 1.4, .4, 1) both;
+}
+#claim-modal .xr-full__piece--gear { background: radial-gradient(50% 50% at 50% 45%, #9fd8ff 0%, #6fb6f2 30%, #3f86d0 65%, #245a9e 100%); }
+#claim-modal .xr-full__piece:nth-child(2) { animation-delay: .08s; }
+#claim-modal .xr-full__piece:nth-child(3) { animation-delay: .16s; }
+#claim-modal .xr-full__piece:nth-child(4) { animation-delay: .24s; }
+#claim-modal .xr-full__piece:nth-child(5) { animation-delay: .32s; }
+#claim-modal .xr-full__piece:nth-child(6) { animation-delay: .40s; }
+#claim-modal .xr-full__piece:nth-child(n+7) { animation-delay: .48s; }
+#claim-modal .xr-full__art { width: 74px; height: 74px; display: grid; place-items: center; }
+#claim-modal .xr-full__name {
+  max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  font-weight: 800; font-size: 12px; line-height: 1.1; color: #fff; text-shadow: 0 2px 0 rgba(13, 10, 38, .6);
+}
+#claim-modal .xr-full__slot { font-weight: 800; font-size: 10px; line-height: 1; color: rgba(13, 10, 38, .7); text-transform: uppercase; letter-spacing: .04em; }
+@keyframes ft-piece-in { from { opacity: 0; transform: scale(.6) translateY(10px); } to { opacity: 1; transform: none; } }
+
+                                                                
+#claim-modal .xr-newtrait--ticket .xr-newtrait__ticket { width: 72px; height: 50px; transform: rotate(-8deg); }
+
+                                                                                                  
+#claim-modal .xr-full__trophy { font-size: 24px; line-height: 1; filter: drop-shadow(0 2px 0 rgba(13, 10, 38, .6)); }
+#claim-modal .xr-newtrait--prize .xr-newtrait__trophy { display: grid; place-items: center; width: 72px; height: 72px; font-size: 50px; line-height: 1; transform: rotate(-8deg); }
+#claim-modal .xr-newtrait--prize .xr-slot { position: relative; }
+#claim-modal .xr-newtrait--prize .xr-slot > .eq-bpmark { right: -6%; bottom: -6%; width: 50%; min-width: 0; }
+
+                                                        
+#claim-modal.xr-trait--reveal > .kit-reward-collect.xr-collect--row { flex-direction: row; align-items: stretch; justify-content: center; }
+#claim-modal .xr-collect--row > .xr-continue { flex: 1 1 0; min-width: 0; width: auto; }
+#claim-modal .xr-autorerun { flex: 1 1 0; min-width: 0; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 0 12px; }
+#claim-modal .xr-autorerun .ax-icon { width: 22px; height: 22px; flex: none; }
+#claim-modal .xr-autorerun__text { display: flex; flex-direction: column; align-items: flex-start; gap: 3px; line-height: 1; text-align: left; }
+#claim-modal .xr-autorerun__text b { font-weight: 800; font-size: 16px; white-space: nowrap; }
+#claim-modal .xr-autorerun__text small { display: inline-flex; align-items: center; gap: 4px; font-weight: 800; font-size: 11px; opacity: .92; white-space: nowrap; }
+#claim-modal .xr-autorerun-on {
+  display: flex; align-items: center; justify-content: center; gap: 6px; margin: 0;
+  font-weight: 800; font-size: 13px; line-height: 1.2; color: #7cf08f; text-align: center;
+}
+#claim-modal .xr-autorerun-on .ax-icon { width: 16px; height: 16px; flex: none; animation: axSpin 2.4s linear infinite; }
+
+                                                                             
+.fp-shop__art > .fp-shop__ticket {
+  left: calc(30 * var(--u)); top: calc(48 * var(--u));
+  width: calc(140 * var(--u)); height: calc(96 * var(--u));
+  transform: rotate(-12deg);
+  filter: drop-shadow(0 0 6px rgba(255, 200, 58, .9)) drop-shadow(0 4px 0 rgba(13, 10, 38, .5));
+}
+.fp-shop__stat-icon > .ft-ticket { width: 22px; height: 16px; }
+
+@media (prefers-reduced-motion: reduce) {
+  #claim-modal .xr-ticket-btn.is-prompted, #claim-modal .xr-full__piece, #claim-modal .xr-autorerun-on .ax-icon { animation: none; }
+}
+
+                                                                            
+                                                                                
+#ftue-tooltip .ftt-ticket-art .ftt-later-then .ft-ticket {
+  position: absolute; left: 50%; top: 12%; width: 96%; height: auto; aspect-ratio: 64 / 44;
+  transform: translateX(-50%) rotate(-12deg); filter: drop-shadow(0 3px 0 rgba(42, 29, 14, .35));
+}

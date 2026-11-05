@@ -1,0 +1,122 @@
+                                                                     
+                                                                
+                                                 
+
+                                                                        
+                                                                      
+                                                                     
+                                                                     
+                                                                     
+                                                   
+                                                                        
+
+                                                                       
+                                                                       
+                                                                         
+:root {
+  --kit-gold-gloss-a: #fff2b3; --kit-gold-gloss-b: #ffe58a;
+  --kit-gold-face-a: #ffd43c;  --kit-gold-face-b: #fdc430;
+  --kit-gold-lip-a: #f2861f;   --kit-gold-lip-b: #e8701b;
+
+  --kit-green-gloss-a: #a3ee6e; --kit-green-gloss-b: #86e05b;
+  --kit-green-face-a: #6cd043;  --kit-green-face-b: #5cc13b;
+  --kit-green-lip-a: #30985a;   --kit-green-lip-b: #26834b;
+}
+
+                                                                          
+                                                                    
+                                                                          
+                                                                           
+                                             
+.kit-btn { line-height: 1; }
+.kit-btn--tag { height: 34px; font-size: 15px; padding: 0 10px; }
+.kit-btn--tag.kit-shape-pill { border-radius: 16px; }
+.kit-btn--sm { font-size: 17px; padding: 0 16px; }
+.kit-btn--md { font-size: 19px; padding: 0 18px; }
+.kit-btn--lg { font-size: 24px; padding: 0 24px; }
+
+                                                                       
+                                                                      
+                                                                            
+                                                                          
+                                                                         
+                                                                           
+                                                                         
+                                                                 
+                                                                          
+.kit-btn:is(.kit-btn--gold, .kit-btn--green):is(.kit-btn--tag, .kit-btn--sm, .kit-btn--md, .kit-btn--lg)::before,
+.kit-btn:is(.kit-btn--danger, .kit-btn--pink, .kit-btn--bonus, .kit-btn--neutral):is(.kit-btn--sm, .kit-btn--md, .kit-btn--lg)::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: calc(-1 * var(--kit-outline-w, 2px));
+  top: calc(-1 * var(--kit-outline-w, 2px));
+  height: calc(0.55 * (100% + 2 * var(--kit-outline-w, 2px)));
+  aspect-ratio: 32.3 / 18.7;
+  background: url("../../assets/ui2/grimoire/btn_shine.svg") no-repeat 0 0 / 100% 100%;
+  pointer-events: none;
+}
+.kit-btn.kit-btn--noshine::before { content: none; }
+
+                                                                        
+                                                     
+.kit-btn__icon {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+.kit-btn--tag .kit-btn__icon { width: 18px; height: 18px; }
+.kit-btn--sm .kit-btn__icon { width: 22px; height: 22px; }
+.kit-btn--lg .kit-btn__icon { width: 28px; height: 28px; }
+.kit-btn__icon img { width: 100%; height: 100%; object-fit: contain; pointer-events: none; }
+
+                                                                                     
+.kit-close {
+  position: relative;
+  box-sizing: border-box;
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  transition: transform 120ms cubic-bezier(.34, 1.56, .64, 1), filter 120ms ease;
+}
+.kit-close__img { display: block; width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
+
+                                                                      
+.kit-back {
+  box-sizing: border-box;
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 2px solid var(--kit-frame-rim-lo);
+  border-radius: 12px;
+  background: var(--kit-surface);
+  color: var(--kit-text);
+  font-family: var(--kit-font);
+  font-weight: 800;
+  font-size: 48px;
+  line-height: 1;
+  cursor: pointer;
+  transition: transform 120ms cubic-bezier(.34, 1.56, .64, 1), filter 120ms ease;
+}
+.kit-back__glyph { display: block; line-height: 1; pointer-events: none; }
+
+                                                              
+.kit-close:not(:disabled):active, .kit-back:not(:disabled):active { transform: translateY(2px); filter: brightness(0.96); }
+.kit-close:disabled, .kit-back:disabled { filter: saturate(0.35) brightness(0.72); cursor: default; }
+.kit-close:focus-visible, .kit-back:focus-visible { outline: 3px solid #fff0a3; outline-offset: 3px; border-radius: 12px; }
+@media (prefers-reduced-motion: reduce) {
+  .kit-close, .kit-back { transition: none; }
+  .kit-close:active, .kit-back:active { transform: none; }
+}

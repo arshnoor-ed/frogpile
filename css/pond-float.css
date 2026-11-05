@@ -1,0 +1,6 @@
+                                                                             
+                                                                         
+.lilypad[data-float-period]{animation:none;}
+.lilypad.ready[data-float-period]{animation:padPulse 1.2s infinite;}
+.pond-log[data-float-period]{animation:none;}
+.g-skull[data-float-period] .skull-bob{animation:none;}

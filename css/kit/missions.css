@@ -1,0 +1,459 @@
+                                                                     
+                                                                       
+                                                                         
+                                                                                
+                                                                            
+                                                                              
+                                                                        
+:root {
+                                                                              
+  --frog\/well: rgba(60, 44, 122, 0.55);
+                                                                       
+                                                        
+  --kit-row-lip: rgba(219, 214, 255, 0.4);
+}
+
+                                                                     
+                                                                         
+                                       
+                                                                        
+.kit-mrow {
+  --kit-mrow-hi: var(--kit-frame-rim-lo);
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 384px;
+  max-width: 100%;
+  border: 2px solid var(--kit-frame-rim-lo);
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--kit-violet-bg);
+  font-family: var(--kit-font);
+}
+                                                                                
+.kit-mrow::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  border-radius: inherit;
+  box-shadow: inset 0 2px 0 var(--kit-mrow-hi), inset 0 4px 0 var(--kit-row-lip);
+  pointer-events: none;
+}
+.kit-mrow--claim {
+  --kit-mrow-hi: var(--kit-green-gloss-a);
+  border-color: var(--kit-green-gloss-a);
+  background: var(--kit-green-face-a);
+}
+                                                                   
+.kit-mrow--claim::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: url(../../assets/ui2/kit/art/star-texture.jpg) 0 0 / 248.36px 124.18px;
+  mix-blend-mode: overlay;
+  opacity: 0.4;
+  pointer-events: none;
+}
+.kit-mrow__main {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 10px 8px 14px;
+}
+.kit-mrow__title {
+  flex: 1 1 0;
+  min-width: 0;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 1;
+  color: var(--kit-text);
+}
+                                                                             
+                                                                                    
+.kit-mrow--go .kit-mrow__title { -webkit-text-stroke: 3.5px var(--kit-ink-dark); paint-order: stroke fill; }
+.kit-mrow--claim .kit-mrow__title { color: var(--kit-gold-ink); }
+.kit-mrow__reward {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 4px;
+  flex: 0 0 auto;
+  padding: 5px 8px;
+  border-radius: 9px;
+  background: var(--kit-ink-dark);
+}
+.kit-mrow__reward .kit-icon, .kit-mrow__reward img { width: 20px; height: 20px; object-fit: contain; }
+.kit-mrow__reward b { font-weight: 800; font-size: 22px; line-height: 1; color: var(--kit-text); white-space: nowrap; }
+                                                                           
+                                                                         
+.kit-mrow__act.kit-btn {
+  flex: 0 0 auto;
+  width: 88px;
+  height: 34px;
+  min-height: 0;
+  padding: 0 10px;
+  font-size: 17px;
+  line-height: 1;
+  border-radius: 16px;
+  --kit-outline-w: 2px;
+}
+                                                                                   
+.kit-mrow__act--go.kit-btn--violet { background-color: var(--kit-surface-bar); }
+.kit-mrow__shine {
+  position: absolute;
+  left: -2px;
+  top: -2px;
+  width: 32.3px;
+  height: 18.7px;
+  pointer-events: none;
+}
+.kit-mrow__progress {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 1px 0;
+  background: var(--kit-ink-dark);
+  font-weight: 800;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: 1.08px;
+  text-transform: uppercase;
+  color: var(--kit-text);
+  white-space: nowrap;
+}
+.kit-mrow--claim .kit-mrow__progress { background: var(--kit-green-gloss-a); }
+
+                                                                     
+                                                                    
+                                                                         
+                                                                         
+                                                                           
+                                                                        
+.kit-plate.kit-plate--art {
+  display: block;
+  width: 400px;
+  max-width: 100%;
+  height: 94px;
+  padding: 0;
+  border: 3px solid var(--kit-ink-dark);
+  border-radius: 18px;
+  overflow: hidden;
+  isolation: isolate;
+  background: #f8eedf;
+  box-shadow: 0 4px 0 rgba(13, 10, 38, 0.4);
+  color: var(--kit-gold-ink);
+  text-align: center;
+  appearance: none;
+}
+button.kit-plate--art { cursor: pointer; }
+div.kit-plate--art, span.kit-plate--art { cursor: default; }
+                                        
+.kit-plate--art::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url(../../assets/ui2/kit/art/star-texture.jpg) 0 0 / 248.36px 124.18px;
+  mix-blend-mode: overlay;
+  opacity: 0.4;
+  pointer-events: none;
+}
+                                       
+.kit-plate--art::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  border-radius: inherit;
+  box-shadow: inset 0 3px 0 #000, inset 0 5px 0 var(--kit-row-lip);
+  pointer-events: none;
+}
+.kit-plate__band {
+  position: absolute;
+  left: -3px;
+  right: -3px;
+  top: -3px;
+  height: 50px;
+  background: linear-gradient(180deg, #ffdd45, #fdc72e);
+  pointer-events: none;
+}
+.kit-plate__band::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url(../../assets/ui2/kit/art/star-texture.jpg) 0 0 / 248.36px 124.18px;
+  mix-blend-mode: overlay;
+  opacity: 0.35;
+}
+                                                         
+.kit-plate__band::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 49px;
+  height: 3px;
+  background: #e9a11c;
+}
+.kit-plate__halftone { position: absolute; right: 1px; top: -1px; width: 120px; height: 46px; pointer-events: none; }
+.kit-plate__panel { position: absolute; left: -3.5px; top: -3.5px; width: 105.18px; height: 95px; max-width: none; pointer-events: none; }
+.kit-plate__edge { position: absolute; left: 69.57px; top: -3.46px; width: 32.86px; height: 94.92px; max-width: none; pointer-events: none; }
+.kit-plate__mega {
+  position: absolute;
+  left: 3px;
+  top: 14.5px;
+  width: 80px;
+  height: 59px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+.kit-plate__mega img { width: 100%; height: 100%; object-fit: contain; }
+.kit-plate__body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 0 11px 0 107px;
+  padding-bottom: 4px;
+  box-sizing: border-box;
+}
+.kit-plate__task {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  font-weight: 800;
+  font-size: 17px;
+  line-height: 1.05;
+  color: var(--kit-gold-ink);
+  overflow: hidden;
+}
+.kit-plate__meterrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 28px;
+  margin-top: auto;
+  overflow: hidden;
+}
+.kit-plate__meter {
+  position: relative;
+  flex: 1 1 0;
+  min-width: 1px;
+  height: 14px;
+  box-sizing: border-box;
+  border: 1.5px solid var(--kit-ink-dark);
+  border-radius: 7px;
+  background: #1e1a4a;
+  overflow: hidden;
+}
+.kit-plate__meterfill {
+  display: block;
+  height: 100%;
+  border-radius: 7px;
+  background: #ffc83a;
+  box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.45);
+}
+.kit-plate__tally, .kit-plate__prize b {
+  font-weight: 800;
+  font-size: 18px;
+  line-height: normal;
+  color: #2b208f;
+  white-space: nowrap;
+}
+.kit-plate__prize { display: inline-flex; align-items: center; gap: 3px; flex: 0 0 auto; }
+.kit-plate__prize .kit-icon, .kit-plate__prize img { width: 24px; height: 24px; object-fit: contain; }
+
+                                                                     
+                                                                       
+                                                                    
+                           
+                                                                        
+.kit-uprow {
+  --kit-uprow-hi: var(--kit-ink-dark);
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-sizing: border-box;
+  width: 392px;
+  max-width: 100%;
+  padding: 12px;
+  border: 2px solid var(--kit-ink-dark);
+  border-radius: 16px;
+  background: var(--kit-violet-bg);
+  font-family: var(--kit-font);
+}
+.kit-uprow::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 2px 0 var(--kit-uprow-hi), inset 0 4px 0 var(--kit-row-lip);
+  pointer-events: none;
+}
+.kit-uprow--new { --kit-uprow-hi: var(--kit-feature-border); border-color: var(--kit-feature-border); }
+.kit-uprow__art {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 64px;
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  background: var(--frog\/well);
+  overflow: hidden;
+}
+.kit-uprow__art img { width: 52px; height: 52px; object-fit: contain; }
+.kit-uprow__info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  flex: 1 1 0;
+  min-width: 1px;
+  overflow: hidden;
+}
+.kit-uprow__titlerow { display: flex; align-items: center; gap: 6px; }
+.kit-uprow__name { font-weight: 800; font-size: 16px; line-height: 1; color: var(--kit-text); white-space: nowrap; }
+.kit-uprow__tag {
+  padding: 2px 6px;
+  border-radius: 6px;
+  background: var(--kit-pink-face-a);
+  font-weight: 800;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: 1.08px;
+  text-transform: uppercase;
+  color: var(--kit-text);
+  white-space: nowrap;
+}
+.kit-uprow__desc {
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--kit-text-muted);
+  white-space: pre;
+}
+.kit-uprow__lv { color: var(--kit-text); }
+.kit-uprow__costs { display: flex; align-items: flex-start; gap: 6px; }
+                                                                           
+                                                                          
+                                                        
+.kit-uprow__costs .kit-cost {
+  gap: 5px;
+  padding: 4px 9px 4px 5px;
+  border: 1.5px solid var(--kit-bonus-gloss-a);
+  border-radius: 9px;
+  background: var(--kit-green-face-a);
+  font-size: 16px;
+  line-height: 1;
+  color: var(--kit-bonus-ink);
+}
+.kit-uprow__costs .kit-cost--short {
+  border-color: var(--kit-danger-gloss-a);
+  background: var(--kit-danger-lip-a);
+  color: var(--kit-pink-ink);
+}
+.kit-uprow__costs .kit-cost b { font-weight: 800; }
+.kit-uprow__costs .kit-cost .kit-icon, .kit-uprow__costs .kit-cost img { width: 15px; height: 15px; object-fit: contain; }
+                                                                           
+                                               
+.kit-uprow__act.kit-btn {
+  flex: 0 0 auto;
+  width: 120px;
+  padding: 0 16px;
+  font-size: 19px;
+  line-height: 1;
+  overflow: hidden;
+}
+                                                                                 
+.kit-uprow__act.kit-btn--gold::after { inset: -2px; box-shadow: 0 0 12px rgba(252, 199, 64, 0.55); }
+.kit-uprow__act.kit-btn--gold { overflow: visible; }
+                                                                  
+                                                     
+.kit-uprow__act.kit-btn:disabled { filter: none; }
+.kit-uprow__shine {
+  position: absolute;
+  left: -2px;
+  top: -2px;
+  width: 45.6px;
+  height: 26.4px;
+  pointer-events: none;
+}
+
+                                                                     
+                                                           
+                                                                        
+.kit-timer {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  box-sizing: border-box;
+  width: 120px;                                                                        
+  height: 38px;
+  padding: 0 14px 0 20px;
+  border: 2px solid var(--kit-ink-dark);
+  border-radius: 13px;
+  overflow: hidden;
+  background-image: linear-gradient(180deg,
+    var(--kit-gold-gloss-a) 0%, var(--kit-gold-gloss-b) 6%,
+    var(--kit-gold-face-a) 6%, var(--kit-gold-face-b) 89.5%,
+    var(--kit-gold-lip-a) 89.5%, var(--kit-gold-lip-b) 100%);
+  box-shadow: 0 0 0 3px var(--kit-gold-glow);
+  font-family: var(--kit-font);
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 1;
+  color: var(--kit-gold-ink);
+  white-space: nowrap;
+}
+.kit-timer__shine { position: absolute; left: -2px; top: -2px; width: 26.6px; height: 19px; pointer-events: none; }
+.kit-timer__clock { position: relative; flex: 0 0 24px; width: 24px; height: 24px; }
+.kit-timer__clock img { position: absolute; left: -0.5px; top: -1.5px; width: 25px; height: 26px; max-width: none; }
+
+                                                                     
+                                                                 
+                                                                        
+.kit-yield {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  box-sizing: border-box;
+  min-width: 140px;
+  height: 36px;
+  padding: 0 10px 0 8px;
+  border: 1.5px solid #332e78;
+  border-radius: 12px;
+  background: #17143f;
+  box-shadow: inset 0 2px 0 #0b0926;
+  font-family: var(--kit-font);
+  font-weight: 800;
+  line-height: 1;
+  white-space: nowrap;
+}
+.kit-yield .kit-icon, .kit-yield__icon { width: 22px; height: 22px; object-fit: contain; flex: 0 0 auto; }
+.kit-yield__amount { font-size: 19px; color: #ffc83a; }
+.kit-yield__unit { font-size: 14px; color: #9e93e8; }
+
+                                                                     
+                                                          
+                                                                        
+.kit-chevron { display: inline-block; flex: 0 0 auto; width: 28px; height: 40px; vertical-align: middle; }
+button.kit-chevron {
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+.kit-chevron img { display: block; width: 100%; height: 100%; }
+.kit-chevron:focus-visible { outline: 3px solid var(--kit-gold-face-a); outline-offset: 2px; border-radius: 8px; }

@@ -1,0 +1,57 @@
+                                                                  
+
+                                                                          
+                                                                       
+#claim-modal .xr-aura-remind {
+  position: relative;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 340px;
+  margin-top: clamp(18px, 4vh, 36px);
+  animation: xr-aura-in .5s cubic-bezier(.2, .9, .3, 1) .75s both;
+}
+                                                                                      
+@keyframes xr-aura-in {
+  0% { opacity: 0; transform: translateY(16px) scale(.9); }
+  65% { opacity: 1; transform: translateY(0) scale(1.03); }
+  100% { opacity: 1; transform: none; }
+}
+#claim-modal .xr-aura-remind__q {
+  margin: 0;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 1.1;
+  color: #fff;
+  -webkit-text-stroke: 4px var(--kit-title-stroke, #1b0f45);
+  paint-order: stroke fill;
+}
+#claim-modal .xr-aura-remind__art {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 824 / 449;
+  filter: drop-shadow(0 4px 0 rgba(13, 10, 38, .55));
+}
+@media (prefers-reduced-motion: reduce) {
+  #claim-modal .xr-aura-remind { animation: none; }
+}
+                                                                          
+                                                                      
+@media (max-height: 640px) {
+  #claim-modal.kit-reward-fullscreen:has(> .xr-aura-remind) { --xr-top: 24px; }
+  #claim-modal .xr-aura-remind { max-width: 250px; margin-top: 12px; gap: 6px; }
+  #claim-modal .xr-aura-remind__q { font-size: 17px; }
+}
+
+                                                                           
+                                                                             
+#ftue-tooltip .ftt-auto-set > span.ftt-aura-4th {
+  border-color: #2a1d0e;
+  background: #fffbe8;
+  box-shadow: 0 0 0 3px #ffb21c, 0 0 12px 4px #fff3a0;
+}

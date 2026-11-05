@@ -1,0 +1,42 @@
+                                                                                                  
+                                                                                                 
+                                                                                                  
+                             
+#ftue-crop .crt-prompt{left:50%;top:46px;z-index:7;width:max-content;max-width:80%;
+  padding:7px 16px;border-radius:18px;border:2px solid rgba(255,255,255,.6);
+  background:rgba(10,12,16,.78);color:#fff;font:700 14px/1.2 'Baloo 2',sans-serif;
+  text-align:center;box-shadow:0 3px 10px rgba(0,0,0,.5);
+  transform:translateX(-50%);animation:crtPromptIn .35s ease-out both, crtPromptBob 1.8s ease-in-out .35s infinite;}
+#ftue-crop .crt-prompt b{color:#ffd24a;font-weight:800;}
+@keyframes crtPromptIn{from{opacity:0;transform:translate(-50%,8px) scale(.94);}to{opacity:1;transform:translate(-50%,0) scale(1);}}
+@keyframes crtPromptBob{0%,100%{transform:translate(-50%,0);}50%{transform:translate(-50%,-3px);}}
+@media (prefers-reduced-motion:reduce){ #ftue-crop .crt-prompt{animation:none;} }
+
+                                                                                                  
+                                                                                                
+                             
+#ftue-crop .crt-crack{inset:0;z-index:7;}
+#ftue-crop .crt-crack svg{width:100%;height:100%;display:block;overflow:visible;}
+#ftue-crop .crt-crack path{fill:none;stroke-linejoin:round;stroke-linecap:round;
+  stroke-dasharray:1;stroke-dashoffset:1;animation:crtCrackDraw .22s cubic-bezier(.2,.8,.3,1) forwards;}
+#ftue-crop .crt-crack .cr-under path{stroke:rgba(0,0,0,.55);stroke-width:4.5;}
+#ftue-crop .crt-crack .cr-line path{stroke:rgba(240,250,255,.95);stroke-width:1.6;}
+@keyframes crtCrackDraw{to{stroke-dashoffset:0;}}
+#ftue-crop .crt-off{inset:0;z-index:9;}
+#ftue-crop .crt-off i{position:absolute;left:0;right:0;display:block;}
+#ftue-crop .crt-off .co-top,#ftue-crop .crt-off .co-bot{height:0;background:#000;
+  animation:crtOffShut var(--off-ms,.65s) cubic-bezier(.7,0,.3,1) forwards;}
+#ftue-crop .crt-off .co-top{top:0;}
+#ftue-crop .crt-off .co-bot{bottom:0;}
+#ftue-crop .crt-off .co-line{top:50%;height:3px;margin-top:-1.5px;background:#fff;opacity:0;
+  box-shadow:0 0 14px 4px rgba(200,240,255,.9);animation:crtOffLine var(--off-ms,.65s) ease-in forwards;}
+@keyframes crtOffShut{0%{height:0;}45%{height:calc(50% - 1.5px);}100%{height:51%;}}
+@keyframes crtOffLine{0%,40%{opacity:0;transform:scaleX(1);}46%{opacity:1;transform:scaleX(1);}
+  82%{opacity:1;transform:scaleX(.015);}100%{opacity:0;transform:scaleX(0);}}
+body.ftue-tv-off #ftue-commentator, body.ftue-tv-off #ftue-crop .crt-prompt, body.ftue-tv-off #tut-pointer{opacity:0;transition:opacity .3s ease;}
+
+                                                                                                
+                                                                                      
+body.ftue-tv .pond-log, body.ftue-tv .g-rock, body.ftue-tv .g-grass, body.ftue-tv .g-skull,
+body.ftue-tv .lilypad:not(.egg-pad), body.ftue-tv .pond-mark, body.ftue-tv .wander-butterfly,
+body.ftue-tv .gacha-tadpole{visibility:hidden;}

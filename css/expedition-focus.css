@@ -1,0 +1,7 @@
+                                                                                
+                                                                                          
+#e2-focus-mask { position:fixed; inset:0; z-index:940; pointer-events:none; }
+.e2-focus-ring { position:absolute; box-sizing:border-box; border:3px solid #ffd43c; border-radius:50%; box-shadow:0 0 0 200vmax rgba(9,5,24,.66); }
+.e2-focus-lock { position:fixed; display:grid; place-items:center; width:24px; height:24px; border:2px solid #f3ddb0; border-radius:50%; background:#403b32; box-shadow:0 2px 4px #0009; font-size:14px; line-height:1; }
+.e2-focus-lock[hidden] { display:none; }
+.e2-focus-locked { cursor:not-allowed; }

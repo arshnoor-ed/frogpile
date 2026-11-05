@@ -1,0 +1,210 @@
+                                                                     
+                                                                              
+                                                                              
+                                                                            
+                                                                           
+                                                                       
+                                                                
+
+                                                                      
+                                                         
+                                                                           
+                                                                           
+                                                                           
+                                                                       
+                                                                        
+
+:root {
+                                                                             
+                                            
+  --fp-dock-label: #f6f0e4;
+  --fp-dock-outline: #1e1e2a;
+                                                                         
+                                                           
+  --kit-dock-tile: #46456b;
+}
+
+                                                                     
+                                                                 
+                                                                           
+                                                 
+                                                                         
+                                                                      
+                                                                            
+                                                       
+                                                                        
+.kit-dock__item {
+  flex: 0 0 80px;
+  width: 80px;
+  height: 80px;
+  min-height: 0;
+  justify-content: flex-end;
+  gap: 0;
+  padding: 0 0 4px;
+  border-radius: 0;
+  color: inherit;
+  transition: none;
+}
+.kit-dock__iconwrap {
+  width: 72px;
+  max-width: 72px;
+  height: 72px;
+  font-size: 44px;
+}
+.kit-dock__item.is-active {
+  transform: none;
+  background: transparent;
+  padding-bottom: 6px;
+}
+.kit-dock__item.is-active .kit-dock__iconwrap {
+  position: absolute;
+  left: -6px;
+  top: -30px;
+  width: 92px;
+  max-width: 92px;
+  height: 92px;
+  transform: none;
+  filter: none;
+}
+.kit-dock__label {
+  position: relative;
+  max-width: none;
+  overflow: visible;
+  text-overflow: clip;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--fp-dock-label);
+  text-shadow: none;
+}
+.kit-dock__item:focus-visible { outline: 3px solid #fff0a3; outline-offset: 2px; border-radius: 16px; }
+
+                                                                     
+                                                                  
+                                                                         
+                                                                       
+                                                                        
+                                                                           
+                                                                           
+                                                      
+                                                                        
+                                                                        
+                                                             
+                                                                        
+.kit-dock {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  width: 416px;
+  max-width: 100%;
+  height: 84px;
+  align-items: flex-end;
+  gap: 2px;
+  padding: 0 4px;
+  border: 3px solid #0b0914;
+  border-radius: 26px;
+  background: var(--kit-dock-tile);
+  box-shadow: inset 0 2px 0 rgba(219, 214, 255, 0.4);
+  isolation: isolate;
+}
+.kit-dock::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 23px;
+  background: url("../../assets/ui2/grimoire/active_texture.jpg") 0 0 / 124.18px 62.09px repeat;
+  mix-blend-mode: screen;
+  opacity: 0.22;
+  pointer-events: none;
+}
+.kit-dock .kit-dock__label { font-size: 15px; }
+.kit-dock__item + .kit-dock__item::before {
+  left: -2px;
+  top: auto;
+  bottom: 0;
+  width: 2px;
+  height: 40px;
+  background: var(--fp-dock-outline);
+}
+
+                                                                     
+                                                                        
+                                                                    
+                                                                          
+                                 
+                                                                         
+                                                
+                                                                        
+.kit-chip {
+  position: relative;
+  gap: 8px;
+  height: 38px;
+  padding: 0 4px 0 8px;
+  border-radius: 19px;
+  border: 2px solid var(--kit-ink-dark);
+  background: var(--surface\/pond-chrome, #100c28);                                                       
+  box-shadow: inset 0 2px 0 rgba(219, 214, 255, 0.4);
+}
+.kit-chip__level {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0;
+  color: var(--kit-text-muted);
+}
+.kit-chip__eyebrow { font-size: 12px; letter-spacing: 1.08px; text-transform: uppercase; }
+.kit-chip__lv { font-size: 15px; color: var(--kit-text); }
+                                                                        
+.kit-chip--muted-level .kit-chip__lv { color: var(--kit-text-muted); }
+.kit-chip__icon { flex: 0 0 auto; display: flex; align-items: center; justify-content: center; width: 22px; height: 22px; }
+.kit-chip__icon img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.kit-chip__value { font-weight: 800; font-size: 17px; line-height: 1; color: var(--kit-text); white-space: nowrap; }
+
+                                                                     
+                                                                          
+                                                                           
+                              
+                                                                           
+                                                                        
+.kit-gear {
+  position: relative;
+  flex: 0 0 auto;
+  display: block;
+  width: 38px;
+  height: 38px;
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 19px;
+  background: none;
+  font-size: 0;
+  cursor: pointer;
+  transition: transform 120ms cubic-bezier(.34, 1.56, .64, 1);
+}
+.kit-gear::before { content: ""; position: absolute; inset: -5px; border-radius: 50%; }
+.kit-gear img { display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 19px; pointer-events: none; }
+.kit-gear:active { transform: translateY(1px) scale(0.96); }
+.kit-gear:focus-visible { outline: 3px solid #fff0a3; outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) { .kit-gear { transition: none; } .kit-gear:active { transform: none; } }
+
+                                                                     
+                                                                         
+                                                                     
+                                                                       
+                                                                         
+                                             
+                                                                        
+.kit-hud-top__bar {
+  box-sizing: border-box;
+  height: 54px;
+  min-height: 0;
+  gap: 4px;
+  padding: 0 8px;
+  justify-content: flex-start;
+  font-family: var(--kit-font);
+}
+.kit-hud-top__bar--screen { gap: 6px; padding: 0 12px; justify-content: flex-end; }
+.kit-hud-top__bar > .kit-rail { gap: inherit; }
+.kit-hud-top__bar > * { flex-shrink: 0; }

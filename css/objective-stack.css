@@ -1,0 +1,77 @@
+                                                                                    
+.objective-stack { --pu: min(1px, calc((100vw - 24px) / 400)); --os-offset: calc(71 * var(--pu)); position: fixed; top: calc(50px + env(safe-area-inset-top)); left: 50%; transform: translateX(-50%); width: calc(400 * var(--pu)); height: calc(94 * var(--pu)); z-index: 96; isolation: isolate; pointer-events: none; font-family: var(--kit-font); }
+.objective-stack > .tutorial-tip.task-plate { position: absolute; top: 0; margin: 0; }
+.objective-stack > .os-active { z-index: 2; }
+.objective-stack > .tutorial-tip.task-plate.os-next { z-index: 1; top: var(--os-offset); filter: saturate(.35) brightness(.62) !important; }
+                                                                            
+                                                                              
+                                                                            
+                                                                           
+                                                                         
+                                                                            
+                                                                            
+                                                                          
+                                                                            
+                                                                            
+                                                                       
+                                                                           
+                                                                            
+.objective-stack .tutorial-tip.task-plate .tp-label {
+  flex-direction: column; align-items: flex-start; justify-content: flex-start !important; gap: calc(1 * var(--pu));
+  text-align: left !important; font: 800 calc(14 * var(--pu)) / 1.15 var(--kit-font) !important;
+  position: absolute !important; left: calc(90 * var(--pu)) !important; right: calc(10 * var(--pu)) !important;
+  top: calc(5 * var(--pu)) !important; height: calc(54 * var(--pu)) !important;
+}
+                                                                              
+                                                                            
+                                                                           
+                                                                           
+                                                                         
+.objective-stack .tutorial-tip.task-plate .tp-label > span:last-child {
+  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; width: 100%;
+}
+.objective-stack .tutorial-tip.task-plate .os-step { font-size: calc(12 * var(--pu)); flex: 0 0 auto; }
+.objective-stack .os-current { position: absolute; z-index: 3; right: 8px; top: -10px; padding: 1px 7px; border-radius: 6px; color: white; background: var(--kit-ink-dark,#211b46); font-size: calc(10 * var(--pu)); font-weight: 800; }
+.objective-stack .os-lock { position: absolute; right: 12px; bottom: 6px; font-size: 22px; }
+                                                                         
+                                                                             
+.objective-stack .os-next .tp-prog { visibility: hidden; }
+.os-transition > .os-active { animation: os-complete 450ms var(--os-elapsed) both; }
+.os-transition > .tutorial-tip.task-plate.os-next { animation: os-promote 450ms calc(450ms + var(--os-elapsed)) both; }
+@keyframes os-complete { 0%,35% { opacity: 1; translate: 0 0; } 100% { opacity: 0; translate: 70px -20px; } }
+@keyframes os-promote { from { top: var(--os-offset); } to { top: 0; } }
+@media (prefers-reduced-motion: reduce) { .os-transition > .os-active,.os-transition > .os-next { animation: none; } }
+body:has(.sheet-scrim) .objective-stack,body.ftue-tv .objective-stack { display: none; }
+                                                                               
+body:has(.hv-page,.fp-shop,.fp-dsheet,.ec-pop,.gp-page,#labor-window.frog-inspect,.xm-fullscreen,.xps-stage) .objective-stack,
+body.ftt-held .objective-stack { visibility: hidden; }
+                                                                               
+                                                            
+body.ftt-held.ftt-banner-shown .objective-stack { visibility: visible; }
+
+                                                                     
+.os-enter > .os-active { animation: os-arrive 900ms var(--os-elapsed) both; }
+@keyframes os-arrive { 0%,20% { opacity: 0; translate: 0 -100px; } 100% { opacity: 1; translate: 0 0; } }
+
+                                                                       
+                                                                           
+                                                                         
+                                                                       
+                                                                       
+                                                                      
+                                                                        
+                                        
+                                                                        
+                                                                       
+                                                                             
+.os-interrupt > .tutorial-tip.task-plate.os-next {
+  animation:
+    os-next-arrive 350ms var(--os-elapsed) both,
+    os-next-disable 200ms calc(350ms + var(--os-elapsed)) both,
+    os-demote 350ms calc(900ms + var(--os-elapsed)) both;
+}
+.os-interrupt > .os-active { animation: os-arrive 350ms calc(550ms + var(--os-elapsed)) both; }
+@keyframes os-next-arrive { 0% { opacity: 0; translate: 0 -100px; top: 0; filter: none; } 100% { opacity: 1; translate: 0 0; top: 0; filter: none; } }
+@keyframes os-next-disable { from { filter: none; } to { filter: saturate(.35) brightness(.62); } }
+@keyframes os-demote { from { top: 0; filter: saturate(.35) brightness(.62); } to { top: var(--os-offset); filter: saturate(.35) brightness(.62); } }
+@media (prefers-reduced-motion: reduce) { .os-enter > .os-active,.os-interrupt > .os-active,.os-interrupt > .os-next { animation: none; } }

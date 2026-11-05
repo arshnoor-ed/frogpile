@@ -1,0 +1,258 @@
+                                                                             
+                                                                                
+                                                                           
+                                                                           
+                                                                     
+                                                            
+
+.fs-aura-flame {
+  position: absolute; left: var(--fs-l); top: var(--fs-t);
+  width: var(--fs-zoom); height: var(--fs-zoom); pointer-events: none;
+                                                                
+  --fl-ox: 57%; --fl-oy: 76%; --fl-tx: 57%; --fl-ty: 11.5%;
+  --fl-l: 29%; --fl-w: 56%; --fl-t: 1%; --fl-h: 75%; --fl-mask: 23.5%;
+  --fl-rgb: 255,226,150; --fl-hot: 255,243,213;
+}
+.frog-stack .fs-aura-flame img {
+  position: absolute; left: 0; top: 0; width: 100%; height: 100%;
+  object-fit: contain;
+}
+.fs-flame-body, .fs-flame-core { position: absolute; inset: 0; }
+                                                                            
+#cl-stage .cl-frog-face .fs-aura-flame { width: 140px; height: 140px; }
+
+                                                                               
+                                                                             
+                                                                           
+                                                              
+                                     
+.fs-flame-frame {
+  --boil-step: .085s;
+  opacity: 0;
+  animation: auraFlameFrame calc(var(--boil-step) * 8) step-end calc((var(--fi, 0) - 8) * var(--boil-step) - var(--boil-off, 0s)) infinite;
+}
+@keyframes auraFlameFrame {
+  0%    { opacity: 1; }
+  12.5% { opacity: 0; }
+  100%  { opacity: 0; }
+}
+
+                                                               
+.fs-flame-glow {
+  position: absolute;
+  left: calc(var(--fl-l) - var(--fl-w) * .3); width: calc(var(--fl-w) * 1.6);
+  top: calc(var(--fl-t) - var(--fl-h) * .08); height: calc(var(--fl-h) * .9);
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(var(--fl-rgb), .62), rgba(var(--fl-rgb), .24) 55%, rgba(var(--fl-rgb), 0));
+  transform-origin: 50% 100%;
+  animation: auraFlameGlow 1.7s ease-in-out infinite;
+}
+@keyframes auraFlameGlow {
+  0%, 100% { opacity: .62; transform: scale(1, 1); }
+  21%      { opacity: .9;  transform: scale(1.05, 1.08); }
+  38%      { opacity: .55; transform: scale(.97, .95); }
+  57%      { opacity: .84; transform: scale(1.03, 1.06); }
+  79%      { opacity: .5;  transform: scale(.96, .97); }
+}
+
+                                                                             
+                                                               
+.fs-flame-body {
+  transform-origin: var(--fl-ox) var(--fl-oy);
+  animation: auraFlameFlicker 1.25s ease-in-out infinite, auraFlameSway 2.9s ease-in-out infinite;
+}
+@keyframes auraFlameFlicker {
+  0%, 100% { transform: scale(1, 1) skewX(0deg); }
+  11%      { transform: scale(1.03, .95) skewX(-2.5deg); }
+  26%      { transform: scale(.96, 1.08) skewX(3deg); }
+  40%      { transform: scale(1.02, .98) skewX(-1deg); }
+  54%      { transform: scale(.95, 1.1) skewX(-3.5deg); }
+  69%      { transform: scale(1.04, .95) skewX(1.5deg); }
+  84%      { transform: scale(.97, 1.06) skewX(3.5deg); }
+}
+@keyframes auraFlameSway {
+  0%, 100% { rotate: -2deg; }
+  50%      { rotate: 2.4deg; }
+}
+
+                                                                           
+                                                   
+.fs-flame-core {
+  --boil-off: .34s;
+  transform-origin: var(--fl-ox) var(--fl-oy);
+  scale: .64 .7;
+  opacity: .6;
+  filter: brightness(1.32) saturate(1.15) blur(.6px);
+  animation: auraFlameFlicker .92s ease-in-out -.37s infinite reverse, auraFlameSway 2.3s ease-in-out -1.1s infinite reverse;
+}
+
+                                                                                
+.fs-flame-lick {
+  transform-origin: var(--fl-tx) var(--fl-ty);
+  -webkit-mask-image: linear-gradient(to bottom, #000 0, #000 calc(var(--fl-mask) - 10%), transparent var(--fl-mask));
+          mask-image: linear-gradient(to bottom, #000 0, #000 calc(var(--fl-mask) - 10%), transparent var(--fl-mask));
+  opacity: 0;
+  animation: auraFlameLick 1.05s ease-out calc(var(--lk-i, 0) * -.52s) infinite;
+}
+@keyframes auraFlameLick {
+  0%   { transform: translateY(0) scale(1, 1); opacity: 0; }
+  12%  { opacity: .9; }
+  45%  { transform: translateY(-3%) scale(.8, 1.14); opacity: .75; }
+  100% { transform: translateY(-11%) scale(.38, .62); opacity: 0; }
+}
+
+                                                                            
+                                                      
+.fs-ember {
+  position: absolute; inset: 0;
+  animation: auraEmberRise var(--edur, 1.8s) linear var(--edel, 0s) infinite;
+}
+.fs-ember > b {
+  position: absolute; display: block;
+  left: calc(var(--fl-l) + var(--fl-w) * var(--ex, .5)); top: calc(var(--fl-t) + var(--fl-h) * var(--ey, .3));
+  width: var(--esz, 3%); aspect-ratio: 1; margin-left: calc(var(--esz, 3%) / -2);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(var(--fl-hot), 1) 0 28%, rgba(var(--fl-rgb), .95) 52%, rgba(var(--fl-rgb), 0) 74%);
+  animation: auraEmberDot var(--edur, 1.8s) ease-out var(--edel, 0s) infinite;
+}
+@keyframes auraEmberRise {
+  0%   { transform: translate(0, 0); }
+  35%  { transform: translate(calc(var(--edx) * -.45), calc(var(--erise) * .33)); }
+  70%  { transform: translate(calc(var(--edx) * .6), calc(var(--erise) * .7)); }
+  100% { transform: translate(var(--edx), var(--erise)); }
+}
+@keyframes auraEmberDot {
+  0%   { opacity: 0; transform: scale(.4); }
+  10%  { opacity: 1; transform: scale(1.15); }
+  55%  { opacity: .9; transform: scale(.85); }
+  100% { opacity: 0; transform: scale(.2); }
+}
+
+                                                        
+                                                                                
+                                                                            
+                                                              
+                                                                        
+                                                                               
+                                                                            
+                                                                         
+
+                                                                          
+                                                                                  
+#cl-stage .cl-frog-face .fs-aura-piece { width: 140px; height: 140px; }
+
+                                                                            
+                                                
+.fs-aura-piece > img[data-motion="spin"] {
+  animation-name: auraSpin, auraJuiceBob;
+  animation-duration: var(--am-dur, 6s), 2.4s;
+  animation-timing-function: linear, ease-in-out;
+  animation-delay: var(--am-delay, 0s), calc(var(--am-dur, 6s) * -.37);
+}
+                                                                
+.fs-aura-piece > img[data-motion="twinkle"] {
+  animation-name: auraTwinkle, auraJuiceTwinkle;
+}
+                                                              
+.fs-aura-piece > img[data-motion="breathe"] {
+  animation-name: auraBreathe, auraJuiceBob;
+  animation-duration: var(--am-dur, 6s), 3.1s;
+}
+                                              
+.fs-aura-piece > img[data-motion="hover"] {
+  animation-name: auraHover, auraJuiceTilt;
+  animation-duration: var(--am-dur, 6s), calc(var(--am-dur, 6s) * 1.37);
+}
+                                                                              
+                                               
+.fs-aura-piece > img[data-motion="orbit"] {
+  animation-name: auraOrbit, auraJuiceDepth;
+  animation-timing-function: linear, linear;
+}
+                                                  
+.fs-aura-piece > img[data-motion="blowSE"],
+.fs-aura-piece > img[data-motion="blowW"] {
+  animation-name: var(--am-blow), auraJuiceZig;
+  animation-duration: var(--am-dur, 6s), .95s;
+  animation-timing-function: linear, ease-in-out;
+}
+.fs-aura-piece > img[data-motion="blowSE"] { --am-blow: auraBlowSE; }
+.fs-aura-piece > img[data-motion="blowW"]  { --am-blow: auraBlowW; }
+                                    
+.fs-aura-piece > img[data-motion="fall"] {
+  animation-name: auraFall, auraJuiceStreak;
+  animation-timing-function: ease-in, ease-in;
+}
+                                  
+.fs-aura-piece > img[data-motion="rise"] {
+  animation-name: auraRise, auraJuiceWobble;
+  animation-duration: var(--am-dur, 6s), .8s;
+  animation-timing-function: ease-out, ease-in-out;
+}
+                                                                           
+                                                           
+.fs-aura-piece > img[data-motion="seq"] {
+  animation: auraJuiceBob 1.9s ease-in-out infinite;
+  animation-delay: calc(var(--am-delay, 0s) * -1);
+  transition: opacity .16s ease-out, scale .34s cubic-bezier(.3, 1.8, .5, 1);
+}
+.fs-aura-piece > img[data-motion="seq"][style*="opacity: 0;"] { scale: .35; }
+
+@keyframes auraJuiceBob     { 0%, 100% { translate: 0 0; } 50% { translate: 0 -3%; } }
+@keyframes auraJuiceTwinkle { 0%, 100% { scale: .84; rotate: -9deg; } 50% { scale: 1.16; rotate: 9deg; } }
+@keyframes auraJuiceTilt    { 0%, 100% { rotate: -3.5deg; } 50% { rotate: 3.5deg; } }
+@keyframes auraJuiceDepth {
+  0%, 50%, 100% { scale: 1; opacity: 1; }
+  25%           { scale: 1.16; opacity: 1; }
+  75%           { scale: .82; opacity: .72; }
+}
+@keyframes auraJuiceZig {
+  0%, 100% { translate: 0 0; rotate: 0deg; }
+  25%      { translate: 1.6% -1.2%; rotate: 14deg; }
+  75%      { translate: -1.6% 1%; rotate: -12deg; }
+}
+@keyframes auraJuiceStreak {
+  0%   { scale: 1 .9; }
+  55%  { scale: .84 1.26; }
+  100% { scale: .9 1.14; }
+}
+@keyframes auraJuiceWobble { 0%, 100% { scale: 1.07 .93; } 50% { scale: .93 1.07; } }
+
+                                                                         
+                                                                                  
+.fs-aura-sparkle {
+  position: absolute; inset: 0; pointer-events: none;
+  --ag-l: 25%; --ag-t: 15%; --ag-w: 50%; --ag-h: 45%; --ag-rgb: 255,236,170;
+}
+.fs-aura-sparkle:not([data-geom]) { opacity: 0; }
+.fs-aura-glow {
+  position: absolute;
+  left: calc(var(--ag-l) - var(--ag-w) * .14); width: calc(var(--ag-w) * 1.28);
+  top: calc(var(--ag-t) - var(--ag-h) * .14); height: calc(var(--ag-h) * 1.28);
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(var(--ag-rgb), .46), rgba(var(--ag-rgb), .16) 60%, rgba(var(--ag-rgb), 0));
+  animation: auraJuiceGlow 2.8s ease-in-out infinite;
+}
+@keyframes auraJuiceGlow { 0%, 100% { opacity: .55; transform: scale(.94); } 50% { opacity: 1; transform: scale(1.06); } }
+.fs-glint {
+  position: absolute;
+  left: calc(var(--ag-l) + var(--ag-w) * var(--gx, .5)); top: calc(var(--ag-t) + var(--ag-h) * var(--gy, .5));
+  width: var(--gsz, 9%); aspect-ratio: 1;
+  margin: calc(var(--gsz, 9%) / -2) 0 0 calc(var(--gsz, 9%) / -2);
+  background: radial-gradient(circle, #fff 0 38%, rgba(var(--ag-rgb), .95) 58%, rgba(var(--ag-rgb), 0) 78%);
+  clip-path: polygon(50% 0, 60% 40%, 100% 50%, 60% 60%, 50% 100%, 40% 60%, 0 50%, 40% 40%);
+  opacity: 0;
+  animation: auraJuiceGlint var(--gdur, 2.4s) ease-in-out var(--gdel, 0s) infinite;
+}
+@keyframes auraJuiceGlint {
+  0%   { opacity: 0; transform: scale(.1) rotate(0deg); }
+  11%  { opacity: 1; transform: scale(1.15) rotate(45deg); }
+  24%  { opacity: 0; transform: scale(.2) rotate(90deg); }
+  100% { opacity: 0; transform: scale(.1) rotate(90deg); }
+}
+
+                                                                          
+                                                                             
+@media (prefers-reduced-motion: reduce) {
+  .fs-flame-lick, .fs-ember, .fs-glint { display: none; }
+}

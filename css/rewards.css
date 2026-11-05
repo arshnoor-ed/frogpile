@@ -1,0 +1,8 @@
+                                                                           
+                                                                                
+.kit-reward-fullscreen { overflow-x: hidden; }
+.kit-reward-fullscreen::before { position: fixed; }
+.kit-reward-fullscreen > #claim-rollpanel,
+.kit-reward-fullscreen > .kit-reward-tiles,
+.kit-reward-fullscreen > .kit-reward-collect { flex-shrink: 0; }
+.kit-reward-fullscreen > #claim-rollpanel { width: 100%; max-width: 540px; }

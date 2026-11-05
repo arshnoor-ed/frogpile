@@ -1,0 +1,82 @@
+                                                                                                        
+                                                                                                       
+                                                                                                     
+                                                                                                          
+#cl-stage .cl-rock { position: absolute; pointer-events: none; }
+#cl-stage .cl-rock-shadow {
+  position: absolute; left: 10%; right: 10%; top: 80%; height: 17%; border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(22, 30, 12, .42), rgba(22, 30, 12, 0) 70%);
+}
+#cl-stage .cl-rock-body { position: absolute; inset: 0; transform-origin: 50% 90%; }
+#cl-stage .cl-rock-body img { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+                                                                                 
+#cl-stage .cl-rock-cracks {
+  position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible;
+  -webkit-mask-size: 100% 100%; mask-size: 100% 100%; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+}
+#cl-stage .cl-rock-cracks path {
+  fill: none; stroke: #1d1a2b; stroke-width: 3.2; stroke-linecap: round; stroke-linejoin: round;
+  vector-effect: non-scaling-stroke; opacity: 0; transition: opacity .08s;
+}
+#cl-stage .cl-rock[data-crack="1"] .k1, #cl-stage .cl-rock[data-crack="2"] .k1, #cl-stage .cl-rock[data-crack="2"] .k2 { opacity: .92; }
+#cl-stage .cl-rock[data-crack="2"] .cl-rock-body img { filter: brightness(.93) saturate(.9); }
+                                           
+#cl-stage .cl-rock-glint {
+  position: absolute; left: 34%; top: 24%; width: 22px; height: 22px; margin: -11px; opacity: 0;
+  animation: clRockGlint 3.4s ease-in-out infinite;
+}
+#cl-stage .cl-rock-glint::before, #cl-stage .cl-rock-glint::after {
+  content: ""; position: absolute; left: 50%; top: 0; width: 4px; height: 100%; margin-left: -2px; border-radius: 2px;
+  background: linear-gradient(transparent, #fff 50%, transparent); box-shadow: 0 0 6px rgba(255, 255, 230, .9);
+}
+#cl-stage .cl-rock-glint::after { rotate: 90deg; }
+@keyframes clRockGlint {
+  0%, 74%, 100% { opacity: 0; transform: scale(.2) rotate(0deg); }
+  83% { opacity: 1; transform: scale(1.1) rotate(40deg); }
+  92% { opacity: 0; transform: scale(.4) rotate(80deg); }
+}
+#cl-stage .cl-rock.is-burst .cl-rock-glint, #cl-stage .cl-rock.is-burst .cl-rock-shadow { display: none; }
+
+                          
+#cl-stage .cl-sparks--stone i {
+  left: -5px; top: -4px; width: 10px; height: 8px; border-radius: 2px 4px 3px 2px;
+  background: linear-gradient(160deg, #c6c4d0, #7d7a8c); box-shadow: 0 0 0 1.5px #2b2838;
+}
+#cl-stage .cl-sparks--dust i {
+  left: -11px; top: -11px; width: 22px; height: 22px; border-radius: 50%;
+  background: rgba(232, 226, 206, .8); box-shadow: 0 0 10px 5px rgba(232, 226, 206, .45);
+}
+#cl-stage .cl-ring--dust { border-width: 9px; border-color: rgba(238, 232, 214, .9); box-shadow: 0 0 16px rgba(205, 196, 166, .7); }
+#cl-stage .cl-rubble i {
+  position: absolute; left: 0; top: 0; translate: -50% -50%; box-sizing: border-box;
+  border: 1.5px solid #2b2838; border-radius: 34% 46% 30% 42%;
+  background: linear-gradient(160deg, #b4b2c0, #75738a); box-shadow: inset 0 2px 0 rgba(255, 255, 255, .28);
+}
+
+                                                      
+#cl-stage .cl-stone-gain {
+  position: absolute; translate: -50% -50%; white-space: nowrap; font-weight: 900; font-size: 28px; line-height: 1; color: #f1eefc;
+  text-shadow: -2px -2px 0 #26213f, 2px -2px 0 #26213f, -2px 2px 0 #26213f, 2px 2px 0 #26213f, 0 4px 5px rgba(0, 0, 0, .45);
+  animation: clStoneGain 1.1s cubic-bezier(.2, 1.4, .4, 1) forwards;
+}
+@keyframes clStoneGain {
+  0% { transform: scale(.3); opacity: 0; }
+  18% { transform: scale(1.3); opacity: 1; }
+  32% { transform: scale(1); }
+  75% { transform: translateY(-16px); opacity: 1; }
+  100% { transform: translateY(-26px); opacity: 0; }
+}
+#cl-stage .cl-stonetoken {
+  position: absolute; z-index: 2; width: 24px; height: 24px; margin: -12px 0 0 -12px; object-fit: contain;
+  filter: drop-shadow(0 0 2px #fff) drop-shadow(0 0 2px #fff) drop-shadow(0 0 10px rgba(255, 214, 90, 1)) drop-shadow(0 2px 2px rgba(0, 0, 0, .35));
+}
+#cl-stage .cl-stone-gain { z-index: 3; }
+
+                                                                                       
+#cl-stage .cl-stonechip {
+  position: absolute; z-index: 9; right: 14px; top: 260px; display: flex; align-items: center; gap: 5px;
+  padding: 3px 11px 3px 4px; border: 2px solid var(--kit-ink-dark, #0d0a27); border-radius: 17px;
+  background: rgba(26, 22, 80, .92); pointer-events: none;
+}
+#cl-stage .cl-stonechip img { width: 26px; height: 26px; object-fit: contain; }
+#cl-stage .cl-stonechip b { font-weight: 800; font-size: 15px; line-height: 1; color: #fff; min-width: 1ch; }

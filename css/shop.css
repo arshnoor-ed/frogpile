@@ -1,0 +1,288 @@
+                                                                     
+                                
+
+                                                               
+                                                             
+                                                                       
+                                                              
+                                                                        
+                                                                         
+                                                                   
+                                                                     
+
+                                                                       
+                                                                     
+                                                                       
+                                                                     
+                                                                        
+
+.fp-shop {
+  --u: min(1px, calc(100vw / 440));
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  overflow: hidden;
+  background: var(--kit-surface, #2b1d76);
+  font-family: var(--kit-font);
+  color: var(--kit-text, #fff);
+}
+                                                                                
+.fp-shop::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url(../assets/ui2/grimoire/bg_pattern.jpg) center / cover no-repeat;
+  opacity: 0.53;
+  pointer-events: none;
+}
+body:has(.fp-shop) .tutorial-tip,
+body:has(.fp-shop) #tut-notice { visibility: hidden; }
+body:has(.fp-shop) .bottom-dock { pointer-events: auto; }
+                                                                           
+                                                                     
+                                                                       
+body:has(.fp-shop) #fx-layer > :not(#family-spotlight):not(.big-unlock) { visibility: hidden; }
+
+                                                                         
+                                    
+.fp-shop__scroll {
+  position: absolute;
+  inset: calc(env(safe-area-inset-top) + 54px) 0 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+.fp-shop__body {
+  position: relative;
+  box-sizing: border-box;
+  max-width: 440px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: calc(12 * var(--u));
+  padding: calc(49 * var(--u)) calc(24 * var(--u)) calc(var(--dock-clear, 90px) + 16px);
+}
+
+                                                                     
+                                                                      
+                                                                        
+.fp-shop__banner {
+  position: absolute;
+  z-index: 2;
+  left: calc(4 * var(--u));
+  top: calc(-13 * var(--u));
+  width: calc(432 * var(--u));
+  height: calc(108 * var(--u));
+  margin: 0;
+  pointer-events: none;
+  user-select: none;
+}
+.fp-shop__banner img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+                                   
+.fp-shop__card {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  overflow: hidden;
+  border: 4px solid var(--kit-feature-border, #fbc838);
+  border-radius: 22px;
+  padding: calc(14 * var(--u)) calc(16 * var(--u));
+}
+.fp-shop__card > * { position: relative; }
+                                                                     
+                                                                
+.fp-shop__card > .kit-sign,
+.fp-shop__card > .fp-shop__desc { z-index: 2; }
+                        
+.fp-shop__card--featured {
+  padding-top: calc(34 * var(--u));
+  background: linear-gradient(180deg, #7834d6, #2e0e68);
+}
+                                                                       
+                                                                       
+.fp-shop__card--pack,
+.fp-shop__card--boat {
+  background: linear-gradient(180deg, var(--kit-feature-top, #471cb0), var(--kit-feature-bottom, #8b34e8));
+}
+.fp-shop__card--pack::before,
+.fp-shop__card--boat::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url(../assets/ui2/kit/art/star-texture.jpg) 0 0 / 248.36px 124.18px repeat;
+  mix-blend-mode: overlay;
+  opacity: 0.6;
+  pointer-events: none;
+}
+.fp-shop__card .kit-sign { flex: none; max-width: 100%; }
+.fp-shop__desc {
+  margin: 0;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--kit-text, #fff);
+}
+
+                                           
+.fp-shop__offer {
+  display: flex;
+  align-items: center;
+  gap: calc(10 * var(--u));
+  width: 100%;
+}
+                                                                          
+                                                                          
+                                                                             
+.fp-shop__art {
+  position: relative;
+  flex: none;
+  width: calc(200 * var(--u));
+  height: calc(190 * var(--u));
+  pointer-events: none;
+}
+.fp-shop__art > * { position: absolute; display: block; }
+.fp-shop__halo { left: calc(-50 * var(--u)); top: calc(-23 * var(--u)); width: calc(300 * var(--u)); height: calc(240 * var(--u)); }
+.fp-shop__core { left: calc(15 * var(--u)); top: calc(27 * var(--u)); width: calc(170 * var(--u)); height: calc(140 * var(--u)); }
+                                                                                      
+.fp-shop__halo img { position: absolute; top: -16.67%; left: -13.33%; width: 126.66%; height: 133.34%; max-width: none; }
+.fp-shop__core img { position: absolute; top: -21.43%; left: -17.65%; width: 135.3%; height: 142.86%; max-width: none; }
+.fp-shop__burst {
+  left: calc(-130 * var(--u));
+  top: calc(-25.5 * var(--u));
+  width: calc(460 * var(--u));
+  height: calc(257 * var(--u));
+  opacity: 0.75;
+  background: #fadcff;
+  -webkit-mask: url(../assets/ui2/grimoire/burst_mask.png) center / 100% 100% no-repeat;
+  mask: url(../assets/ui2/grimoire/burst_mask.png) center / 100% 100% no-repeat;
+}
+                                                                 
+.fp-shop__boat {
+  left: calc(2 * var(--u));
+  top: calc(65 * var(--u));
+  width: calc(196 * var(--u));
+  height: auto;
+  filter: drop-shadow(0 0 5px rgba(186, 104, 255, 0.9));
+  user-select: none;
+}
+                                                                           
+                                                                         
+                                                                           
+                                                                    
+.fp-shop__frog {
+  left: calc(24 * var(--u));
+  top: calc(30 * var(--u));
+  width: calc(148 * var(--u));
+  height: calc(148 * var(--u));
+}
+.fp-shop__frog .frog-stack { width: 100% !important; height: 100% !important; }
+                                                                                 
+.fp-shop__art > .fp-shop__new {
+  display: inline-flex;
+  left: calc(107 * var(--u));
+  top: 0;
+  transform: rotate(9deg);
+  z-index: 1;
+}
+.fp-shop__sparkle {
+  background: url(../assets/ui2/grimoire/sparkle.png) center / cover no-repeat;
+  opacity: 0;
+  animation: fp-shop-twinkle 2.4s ease-in-out infinite;
+}
+                                                                             
+.fp-shop__sparkle--1 { left: calc(2 * var(--u));   top: calc(18 * var(--u));  width: calc(26 * var(--u)); height: calc(24 * var(--u)); animation-delay: 0s; }
+.fp-shop__sparkle--2 { left: calc(168 * var(--u)); top: calc(4 * var(--u));   width: calc(20 * var(--u)); height: calc(19 * var(--u)); animation-delay: 0.5s; }
+.fp-shop__sparkle--3 { left: calc(176 * var(--u)); top: calc(120 * var(--u)); width: calc(28 * var(--u)); height: calc(26 * var(--u)); animation-delay: 1s; }
+.fp-shop__sparkle--4 { left: calc(10 * var(--u));  top: calc(140 * var(--u)); width: calc(16 * var(--u)); height: calc(15 * var(--u)); animation-delay: 1.5s; }
+.fp-shop__sparkle--5 { left: calc(118 * var(--u)); top: calc(2 * var(--u));   width: calc(14 * var(--u)); height: calc(13 * var(--u)); animation-delay: 0.8s; }
+@keyframes fp-shop-twinkle {
+  0%   { opacity: 0; transform: scale(0.6); }
+  16.667% { opacity: 1; transform: scale(1.1); }
+  33.333% { opacity: 1; }
+  50%  { opacity: 0; transform: scale(0.6); }
+  100% { opacity: 0; transform: scale(0.6); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .fp-shop__sparkle { animation: none; opacity: 1; }
+}
+
+                                                                            
+                                    
+.fp-shop__side {
+  position: relative;
+  z-index: 1;                                                                                         
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+.fp-shop__stat {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  padding: 3px 10px 3px 8px;
+  border-radius: 10px;
+  background: rgba(46, 14, 104, 0.55);
+}
+.fp-shop__stat-icon { flex: none; width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; }
+.fp-shop__stat-icon img, .fp-shop__stat-icon .kit-frogstandin { max-width: 100%; max-height: 100%; }
+.fp-shop__stat-label { flex: none; font-weight: 700; font-size: 13px; line-height: normal; color: #e2ceff; }
+.fp-shop__stat-value { flex: 1 1 0; min-width: 0; text-align: right; font-weight: 800; font-size: 18px; line-height: normal; color: #fff; white-space: nowrap; }
+
+                                                                         
+.fp-shop__buy { width: min(120px, 100%); max-width: 100%; white-space: nowrap; }
+.fp-shop__buy.kit-btn { overflow: hidden; }
+
+                                               
+.fp-shop__pack-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+.fp-shop__contents { display: flex; gap: 6px; flex: none; }
+.fp-shop__contents .kit-reward-count { width: 76px; }
+.fp-shop__contents .kit-reward-count__art { overflow: hidden; }
+.fp-shop__price {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+.fp-shop__price .fp-shop__buy { width: min(104px, 100%); }
+
+                                         
+.fp-shop__note {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin: 0;
+  padding: 11px 13px;
+  border-radius: 13px;
+  background: rgba(14, 9, 42, 0.46);
+  border: 1px solid rgba(190, 168, 255, 0.16);
+  font-weight: 700;
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: #d3c4f5;
+}
+
+@media (max-width: 350px) {
+  .fp-shop__body { padding-left: 12px; padding-right: 12px; }
+  .fp-shop__card { padding-left: 12px; padding-right: 12px; }
+  .fp-shop__stat { padding-left: 6px; padding-right: 8px; gap: 4px; }
+  .fp-shop__stat-value { font-size: 16px; }
+  .fp-shop__buy.kit-btn { padding-left: 10px; padding-right: 10px; }
+  .fp-shop__desc { font-size: 13px; }
+}

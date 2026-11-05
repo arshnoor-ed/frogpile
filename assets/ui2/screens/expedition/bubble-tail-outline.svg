@@ -1,0 +1,15 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="34.0008" height="31.0004" viewBox="0 0 34.0008 31.0004" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Tail outline" filter="url(#filter0_d_0_150)">
+<path d="M4.00038 4.00038L17.0004 23.0004L30.0004 4.00038" stroke="white" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<filter id="filter0_d_0_150" x="0" y="0" width="34.0008" height="31.0004" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="4"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.35 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_150"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_150" result="shape"/>
+</filter>
+</defs>
+</svg>

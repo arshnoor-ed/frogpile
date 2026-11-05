@@ -1,0 +1,38 @@
+                                                                           
+                                                                          
+                                
+#pond-scene,#frog-layer,#pond-landmarks{
+  transform:translate3d(calc(-1 * var(--cam-x,0px) + var(--pond-pulse-x,0px)),calc(-1 * var(--cam-y,0px) + var(--pond-pulse-y,0px)),0) scale(calc(var(--pond-pulse,1) * var(--cam-zoom,1)));
+  transform-origin:calc(var(--cam-x,0px) + var(--pond-w,100vw) / 2) calc(var(--cam-y,0px) + var(--pond-h,100vh) / 2);
+}
+.harvest-speech{
+  position:absolute;left:50%;top:0;transform:translate(-50%,-100%);
+  display:flex;align-items:center;justify-content:center;width:34px;height:30px;
+  background:#fff8e9;border:2px solid #694526;border-radius:12px;
+  box-shadow:0 2px 3px #34251555;pointer-events:none;z-index:20;
+}
+.harvest-speech::after{content:'';position:absolute;bottom:-6px;left:12px;width:8px;height:8px;background:#fff8e9;border-right:2px solid #694526;border-bottom:2px solid #694526;transform:rotate(45deg);}
+.harvest-speech .cur-ico{width:23px;height:23px;object-fit:contain;position:relative;z-index:1;}
+.wander-frog.harvest-working .frog-speech{display:none;}
+
+                                                                           
+                                                                             
+                                                                                 
+body.pond-expansion-zoom #pond-scene::before,body.pond-expansion-zoom #pond-scene::after{
+  content:'';position:absolute;left:0;width:100%;height:20%;pointer-events:none;
+  background-image:inherit;background-size:100% 500%;background-repeat:no-repeat;
+  transform:scaleY(-1);
+}
+body.pond-expansion-zoom #pond-scene::before{top:-20%;background-position:center top;}
+body.pond-expansion-zoom #pond-scene::after{bottom:-20%;background-position:center bottom;}
+
+                                                                              
+                                                                       
+                                                                    
+body.pond-expansion-zoom #tut-pointer,
+body.pond-expansion-zoom .toast,
+body.pond-expansion-zoom .m-banner,
+body.pond-expansion-zoom .tutorial-notice{visibility:hidden;}
+body.pond-expansion-zoom #pond-scene,
+body.pond-expansion-zoom #frog-layer,
+body.pond-expansion-zoom #pond-landmarks{transition:none !important;}

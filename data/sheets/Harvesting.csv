@@ -1,0 +1,13 @@
+[BUILD READ],[BUILD READ],[BUILD READ],[BUILD READ],[BUILD READ],[BUILD READ],[BUILD SKIP],[BUILD SKIP]
+job_id,display_name,resource,frogs_per_job,shift_length_s,yield_per_second,yield_per_shift,notes
+gather_wood,Gather Wood,wood,3,300,0.25,225,"PROPOSED 2026-10-09 overnight, plan.md SS3.9/SS3.12/SS11: Loop 3's automatic (dispatch-a-frog) harvesting. frogs_per_job=3 mirrors designer's HarvestingSheet MAX_FROGS_PER_JOB shape only (layout reference, plan.md SS3.11/SS3.12) -- not his balance. shift_length_s and yield_per_shift are fresh Overhaul numbers, NOT measured against any existing sim (no Overhaul sheet models this job numerically today) -- rough placeholders pending real balance-sim measurement. Needs captain/balance review -- see Morning list."
+mine_stone,Mine Stone,stone,3,300,0.25,225,"PROPOSED 2026-10-09 overnight, same reasoning and source as gather_wood above."
+,,,,,,,
+parameter,value,description,,,,,
+manual_wood_yield,1,[RULED 2026-10-15] Manual pond harvesting.,,,,,
+manual_wood_regrow_s,12,[RULED 2026-10-15] Manual pond harvesting.,,,,,
+manual_wood_node_count,19,[RULED 2026-10-15] Manual pond harvesting.,,,,,
+manual_stone_yield,1,[RULED 2026-10-15] Manual pond harvesting.,,,,,
+manual_stone_taps,1,[RULED 2026-10-20] One tap breaks a rock like a log (user; was 3).,,,,,
+manual_stone_regrow_s,12,[RULED 2026-10-15] Manual pond harvesting.,,,,,
+manual_stone_node_count,18,[RULED 2026-10-15] Manual pond harvesting.,,,,,

@@ -1,0 +1,26 @@
+                                                                                             
+                                                                                               
+                                                                    
+                                                                                          
+                                                      
+                                                                                                 
+                                                                                                        
+.fs-shield-arm, .fs-back-wing {
+  position: absolute; left: var(--fs-l); top: var(--fs-t);
+  width: var(--fs-zoom); height: var(--fs-zoom); pointer-events: none;
+}
+.frog-stack .fs-shield-arm > img, .frog-stack .fs-back-wing > img { left: 0; top: 0; width: 100%; height: 100%; }
+#cl-stage .cl-frog-face .fs-shield-arm, #cl-stage .cl-frog-face .fs-back-wing { width: 140px; height: 140px; }
+
+.fs-back-wing { animation: fsWingFlap var(--fw-ms, 1400ms) infinite; }
+@keyframes fsWingFlap {
+  0%   { rotate: 0deg; animation-timing-function: cubic-bezier(.5, 0, .7, .4); }
+  34%  { rotate: var(--fw-deg); animation-timing-function: cubic-bezier(.3, .6, .5, 1); }
+  100% { rotate: 0deg; }
+}
+@media (prefers-reduced-motion: reduce) { .fs-back-wing { animation: none; } }
+
+                                                                                            
+                                                                                      
+.frog-stack.fs-flopped .fs-shield-arm { visibility: hidden; }
+.frog-stack.fs-flopped .fs-back-wing { animation: none; }

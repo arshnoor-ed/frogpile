@@ -1,0 +1,52 @@
+                                                                                
+                                                                              
+                                                                              
+                                                                             
+                                                                          
+                                                                        
+                                                          
+
+                                                                
+                                                                             
+                   
+                                                                                   
+
+                                                                          
+                                                                            
+                                                                         
+                        
+#claim-modal.kit-reward-fullscreen.xr-fit {
+  --xr-top-min: max(14px, calc(env(safe-area-inset-top) + 8px));
+  padding-bottom: max(14px, calc(env(safe-area-inset-bottom) + 10px));
+}
+#claim-modal.kit-reward-fullscreen.xr-fit > .xr-newtrait { margin-top: 10px; }
+#claim-modal.kit-reward-fullscreen.xr-fit > .xr-newtrait + .xr-newtrait { margin-top: 8px; }
+#claim-modal.kit-reward-fullscreen.xr-fit > .kit-reward-tiles { margin-top: 10px; }
+#claim-modal.kit-reward-fullscreen.xr-fit > .kit-reward-collect { padding-top: 14px; }
+#claim-modal.kit-reward-fullscreen.xr-fit > .xr-sealed-wrap { margin-top: 12px; }
+
+                                                                      
+                                          
+#claim-modal.kit-reward-fullscreen.xr-fit.xr-fit-2 { --xr-top: var(--xr-top-min); --xr-bw: min(270px, calc(100vw - 40px)); }
+#claim-modal.kit-reward-fullscreen.xr-fit-2 > .kit-reward-title { margin-top: 4px; font-size: 13px; }
+#claim-modal.kit-reward-fullscreen.xr-fit-2 .xr-newtrait { gap: 8px; padding: 10px; }
+#claim-modal.kit-reward-fullscreen.xr-fit-2 .xr-newtrait__set { gap: 6px; padding: 6px 8px 10px; }
+#claim-modal.kit-reward-fullscreen.xr-fit-2 > .kit-reward-collect { gap: 8px; }
+
+                                                                            
+                                                                   
+#claim-modal.kit-reward-fullscreen.xr-fit-3 .xr-newtrait__art { zoom: .75; }
+#claim-modal.kit-reward-fullscreen.xr-fit-3 .xr-slot { max-width: 60px; }
+#claim-modal.kit-reward-fullscreen.xr-fit-3 .xr-newtrait__name { font-size: 24px; }
+#claim-modal.kit-reward-fullscreen.xr-fit-3 > .xr-items .kit-reward-tile,
+#claim-modal.kit-reward-fullscreen.xr-fit-3:not(:has(> .xr-newtrait)) > .xr-res .kit-reward-tile { width: 70px; gap: 5px; padding-top: 7px; }
+#claim-modal.kit-reward-fullscreen.xr-fit-3 > .xr-items :is(.kit-reward-tile__icon, .kit-reward-tile__img),
+#claim-modal.kit-reward-fullscreen.xr-fit-3:not(:has(> .xr-newtrait)) > .xr-res :is(.kit-reward-tile__icon, .kit-reward-tile__img) { width: 38px; height: 38px; font-size: 28px; }
+#claim-modal.kit-reward-fullscreen.xr-fit-3 > .xr-items .kit-reward-tile__amt,
+#claim-modal.kit-reward-fullscreen.xr-fit-3:not(:has(> .xr-newtrait)) > .xr-res .kit-reward-tile__amt { font-size: 15px; }
+
+                                                                            
+                                                                        
+                                                                           
+#claim-modal.kit-reward-fullscreen.xr-fit-4 .xr-newtrait.xr-fit-repeat > :is(.xr-newtrait__set, .xr-newtrait__next) { display: none; }
+#claim-modal.kit-reward-fullscreen.xr-fit-4 .xr-slot.xr-fit-won { filter: drop-shadow(0 0 6px rgba(255, 200, 58, .95)); }

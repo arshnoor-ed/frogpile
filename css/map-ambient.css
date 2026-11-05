@@ -1,0 +1,154 @@
+                                                                                                 
+                                                                                                   
+                                                                                                 
+                                                                                                   
+                                                                                             
+.xm-map:has(> .ma-stage){ container-type:size; }
+.ma-stage{
+  --ma-h: max(100cqh, 100cqw * 2000 / 900);
+  --u: calc(var(--ma-h) / 2000);
+  position:absolute; height:var(--ma-h); width:calc(var(--ma-h) * 900 / 2000);
+  left:calc((100cqw - var(--ma-h) * 900 / 2000) / 2); top:calc((100cqh - var(--ma-h)) / 2);
+  pointer-events:none;
+}
+.ma-stage > *{ position:absolute; display:block; }
+.ma-stage img{ max-width:none; user-select:none; }
+.ma-plate{ left:0; top:0; width:100%; height:100%; }
+
+                                                                                                  
+                                                                                           
+                                                   
+.ma-isle{
+  transform-origin:50% 60%;
+  animation-name:maFloat, maRock; animation-duration:6.4s, 8s;
+  animation-timing-function:ease-in-out; animation-iteration-count:infinite;
+}
+.ma-isle > *{ position:absolute; display:block; }
+.ma-isle-art{ left:0; top:0; width:100%; height:100%; }
+@keyframes maFloat{ 0%,100%{ translate:0 0; } 50%{ translate:0 calc(var(--ma-amp) * var(--u) * -1); } }
+@keyframes maRock{ 0%,100%{ rotate:calc(var(--ma-tilt) * -1); } 50%{ rotate:var(--ma-tilt); } }
+                                                                                                      
+.xm-map:has(> .ma-stage) .xm-zones{ --ma-u: calc(max(100cqh, 100cqw * 2000 / 900) / 2000); }
+.xm-pill-wrap.ma-ride{ animation:maRide 6.4s ease-in-out infinite; }
+@keyframes maRide{ 0%,100%{ translate:0 0; } 50%{ translate:0 calc(var(--ma-amp) * var(--ma-u) * -1); } }
+
+                                                                                    
+.ma-float{ animation:maBob 4s ease-in-out infinite; }
+@keyframes maBob{
+  0%,100%{ translate:0 0; rotate:0deg; }
+  50%    { translate:0 calc(var(--ma-amp) * var(--u) * -1); rotate:var(--ma-tilt); }
+}
+                                                                                             
+                                         
+.ma-cloud{ animation:maSway 12s ease-in-out infinite; }
+.ma-cloud--mid{ animation-name:maDrift; }
+@keyframes maSway{ 0%,100%{ translate:0 0; } 50%{ translate:calc(var(--ma-dx) * var(--u)) 0; } }
+@keyframes maDrift{ 0%,100%{ translate:0 0; } 25%{ translate:calc(var(--ma-dx) * var(--u)) 0; } 75%{ translate:calc(var(--ma-dx) * var(--u) * -1) 0; } }
+
+                                                                                              
+                                                                                    
+.ma-vortex{
+  -webkit-mask:url('../assets/ui2/expedition-map/map-anim/vortex-mask.webp') 0 0 / 100% 100% no-repeat;
+  mask:url('../assets/ui2/expedition-map/map-anim/vortex-mask.webp') 0 0 / 100% 100% no-repeat;
+}
+.ma-vortex > i{
+  position:absolute; inset:0; border-radius:50%;
+  background:url('../assets/ui2/expedition-map/map-anim/vortex.webp') 0 0 / 100% 100%;
+  animation:maSpin 32s linear infinite;
+}
+@keyframes maSpin{
+  from{ transform:scaleY(var(--ma-sq)) rotate(0deg) scaleY(var(--ma-isq)); }
+  to  { transform:scaleY(var(--ma-sq)) rotate(-360deg) scaleY(var(--ma-isq)); }
+}
+
+                                                          
+.ma-lava{ opacity:0; animation:maGlow 2.4s ease-in-out infinite; }
+@keyframes maGlow{ 0%,100%{ opacity:0; } 50%{ opacity:.9; } }
+
+                                                                                            
+.ma-fall{
+  overflow:hidden;
+  -webkit-mask-size:100% 100%; mask-size:100% 100%; -webkit-mask-repeat:no-repeat; mask-repeat:no-repeat;
+}
+.ma-fall > i{
+  position:absolute; left:0; right:0; top:calc(-64 * var(--u)); bottom:0; opacity:.9;
+  background:url('../assets/ui2/expedition-map/map-anim/fall-streaks.webp') 0 0 / calc(40 * var(--u)) calc(64 * var(--u)) repeat;
+  animation:maFlow .65s linear infinite;
+}
+@keyframes maFlow{ from{ translate:0 0; } to{ translate:0 calc(64 * var(--u)); } }
+
+                                                                                             
+                                                              
+.ma-p{
+  width:calc(4 * var(--ma-s, 1) * var(--u)); height:calc(4 * var(--ma-s, 1) * var(--u));
+  margin:calc(-2 * var(--ma-s, 1) * var(--u)) 0 0 calc(-2 * var(--ma-s, 1) * var(--u));
+  border-radius:50%; opacity:0; animation:3s linear infinite;
+}
+.ma-p--snow{ background:#fff; box-shadow:0 0 calc(2 * var(--u)) rgba(255,255,255,.9); animation-name:maSnow; }
+@keyframes maSnow{
+  0%  { opacity:0; translate:0 0; }
+  12% { opacity:.95; }
+  85% { opacity:.85; }
+  100%{ opacity:0; translate:calc(var(--ma-dx) * var(--u)) calc(80 * var(--u)); }
+}
+.ma-p--ember{
+  width:calc(3.2 * var(--ma-s) * var(--u)); height:calc(3.2 * var(--ma-s) * var(--u));
+  background:#ffe08a; box-shadow:0 0 calc(4 * var(--u)) calc(1.5 * var(--u)) #ff7a1a; animation-name:maEmber; animation-timing-function:ease-out;
+}
+@keyframes maEmber{
+  0%  { opacity:0; translate:0 0; scale:1; }
+  15% { opacity:1; }
+  100%{ opacity:0; translate:calc(var(--ma-dx) * var(--u)) calc(-95 * var(--u)); scale:.35; }
+}
+.ma-p--mote{ background:#f6d2ff; box-shadow:0 0 calc(5 * var(--u)) calc(1.5 * var(--u)) #c45bff; animation-name:maMote; animation-timing-function:ease-in-out; }
+@keyframes maMote{
+  0%  { opacity:0; translate:0 0; }
+  20% { opacity:1; translate:calc(var(--ma-dx) * .4 * var(--u)) calc(-14 * var(--u)); }
+  60% { opacity:.8; translate:calc(var(--ma-dx) * -.3 * var(--u)) calc(-40 * var(--u)); }
+  100%{ opacity:0; translate:calc(var(--ma-dx) * var(--u)) calc(-70 * var(--u)); }
+}
+.ma-p--leaf{
+  width:calc(7 * var(--ma-s) * var(--u)); height:calc(4 * var(--ma-s) * var(--u));
+  border-radius:70% 0 70% 0; background:var(--ma-c, #ff9a2e); box-shadow:inset 0 calc(-1 * var(--u)) 0 rgba(0,0,0,.25);
+  animation-name:maLeaf; animation-timing-function:ease-in-out;
+}
+@keyframes maLeaf{
+  0%  { opacity:0; translate:0 0; rotate:0deg; }
+  12% { opacity:1; }
+  35% { translate:calc(var(--ma-dx) * var(--u)) calc(22 * var(--u)); rotate:140deg; }
+  65% { translate:calc(var(--ma-dx) * -.4 * var(--u)) calc(46 * var(--u)); rotate:300deg; }
+  88% { opacity:1; }
+  100%{ opacity:0; translate:calc(var(--ma-dx) * .6 * var(--u)) calc(70 * var(--u)); rotate:460deg; }
+}
+.ma-p--pollen{
+  width:calc(3 * var(--ma-s) * var(--u)); height:calc(3 * var(--ma-s) * var(--u));
+  background:#fff8c4; box-shadow:0 0 calc(4 * var(--u)) calc(1 * var(--u)) rgba(255,236,120,.9);
+  animation-name:maPollen; animation-timing-function:ease-in-out;
+}
+@keyframes maPollen{
+  0%  { opacity:0; translate:0 0; }
+  30% { opacity:.95; translate:calc(var(--ma-dx) * .5 * var(--u)) calc(-12 * var(--u)); }
+  70% { opacity:.8; translate:calc(var(--ma-dx) * -.2 * var(--u)) calc(-26 * var(--u)); }
+  100%{ opacity:0; translate:calc(var(--ma-dx) * var(--u)) calc(-36 * var(--u)); }
+}
+.ma-p--sparkle{
+  width:calc(12 * var(--ma-s) * var(--u)); height:calc(12 * var(--ma-s) * var(--u));
+  margin:calc(-6 * var(--ma-s) * var(--u)) 0 0 calc(-6 * var(--ma-s) * var(--u));
+  border-radius:0; background:#fff;
+  clip-path:polygon(50% 0, 60% 40%, 100% 50%, 60% 60%, 50% 100%, 40% 60%, 0 50%, 40% 40%);
+  animation-name:maTwinkle; animation-timing-function:ease-in-out;
+}
+@keyframes maTwinkle{
+  0%,62%,100%{ opacity:0; scale:0; rotate:0deg; }
+  76%        { opacity:1; scale:1; rotate:45deg; }
+  90%        { opacity:.6; scale:.35; rotate:90deg; }
+}
+
+                                                                                              
+.xm-pill-wrap--current .kit-map-plate{ animation:maPlate 2.4s ease-in-out var(--ma-plate-at, 0s) infinite; }
+@keyframes maPlate{ 0%,100%{ translate:0 0; } 50%{ translate:0 calc(-5 * var(--xm-u)); } }
+
+@media (prefers-reduced-motion: reduce){
+  .ma-stage *, .ma-stage *::before, .xm-pill-wrap--current .kit-map-plate, .xm-pill-wrap.ma-ride{ animation:none !important; }
+  .ma-p, .ma-lava{ display:none !important; }
+}

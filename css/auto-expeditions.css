@@ -1,0 +1,69 @@
+                                                                           
+                                                                   
+                                                                            
+                                                                     
+.ax-icon{ display:block; width:100%; height:100%; }
+@keyframes axSpin{ to{ transform:rotate(360deg); } }
+
+.xm-auto{
+  display:flex; align-items:center; gap:8px; min-width:0;
+  padding:8px 8px 8px 10px; border:2px solid #3f9b2c; border-radius:14px;
+  background:linear-gradient(90deg, #1e4a2a, #1b2f4a);
+}
+.xm-auto__icon{
+  flex:0 0 auto; width:30px; height:30px; padding:5px; box-sizing:border-box; border-radius:50%;
+  background:#5ed33a; color:#0d2a12; box-shadow:inset 0 -3px 0 rgba(0,0,0,.22);
+}
+.xm-auto__icon.is-spinning .ax-icon{ animation:axSpin 2.4s linear infinite; }
+.xm-auto__text{ flex:1 1 0; min-width:0; display:flex; flex-direction:column; gap:4px; }
+.xm-auto .xm-card-eyebrow{ color:#9be37f; }
+.xm-auto__sub{ font-weight:700; font-size:12px; line-height:1.1; color:#fff; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.xm-auto:not(.xm-auto--on) .xm-auto__sub{ white-space:normal; }                                                                     
+.xm-auto__sub b{ font-weight:800; color:#9be37f; font-variant-numeric:tabular-nums; }
+.xm-auto__bar{ position:relative; display:block; height:6px; border-radius:3px; background:#0d0a27; overflow:hidden; }
+.xm-auto__bar i{ position:absolute; left:0; top:0; bottom:0; border-radius:3px; background:#5ed33a; transition:width .9s linear; }
+.xm-card-auto, .xm-card-autostop{ flex:0 0 auto; padding:0 14px; white-space:nowrap; }
+.xm-card-auto{ display:inline-flex; align-items:center; gap:6px; padding:0 6px 0 12px; }
+.xm-card-auto .ax-icon{ width:16px; height:16px; }
+.xm-auto--short{ border-color:#7a6a8a; }
+
+                                                                           
+                                                                        
+                                                                                 
+.ax-cost{ display:inline-flex; align-items:center; gap:3px; }
+.ax-cost .kit-cost{ font-size:11px; line-height:1; padding:2px 5px; }
+.ax-cost .kit-cost .cur-ico, .ax-cost .kit-cost svg{ width:13px; height:13px; }
+.ax-cost--tbd{
+  justify-content:center; min-width:18px; height:18px; padding:0 4px; box-sizing:border-box;
+  border:2px dashed rgba(255,255,255,.75); border-radius:999px; background:rgba(13,10,39,.35);
+  color:#fff; font:900 11px/1 var(--kit-font);
+}
+.ax-cost-name{ font:800 10px/1 var(--kit-font); text-transform:uppercase; }
+
+                                                     
+.xm-coin-auto{
+  position:absolute; left:50%; top:-6px; z-index:2; transform:translate(-50%,-50%);
+  display:inline-flex; align-items:center; gap:3px; padding:2px 7px 2px 4px;
+  border:2px solid #0d2a12; border-radius:999px; background:#5ed33a; color:#0d2a12;
+  font:900 10px/1 var(--kit-font); letter-spacing:.04em; pointer-events:none;
+  box-shadow:0 2px 0 rgba(0,0,0,.35);
+}
+.xm-coin-auto .ax-icon{ width:12px; height:12px; animation:axSpin 2.4s linear infinite; }
+
+                                                               
+.dock-btn .dock-auto{
+  position:absolute; top:2px; left:6px; z-index:2; width:20px; height:20px; padding:3px; box-sizing:border-box;
+  border:2px solid #0d2a12; border-radius:50%; background:#5ed33a; color:#0d2a12; pointer-events:none;
+}
+.dock-btn .dock-auto .ax-icon{ animation:axSpin 2.4s linear infinite; }
+
+                                                                      
+                                                                             
+#ftue-tooltip .ftt-auto-art .ftt-auto-ring{ position:absolute; left:50%; top:-4%; height:84%; width:auto; transform:translateX(-50%); }
+#ftue-tooltip .ftt-later-col img.ftt-auto-cave{ top:15%; height:44%; }
+#ftue-tooltip .ftt-auto-set{
+  position:absolute; left:50%; top:0; transform:translateX(-50%); height:76%; aspect-ratio:1;
+  display:grid; grid-template-columns:1fr 1fr; grid-template-rows:1fr 1fr; gap:4%;
+}
+#ftue-tooltip .ftt-auto-set > span{ position:relative; overflow:hidden; border:3px solid #2a1d0e; border-radius:12px; background:#fff7e3; }
+#ftue-tooltip .ftt-later-col .ftt-auto-set img{ left:0; top:0; width:100%; height:100%; transform:none; filter:none; }

@@ -1,0 +1,8 @@
+,[BUILD SKIP],[BUILD READ],[BUILD READ],[BUILD READ],[BUILD READ],[BUILD READ],[BUILD READ],[BUILD READ],[BUILD READ],[BUILD READ],[BUILD READ],[BUILD READ],[BUILD READ],[BUILD READ],[BUILD READ],[BUILD SKIP]
+,,Name,repeatable,max purchase count,tadpoles,flies,gems,seeds,wood,stone,bones,Reward Item 1,Reward Item 1 Count,Reward Item 2,Reward Item 2 Count,Notes
+,1,frog pack,yes,8,0,500,0,0,2,2,0,Frogs,10,-,0,This gives frogs that are level 1
+,2,Higher Frog Pack,yes,50,0,2000,0,0,0,2,30,Frogs,6,-,0,This gives frogs that are level 3 
+,3,mutant 01 pack,no,1,0,0,15,20,0,0,0,Frog,1,-,0,This gives a mutant frog. A mutant frog has all traits that currently do not exist in the gene poo. This can only be purchased from the frog market
+,4,seed pack (small),yes,20,0,2500,0,0,0,0,0,Seeds,25,-,0,Provides Regular Seeds
+,5,seed pack (large),yes,20,0,5000,0,0,0,0,0,Seeds,50,-,0,Provides Regular Seeds
+,6,family ticket,yes,,0,0,30,0,0,0,0,Family Ticket,1,-,0,"Used on an expedition's sealed trait drop: hands over that stage family's whole trait set plus its weapon and shield in one go. Gems only, Shop only. New players free 3 from stage 2's tadpole web (DropTables exp2_web_tickets). Price user-picked 2026-10-17."

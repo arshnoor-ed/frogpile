@@ -1,0 +1,7 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Chevron">
+<rect x="0.75" y="0.75" width="26.5" height="26.5" rx="13.25" fill="#2B2570"/>
+<rect x="0.75" y="0.75" width="26.5" height="26.5" rx="13.25" stroke="#0D0A27" stroke-width="1.5"/>
+<path id="Arrow" d="M8 10L14 16L20 10" stroke="#D9D1FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</svg>

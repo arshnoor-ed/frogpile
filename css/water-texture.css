@@ -1,0 +1,76 @@
+                                                                                     
+                                                                                            
+                                                                             
+                                                                                                 
+                                                                                                    
+                                                                                             
+                                                                      
+#pond-scene .wt-water,#pond-scene .wt-tint{
+  position:absolute;pointer-events:none;z-index:1;overflow:hidden;
+  top:0;left:calc(var(--wt-l,0) * -100%);
+  width:calc((1 + var(--wt-l,0) + var(--wt-r,0)) * 100%);
+                                                                                              
+  height:calc((1 + var(--wt-b,0) + var(--wt-over,.2)) * 100%);
+  -webkit-mask-size:100% 100%;mask-size:100% 100%;
+  -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;
+  opacity:0;transition:opacity .6s ease;
+}
+#pond-scene .wt-water.wt-ready{opacity:1;}
+                                                                                          
+                                                                                             
+                                                                                             
+#pond-scene .wt-tint{background:var(--wt-tint);}
+#pond-scene .wt-tint.wt-ready{opacity:var(--wt-tint-a,1);}
+
+                                                                                          
+                                                                                             
+                                                                                           
+#pond-scene .wt-base{
+  --wt-a:calc(var(--world-w,100vw) * var(--wt-sway,.012));
+  position:absolute;inset:calc(-1 * var(--wt-a));
+  background-image:var(--wt-base-img);background-repeat:repeat;
+  background-size:calc(var(--world-w,100vw) * var(--wt-tile,.7)) calc(var(--world-w,100vw) * var(--wt-tile,.7));
+  background-position:calc(var(--wt-l,0) * var(--world-w,100vw) + var(--wt-a)) var(--wt-a);
+                                                                                        
+                                                                                 
+  opacity:var(--wt-strength,.6);
+  animation:wtSway var(--wt-sway-s,16s) linear infinite;will-change:transform;
+}
+                                                                                        
+@keyframes wtSway{
+  0%{transform:translate3d(var(--wt-a),0,0);}
+  12.5%{transform:translate3d(calc(var(--wt-a) * .71),calc(var(--wt-a) * -.35),0);}
+  25%{transform:translate3d(0,calc(var(--wt-a) * -.5),0);}
+  37.5%{transform:translate3d(calc(var(--wt-a) * -.71),calc(var(--wt-a) * -.35),0);}
+  50%{transform:translate3d(calc(var(--wt-a) * -1),0,0);}
+  62.5%{transform:translate3d(calc(var(--wt-a) * -.71),calc(var(--wt-a) * .35),0);}
+  75%{transform:translate3d(0,calc(var(--wt-a) * .5),0);}
+  87.5%{transform:translate3d(calc(var(--wt-a) * .71),calc(var(--wt-a) * .35),0);}
+  100%{transform:translate3d(var(--wt-a),0,0);}
+}
+
+                                                                                         
+                                                                                           
+                                                                               
+#pond-scene .wt-spark{
+  position:absolute;display:block;pointer-events:none;
+  width:calc(var(--world-w,100vw) * var(--wt-spark,.022) * var(--k,1));aspect-ratio:1;
+  translate:-50% -50%;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23fffdf0' d='M12 0C12.9 8.1 15.9 11.1 24 12C15.9 12.9 12.9 15.9 12 24C11.1 15.9 8.1 12.9 0 12C8.1 11.1 11.1 8.1 12 0Z'/%3E%3C/svg%3E") center/contain no-repeat;
+  animation:wtSpark 1s ease-out both;
+}
+                                                                                   
+#pond-scene .wt-spark::before{
+  content:'';position:absolute;inset:-45%;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,255,250,.55) 0,rgba(210,250,255,.22) 38%,rgba(210,250,255,0) 70%);
+}
+@keyframes wtSpark{
+  0%{scale:0;rotate:0deg;opacity:0;}
+  22%{scale:1;rotate:calc(var(--turn,30deg) * .35);opacity:1;}
+  50%{scale:.78;rotate:calc(var(--turn,30deg) * .6);opacity:1;}
+  100%{scale:0;rotate:var(--turn,30deg);opacity:0;}
+}
+@media (prefers-reduced-motion: reduce){
+  #pond-scene .wt-base{animation:none;}
+  #pond-scene .wt-spark{display:none;}
+}

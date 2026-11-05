@@ -1,0 +1,58 @@
+                                                                        
+                                                                          
+                                                                     
+                                                                        
+                                                    
+#pond-scene .pond-ext{position:absolute;pointer-events:none;}
+
+                                                                  
+                                                                  
+#pond-scene .pond-ext-l,#pond-scene .pond-ext-r{
+  top:0;height:100%;
+  background-repeat:repeat-x;background-size:auto 100%;
+}
+#pond-scene .pond-ext-l{
+  right:calc(100% - 1px);width:calc(var(--grow-l,0) * 100% + 1px);
+  background-position:right top;
+}
+#pond-scene .pond-ext-r{
+  left:calc(100% - 1px);width:calc(var(--grow-r,0) * 100% + 1px);
+  background-position:left top;
+}
+
+                                                                     
+#pond-scene .pond-ext-b{
+  top:calc(100% - 1px);height:calc(var(--grow-b,0) * 100% + 1px);
+  left:calc(var(--grow-l,0) * -100%);
+  width:calc((1 + var(--grow-l,0) + var(--grow-r,0)) * 100%);
+  background:var(--grow-water,rgb(64,209,238));
+}
+
+                                                                                
+                                                                                            
+                                                                                       
+                                                                                              
+                                                                                              
+                                                                                               
+                                                                                             
+#pond-scene .pond-forest{position:absolute;pointer-events:none;display:block;}
+body.pond-expansion-zoom #pond-scene::before{content:none;}
+
+                                                                              
+                                                                              
+                                                                   
+body.pond-growing #frog-layer .lilypad,
+body.pond-growing #frog-layer .g-rock{
+  transition:left var(--grow-glide,1100ms) cubic-bezier(.3,.8,.3,1),top var(--grow-glide,1100ms) cubic-bezier(.3,.8,.3,1);
+}
+body.pond-growing #frog-layer .pond-log{
+  transition:opacity .35s ease,scale .45s cubic-bezier(.3,1.5,.5,1),
+    left var(--grow-glide,1100ms) cubic-bezier(.3,.8,.3,1),top var(--grow-glide,1100ms) cubic-bezier(.3,.8,.3,1);
+}
+
+                                                          
+                                                                               
+                                                                
+body.pond-expansion-zoom #pond-scene .pond-ext-b{
+  height:calc((var(--grow-b,0) + 0.2) * 100% + 1px);
+}
