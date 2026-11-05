@@ -1,0 +1,8 @@
+[
+  { "figma": "Hud Dock / halftone texture (bg 124.18×62.09, screen, 22%)", "node": "260:300", "file": "assets/ui2/grimoire/active_texture.jpg", "reused": true },
+  { "figma": "Button/Settings", "node": "260:301", "file": "assets/ui2/grimoire/btn_settings.png", "reused": true },
+  { "figma": "Pond Chip / Icon (Icon/Currency/Tadpoles, the component default)", "node": "257:127", "file": "assets/ui2/currency/tadpoles.png", "reused": true },
+  { "figma": "Top Bar / Pond Chip instance / Frog icon (frog-head art override)", "node": "I260:313;260:307", "file": "assets/ui2/kit/navigation/pond-chip-frog.png", "reused": false },
+  { "figma": "Top Bar / Pill icons (Icon/Currency/Tadpoles, Gems, Flies, Bones)", "node": "260:359", "file": "assets/ui2/currency/{tadpoles,bluediamond,fly,bone}.png", "reused": true },
+  { "figma": "Dock Tab / Hud Dock icons (Icon/Nav/Shop, Upgrades, Expedition, Grimoire, Harvesting — Icons group)", "node": "257:147", "file": "assets/ui2/kit/icons/nav-{shop,upgrades,expedition,grimoire,harvesting}.png", "reused": true }
+]

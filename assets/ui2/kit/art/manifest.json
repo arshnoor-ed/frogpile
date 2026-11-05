@@ -1,0 +1,11 @@
+[
+  { "figma": "Art/Insect/Butterfly Red · ATK", "node": "2104:8855", "file": "assets/butterfly_red_atkBoost.png", "reused": true },
+  { "figma": "Art/Insect/Firefly Blue · DEF", "node": "2104:8856", "file": "assets/firefly_blue_defBoost.png", "reused": true },
+  { "figma": "Art/Insect/Dragonfly Green · HP", "node": "2104:8857", "file": "assets/dragonfly_green_hpBoost.png", "reused": true },
+  { "figma": "Art/Frog/Body_01 (art + its Shade mask)", "node": "2103:4186", "file": "assets/ui2/kit/frog/frog-body-01.png", "reused": true },
+  { "figma": "Art/Frog/Bunny", "node": "2129:4969", "file": "assets/ui2/kit/art/frog-bunny.png", "reused": false },
+  { "figma": "Flower Card — default flower art (Flower / White, Open)", "node": "I2110:601;266:379", "file": "assets/env/flower/whitelily_open.png", "reused": true },
+  { "figma": "Flower Card — Icon/Currency/Seeds", "node": "257:107", "file": "assets/ui2/currency/seed.png", "reused": true },
+  { "figma": "Flower Card / State=Selected — sparkle texture", "node": "2110:636", "file": "assets/ui2/kit/art/star-texture.jpg", "reused": true },
+  { "figma": "Sparkle texture (Mission Row Claim / Mission Plate / Flower Card Selected overlay fill)", "node": "265:306", "file": "assets/ui2/kit/art/star-texture.jpg", "reused": false }
+]

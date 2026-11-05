@@ -1,0 +1,19 @@
+[
+  { "figma": "Mission Row / State=Claim — sparkle texture (overlay fill)", "node": "265:306", "file": "assets/ui2/kit/art/star-texture.jpg", "reused": false },
+  { "figma": "Mission Row — Icon/Currency/Gems", "node": "257:97", "file": "assets/ui2/currency/bluediamond.png", "reused": true },
+  { "figma": "Mission Row / State=Claim — Button Shine", "node": "I265:313;2007:463", "file": "assets/ui2/grimoire/btn_shine.svg", "reused": true },
+  { "figma": "Mission Plate — Panel (purple tab)", "node": "2075:531", "file": "assets/ui2/kit/missions/mission-plate-panel.png", "reused": false },
+  { "figma": "Mission Plate — Panel edge", "node": "2075:532", "file": "assets/ui2/kit/missions/mission-plate-edge.svg", "reused": false },
+  { "figma": "Mission Plate — Halftone", "node": "2075:494", "file": "assets/ui2/kit/missions/mission-plate-halftone.svg", "reused": false },
+  { "figma": "Mission Plate — Megaphone", "node": "2075:533", "file": "assets/ui2/icon/task_megaphone.png", "reused": true },
+  { "figma": "Mission Plate — plate / band texture", "node": "265:336", "file": "assets/ui2/kit/art/star-texture.jpg", "reused": true },
+  { "figma": "Mission Plate — Icon/Currency/Gems", "node": "257:97", "file": "assets/ui2/currency/bluediamond.png", "reused": true },
+  { "figma": "Upgrade Row — Icon/Nav/Upgrades", "node": "257:152", "file": "assets/ui2/kit/icons/nav-upgrades.png", "reused": true },
+  { "figma": "Upgrade Row — Cost Chip Icon/Currency/Wood", "node": "257:102", "file": "assets/ui2/currency/wood.png", "reused": true },
+  { "figma": "Upgrade Row — Cost Chip Icon/Currency/Stone", "node": "257:117", "file": "assets/ui2/currency/rock.png", "reused": true },
+  { "figma": "Upgrade Row — Button Shine (Size=S, same drawing scaled)", "node": "I265:359;2007:466", "file": "assets/ui2/grimoire/btn_shine.svg", "reused": true },
+  { "figma": "Timer Sign — Shine", "node": "2060:402", "file": "assets/ui2/kit/missions/timer-sign-shine.svg", "reused": false },
+  { "figma": "Timer Sign — Clock", "node": "2059:419", "file": "assets/ui2/kit/missions/timer-sign-clock.svg", "reused": false },
+  { "figma": "Yield Box — Icon/Currency/Wood", "node": "257:102", "file": "assets/ui2/currency/wood.png", "reused": true },
+  { "figma": "Chevron", "node": "2059:416", "file": "assets/ui2/kit/frog/hero-chevron.svg", "reused": true }
+]

@@ -1,0 +1,9 @@
+[
+  { "figma": "Popup / texture (53% over #2b1d76)", "node": "261:261", "file": "assets/ui2/grimoire/bg_pattern.jpg", "reused": true },
+  { "figma": "Popup / Button/Close (Actions group, KitUI.closeButton)", "node": "258:233", "file": "assets/ui2/kit/actions/button-close.png", "reused": true },
+  { "figma": "Popup, Confirm Modal / button Shine (Actions group CSS)", "node": "2007:466", "file": "assets/ui2/grimoire/btn_shine.svg", "reused": true },
+  { "figma": "Confirm Modal / texture (53% over the #8561f5→#6642db gradient)", "node": "261:326", "file": "assets/ui2/grimoire/bg_pattern.jpg", "reused": true },
+  { "figma": "Confirm Modal / halftone (bg 141.92×70.96, screen, 12%)", "node": "261:326", "file": "assets/ui2/grimoire/active_texture.jpg", "reused": true },
+  { "figma": "Confirm Modal / Meta icon (Icon/Currency/Bones)", "node": "257:112", "file": "assets/ui2/currency/bone.png", "reused": true },
+  { "figma": "Page Header / Power badge icon (Icon/UI/Power)", "node": "2159:9773", "file": "assets/ui2/grimoire/icon_power.png", "reused": true }
+]

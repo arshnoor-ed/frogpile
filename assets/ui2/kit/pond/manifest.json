@@ -1,0 +1,14 @@
+[
+  { "figma": "Lily Pad — Pad", "node": "266:348", "file": "assets/env/lilypad/01.png", "reused": true },
+  { "figma": "Lily Pad / Type=Hatch — Signpost", "node": "266:351", "file": "assets/ui2/kit/pond/lily-pad-signpost.png", "reused": false },
+  { "figma": "Lily Pad / Type=Empty flower spot — Spot", "node": "266:354", "file": "assets/ui2/kit/pond/lily-pad-spot.png", "reused": false },
+  { "figma": "Tadpole / Stage=0", "node": "266:358", "file": "assets/frog2/tadpole/stage_0.png", "reused": true },
+  { "figma": "Tadpole / Stage=1", "node": "266:360", "file": "assets/frog2/tadpole/stage_1.png", "reused": true },
+  { "figma": "Tadpole / Stage=3", "node": "266:364", "file": "assets/frog2/tadpole/stage_3.png", "reused": true },
+  { "figma": "Flower / Species=Pink, Stage=Open", "node": "266:371", "file": "assets/env/flower/pinklily_open.png", "reused": true },
+  { "figma": "Flower / Species=White, Stage=Open", "node": "266:379", "file": "assets/env/flower/whitelily_open.png", "reused": true },
+  { "figma": "Flower / Species=Blue, Stage=Open", "node": "266:387", "file": "assets/env/flower/bluelily_open.png", "reused": true },
+  { "figma": "Flower / Species=Reed, Stage=Open", "node": "266:395", "file": "assets/env/flower/reed_open.png", "reused": true },
+  { "figma": "Deco Pad / Variant=1", "node": "266:400", "file": "assets/env/lilypad/decorative_01.png", "reused": true },
+  { "figma": "Deco Pad / Variant=2", "node": "266:402", "file": "assets/env/lilypad/decorative_02.png", "reused": true }
+]

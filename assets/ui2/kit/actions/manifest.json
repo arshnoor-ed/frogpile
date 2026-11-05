@@ -1,0 +1,5 @@
+[
+  { "figma": "Button/Close", "node": "258:233", "file": "assets/ui2/kit/actions/button-close.png", "reused": false },
+  { "figma": "Button / Shine (Tag 32.3×18.7; S, M, L are the same drawing scaled ×1.41/×1.53/×1.88)", "node": "2007:463", "file": "assets/ui2/grimoire/btn_shine.svg", "reused": true },
+  { "figma": "Button / Icon (default swap = Icon/Currency/Gems)", "node": "258:93", "file": "assets/ui2/currency/bluediamond.png", "reused": true }
+]
